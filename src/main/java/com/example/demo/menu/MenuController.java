@@ -13,6 +13,8 @@ public class MenuController implements Initializable{
     @FXML
     private ListView<?> mylistView;
 
+    @FXML
+    private ListView<?> permissionListview=new ListView<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
@@ -23,8 +25,17 @@ public class MenuController implements Initializable{
 
                 "城市管理", "节点管理", "车型管理", "车辆备案","货物名称管理","业务类型管理","GPS车辆部门管理","GPS车辆信息管理");
 
+        //*************************
+
+        ObservableList permissionItems = FXCollections.observableArrayList (
+
+                "城市管理", "节点管理", "车型管理", "车辆备案","货物名称管理","业务类型管理","GPS车辆部门管理","GPS车辆信息管理");
+
         mylistView.setPrefSize(165, 551);
         mylistView.getItems().addAll(items);
+
+        permissionListview.setPrefSize(165,551);
+        permissionListview.getItems().addAll(permissionItems);
 
 
 }

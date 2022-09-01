@@ -14,7 +14,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="667.0" prefWidth="873.0">
                      <children>
-                        <SplitPane dividerPositions="0.23169267707082833" layoutX="14.0" layoutY="14.0" prefHeight="573.0" prefWidth="835.0">
+                        <SplitPane dividerPositions="0.2424969987995198" layoutX="14.0" layoutY="14.0" prefHeight="573.0" prefWidth="835.0">
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.0" prefWidth="346.0">
                                  <children>
@@ -38,7 +38,19 @@
           </Tab>
           <Tab fx:id="permission" text="权限管理">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.24743443557582667" layoutX="-3.0" layoutY="-1.0" prefHeight="591.0" prefWidth="879.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <ListView fx:id="permissionListview" layoutX="1.0" layoutY="1.0" prefHeight="588.0" prefWidth="215.0" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
             </content>
           </Tab>
             <Tab fx:id="托运信息变更" text="托运信息变更">
