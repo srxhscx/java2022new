@@ -1,7 +1,6 @@
 package com.example.demo.menu;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -23,12 +22,7 @@ public class MenuController implements Initializable{
     @FXML
     private ListView<?> transportationListview=new ListView<>();
 
-    @FXML
-    void mylistView(ActionEvent event)
-    {
 
-
-    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -64,5 +58,7 @@ public class MenuController implements Initializable{
 
         transportationListview.setPrefSize(165,551);
         transportationListview.getItems().addAll(transportationItems);
-    }
+
+
+}
 }
