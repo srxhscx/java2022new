@@ -256,12 +256,12 @@
                      <children>
                         <TabPane prefHeight="710.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
-                            <Tab text="Untitled Tab 1">
+                            <Tab text="运输计划生成">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="268.0" prefWidth="459.0" />
                               </content>
                             </Tab>
-                            <Tab text="Untitled Tab 2">
+                            <Tab text="运输委托">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
@@ -277,16 +277,21 @@
                      <children>
                         <TabPane prefHeight="719.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
-                            <Tab text="Untitled Tab 1">
+                            <Tab text="在途监控">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
                             </Tab>
-                            <Tab text="Untitled Tab 2">
+                            <Tab text="在途信息录入">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
                             </Tab>
+                              <Tab text="异常信息录入">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
                           </tabs>
                         </TabPane>
                      </children></AnchorPane>
@@ -298,16 +303,21 @@
                      <children>
                         <TabPane prefHeight="721.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
-                            <Tab text="Untitled Tab 1">
+                            <Tab text="到货预报">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
                             </Tab>
-                            <Tab text="Untitled Tab 2">
+                            <Tab text="索赔管理">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
                             </Tab>
+                              <Tab text="委托书签收">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
                           </tabs>
                         </TabPane>
                      </children></AnchorPane>
@@ -319,12 +329,7 @@
                      <children>
                         <TabPane prefHeight="728.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
-                            <Tab text="Untitled Tab 1">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                              </content>
-                            </Tab>
-                            <Tab text="Untitled Tab 2">
+                            <Tab text="延迟审核">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
@@ -340,16 +345,21 @@
                      <children>
                         <TabPane prefHeight="719.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
-                            <Tab text="Untitled Tab 1">
+                            <Tab text="账单调整">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
                             </Tab>
-                            <Tab text="Untitled Tab 2">
+                            <Tab text="运费核算">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
                             </Tab>
+                              <Tab text="整车运费核算">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
                           </tabs>
                         </TabPane>
                      </children></AnchorPane>
@@ -361,16 +371,21 @@
                      <children>
                         <TabPane layoutY="-2.0" prefHeight="722.0" prefWidth="1230.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
-                            <Tab text="Untitled Tab 1">
+                            <Tab text="监控明细查询">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
                             </Tab>
-                            <Tab text="Untitled Tab 2">
+                            <Tab text="对账明细查询">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
                             </Tab>
+                              <Tab text="修改日志查询">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
                           </tabs>
                         </TabPane>
                      </children></AnchorPane>
