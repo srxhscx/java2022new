@@ -14,7 +14,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="667.0" prefWidth="873.0">
                      <children>
-                        <TabPane prefHeight="599.0" prefWidth="872.0" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane prefHeight="709.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab text="城市管理">
                               <content>
@@ -66,7 +66,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="539.0" prefWidth="834.0">
                      <children>
-                        <TabPane layoutY="-1.0" prefHeight="710.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane layoutY="-3.0" prefHeight="712.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab text="账号管理">
                               <content>
@@ -105,12 +105,44 @@
                             </Tab>
                             <Tab text="角色管理">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Button layoutX="846.0" layoutY="59.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="117.0" text="查询" />
+                                          <Button layoutX="1000.0" layoutY="58.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="114.0" text="新建角色" />
+                                          <TextField layoutX="160.0" layoutY="61.0" />
+                                          <TableView layoutX="68.0" layoutY="114.0" prefHeight="536.0" prefWidth="1098.0">
+                                            <columns>
+                                              <TableColumn prefWidth="164.0" text="状态" />
+                                              <TableColumn prefWidth="262.0" text="角色" />
+                                                <TableColumn prefWidth="437.0" text="备注" />
+                                                <TableColumn prefWidth="234.0" text="操作" />
+                                            </columns>
+                                          </TableView>
+                                          <Label layoutX="99.0" layoutY="66.0" text="角色" />
+                                       </children></AnchorPane>
                               </content>
                             </Tab>
                               <Tab text="用户权限管理">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="128.0" layoutY="61.0" text="角色名" />
+                                          <Label layoutX="469.0" layoutY="61.0" text="用户名" />
+                                          <TableView layoutX="23.0" layoutY="137.0" prefHeight="509.0" prefWidth="1173.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="用户名" />
+                                              <TableColumn prefWidth="181.0" text="姓名" />
+                                                <TableColumn prefWidth="387.0" text="角色名" />
+                                                <TableColumn prefWidth="276.0" text="备注" />
+                                                <TableColumn prefWidth="253.0" text="操作" />
+                                            </columns>
+                                          </TableView>
+                                          <TextField layoutX="539.0" layoutY="57.0" />
+                                          <Button layoutX="822.0" layoutY="57.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="89.0" text="查询" />
+                                          <Button layoutX="1006.0" layoutY="56.0" mnemonicParsing="false" text="用户维护" />
+                                          <Button layoutX="1102.0" layoutY="56.0" mnemonicParsing="false" text="权限维护" />
+                                          <ComboBox layoutX="181.0" layoutY="57.0" prefHeight="29.0" prefWidth="189.0" />
+                                       </children></AnchorPane>
                                 </content>
                               </Tab>
                           </tabs>
@@ -122,7 +154,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TabPane prefHeight="588.0" prefWidth="872.0" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane prefHeight="711.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab text="发货信息变更">
                               <content>
@@ -136,7 +168,7 @@
                             </Tab>
                               <Tab text="索赔信息变更">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="572.0" prefWidth="938.0" />
                                 </content>
                               </Tab>
                           </tabs>
@@ -148,7 +180,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TabPane prefHeight="590.0" prefWidth="872.0" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane prefHeight="711.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab text="承运商管理">
                               <content>
@@ -174,7 +206,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TabPane prefHeight="580.0" prefWidth="872.0" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane prefHeight="710.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab text="Untitled Tab 1">
                               <content>
