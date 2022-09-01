@@ -156,21 +156,69 @@
                      <children>
                         <TabPane prefHeight="711.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
-                            <Tab text="发货信息变更">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                              </content>
-                            </Tab>
-                            <Tab text="签收信息变更">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                              </content>
-                            </Tab>
-                              <Tab text="索赔信息变更">
+                              <Tab text="发货信息变更">
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="572.0" prefWidth="938.0" />
                                 </content>
                               </Tab>
+                            <Tab text="签收信息变更">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView layoutX="14.0" layoutY="191.0" prefHeight="334.0" prefWidth="1173.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="C1" />
+                                              <TableColumn prefWidth="75.0" text="C2" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                                <TableColumn prefWidth="75.0" text="Column X" />
+                                            </columns>
+                                          </TableView>
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="索赔信息变更">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView layoutX="18.0" layoutY="167.0" prefHeight="480.0" prefWidth="1182.0">
+                                            <columns>
+                                              <TableColumn prefWidth="101.0" text="索赔函编号" />
+                                              <TableColumn prefWidth="87.0" text="委托书编号" />
+                                                <TableColumn prefWidth="97.0" text="托运单号" />
+                                                <TableColumn prefWidth="81.0" text="承运商" />
+                                                <TableColumn prefWidth="120.0" text="车牌号" />
+                                                <TableColumn prefWidth="76.0" text="始发城市" />
+                                                <TableColumn prefWidth="157.0" text="始发仓别" />
+                                                <TableColumn prefWidth="95.0" text="目的城市" />
+                                                <TableColumn prefWidth="139.0" text="目的仓别" />
+                                                <TableColumn prefWidth="129.0" text="签字人" />
+                                                <TableColumn prefWidth="85.0" text="操作" />
+                                            </columns>
+                                          </TableView>
+                                          <Button layoutX="913.0" layoutY="81.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="105.0" text="查询" />
+                                          <Button layoutX="1063.0" layoutY="83.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="99.0" text="导出" />
+                                          <Label layoutX="48.0" layoutY="58.0" text="索赔函编号" />
+                                          <Label layoutX="48.0" layoutY="113.0" text="委托书编号" />
+                                          <Label layoutX="536.0" layoutY="58.0" text="起始时间" />
+                                          <Label layoutX="536.0" layoutY="113.0" text="截止时间" />
+                                          <TextField layoutX="146.0" layoutY="53.0" />
+                                          <TextField layoutX="146.0" layoutY="108.0" />
+                                          <TextField layoutX="611.0" layoutY="108.0" />
+                                          <TextField layoutX="609.0" layoutY="53.0" />
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
                           </tabs>
                         </TabPane>
                      </children></AnchorPane>
