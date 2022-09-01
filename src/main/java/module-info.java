@@ -4,6 +4,8 @@ module com.example.demo {
         requires javafx.fxml;
         requires java.desktop;
         requires java.sql;
+
+
         opens com.example.demo.homepage to javafx.fxml;
         opens com.example.demo to javafx.fxml;
         opens com.example.demo.register to javafx.fxml;
