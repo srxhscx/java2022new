@@ -27,7 +27,7 @@
             <TextField fx:id="idText" promptText="请输入手机号" GridPane.columnIndex="1" />
             <TextField fx:id="passText" promptText="请输入您的密码" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="pass1Text" promptText="请确认您的密码" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="regiterBtn" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="注册" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="regiterBtn" mnemonicParsing="false" onAction="#regiter" prefHeight="30.0" prefWidth="112.0" text="注册" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <ImageView fitHeight="236.0" fitWidth="732.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
