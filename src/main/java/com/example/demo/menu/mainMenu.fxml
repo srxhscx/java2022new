@@ -6,13 +6,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="664.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.menu.MenuController">
+<AnchorPane prefHeight="578.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.menu.MenuController">
    <children>
-      <TabPane layoutX="8.0" layoutY="14.0" prefHeight="639.0" prefWidth="860.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="628.0" prefWidth="872.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="系统设置">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="505.0" prefWidth="745.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="667.0" prefWidth="873.0">
                      <children>
                         <SplitPane dividerPositions="0.23169267707082833" layoutX="14.0" layoutY="14.0" prefHeight="573.0" prefWidth="835.0">
                           <items>
@@ -23,7 +23,7 @@
                               </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                  <children>
-                                    <TableView layoutX="14.0" layoutY="14.0" prefHeight="550.0" prefWidth="611.0">
+                                    <TableView layoutX="14.0" layoutY="14.0" prefHeight="560.0" prefWidth="646.0">
                                       <columns>
                                         <TableColumn prefWidth="75.0" text="C1" />
                                         <TableColumn prefWidth="75.0" text="C2" />
@@ -36,24 +36,49 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
+          <Tab fx:id="permission" text="权限管理">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
-            <Tab text="Untitled Tab">
+            <Tab fx:id="托运信息变更" text="托运信息变更">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
-            <Tab text="Untitled Tab">
+            <Tab text="运输网络管理">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
-            <Tab text="Untitled Tab">
+            <Tab text="发运管理">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="在途监听">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="到货管理">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="延迟审核">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1074.0" />
+              </content>
+            </Tab>
+            <Tab text="运费合算">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="查询统计">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="646.0" prefWidth="1003.0" />
               </content>
             </Tab>
         </tabs>
