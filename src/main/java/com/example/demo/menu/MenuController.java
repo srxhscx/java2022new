@@ -13,16 +13,6 @@ public class MenuController implements Initializable{
     @FXML
     private ListView<?> mylistView;
 
-    @FXML
-    private ListView<?> permissionListview=new ListView<>();
-
-    @FXML
-    private ListView<?> checkedListview=new ListView<>();
-
-    @FXML
-    private ListView<?> transportationListview=new ListView<>();
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -34,30 +24,10 @@ public class MenuController implements Initializable{
 
         //*************************
 
-        ObservableList permissionItems = FXCollections.observableArrayList (
-
-                "账户管理","角色管理","用户权限管理");
-
-        ObservableList checkedItems = FXCollections.observableArrayList (
-
-                "发货信息变更","签收信息变更" , "索赔信息变更");
-
-        ObservableList transportationItems = FXCollections.observableArrayList (
-
-                "运输网络管理","运价管理","用户权限管理");
 
 
         mylistView.setPrefSize(165, 551);
         mylistView.getItems().addAll(items);
-
-        permissionListview.setPrefSize(165,551);
-        permissionListview.getItems().addAll(permissionItems);
-
-        checkedListview.setPrefSize(165,551);
-        checkedListview.getItems().addAll(checkedItems);
-
-        transportationListview.setPrefSize(165,551);
-        transportationListview.getItems().addAll(transportationItems);
 
 
 }
