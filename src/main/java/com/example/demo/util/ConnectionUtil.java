@@ -11,9 +11,9 @@ public class ConnectionUtil {
         //声明一个连接对象
         Connection cn = null;
         //连接数据库的URL，用户名和密码
-        String url = "jdbc:mysql://localhost:3306/test2";
+        String url = "jdbc:mysql://localhost:3306/jd_tms_db";
         String username = "root";
-        String password = "QWer13836656849";
+        String password = "123456";
 
         try{
             //加载驱动类
