@@ -1,79 +1,51 @@
 package com.example.demo.dao;
 
 import com.example.demo.util.ConnectionUtil;
+import com.example.demo.vo.Role;
+import com.example.demo.vo.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDAO {
 
-    public int delRole(int id){
-        int m = -1;
-        String sql = "delete from role_info where role_id = ?";
-        Connection cn = ConnectionUtil.getConnection();
+ /**
+  *
+ *验证用户是否存在
+ *
+  */
 
-        PreparedStatement pstmt =  null;
 
-        try{
-            pstmt = cn.prepareStatement(sql);
-
-            pstmt.setInt(1,id);
-            m = pstmt.executeUpdate();
-        }catch(SQLException e) {
-            e.printStackTrace();
-        }finally {
-            if (cn != null){
-                try {
-                    cn.close();
-                }catch (SQLException e){
-                    e.printStackTrace();
-                }
-            }
-        }
-        return m;
-    }
-
-    public int updateRole(int id){
-        int m = -1;
-        String sql = "UPDATE role_info SET role_name = '店长',role_permission = '修改' WHERE role_id = ?;";
-        Connection cn = ConnectionUtil.getConnection();
-
-        PreparedStatement pstmt =  null;
-
-        try{
-            pstmt = cn.prepareStatement(sql);
-
-            pstmt.setInt(1,id);
-            m = pstmt.executeUpdate();
-        }catch(SQLException e) {
-            e.printStackTrace();
-        }finally {
-            if (cn != null){
-                try {
-                    cn.close();
-                }catch (SQLException e){
-                    e.printStackTrace();
-                }
-            }
-        }
-        return m;
-    }
-
-    public int addRole(String User_account,String User_password,String Face_img,int Role_id,String User_name) throws SQLException {
-        //获取连接
-        Connection cn = ConnectionUtil.getConnection();
-        String sql = "insert into user_info(user_account,user_password,face_img,role_id,user_name)values('"+User_account+"','"+User_password+"','"+Face_img+"',"+Role_id+",'"+User_name+"')";
-        //发送给mysql执行
-        PreparedStatement pstmt =  null;
-
+    public User login(String account){
         int n = -1;
-        //绑定到PreparedStatement对象中
+        String sql = "SELECT * FROM user_info WHERE user_account = ?";
+        Connection cn = ConnectionUtil.getConnection();
 
+        PreparedStatement pstmt =  null;
+
+        //声明结果集游标，用于查询每一行数据
+        ResultSet rs = null;
+        User user = null;
         try{
             pstmt = cn.prepareStatement(sql);
-            //返回影响行数
-            n = pstmt.executeUpdate();
+            pstmt.setString(1,account);
+
+            rs = pstmt.executeQuery();
+
+
+            if(rs.next()){
+                user = new User();
+                //使用rs.get...(查询结果集)
+                user.setUser_account(rs.getString("user_name"));
+                user.setUser_password(rs.getString("user_password"));
+                user.setUser_id(rs.getInt("user_id"));
+                user.setFace_img(rs.getString("face_img"));
+                user.setUser_name(rs.getString("user_name"));
+
+
+            }
         }catch(SQLException e) {
             e.printStackTrace();
         }finally {
@@ -85,9 +57,9 @@ public class UserDAO {
                 }
             }
         }
-        return n;
-    }
+        return user;
 
+    }
     public static void main(String[] args) throws SQLException {
         //RoleDAO roleDAO = new RoleDAO();
         //int m = roleDAO.addRole("超级管理员","修改");
