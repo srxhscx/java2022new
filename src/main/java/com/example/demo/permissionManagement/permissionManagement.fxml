@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.permissionManagement.permissionManagementController">
+   <children>
+      <TabPane layoutY="-8.0" prefHeight="697.0" prefWidth="610.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="角色设置">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField layoutX="84.0" layoutY="153.0" />
+                        <TextField layoutX="388.0" layoutY="153.0" />
+                        <ChoiceBox layoutX="230.0" layoutY="293.0" prefWidth="150.0" />
+                        <Label layoutX="29.0" layoutY="158.0" text="账号" />
+                        <Label layoutX="328.0" layoutY="158.0" text="姓名" />
+                        <Label layoutX="166.0" layoutY="298.0" text="角色" />
+                        <Button layoutX="181.0" layoutY="537.0" mnemonicParsing="false" text="设置" />
+                        <Button layoutX="388.0" layoutY="537.0" mnemonicParsing="false" text="返回" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="角色管理">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="117.0" layoutY="88.0" text="角色名" />
+                        <ChoiceBox layoutX="249.0" layoutY="83.0" prefWidth="150.0" />
+                        <Button layoutX="152.0" layoutY="554.0" mnemonicParsing="false" text="设置" />
+                        <Button layoutX="438.0" layoutY="554.0" mnemonicParsing="false" text="返回" />
+                        <CheckBox layoutX="68.0" layoutY="181.0" mnemonicParsing="false" text="CheckBox" />
+                        <CheckBox layoutX="68.0" layoutY="226.0" mnemonicParsing="false" text="CheckBox" />
+                        <CheckBox layoutX="68.0" layoutY="267.0" mnemonicParsing="false" text="CheckBox" />
+                        <CheckBox layoutX="68.0" layoutY="310.0" mnemonicParsing="false" text="CheckBox" />
+                        <CheckBox layoutX="68.0" layoutY="349.0" mnemonicParsing="false" text="CheckBox" />
+                        <CheckBox layoutX="364.0" layoutY="181.0" mnemonicParsing="false" text="CheckBox" />
+                        <CheckBox layoutX="364.0" layoutY="226.0" mnemonicParsing="false" text="CheckBox" />
+                        <CheckBox layoutX="364.0" layoutY="267.0" mnemonicParsing="false" text="CheckBox" />
+                        <CheckBox layoutX="364.0" layoutY="310.0" mnemonicParsing="false" text="CheckBox" />
+                        <CheckBox layoutX="364.0" layoutY="349.0" mnemonicParsing="false" text="CheckBox" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
