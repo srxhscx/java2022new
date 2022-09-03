@@ -13,7 +13,7 @@ public class RoleDAO {
      *
      * 添加一个角色
      */
-
+//1.8
     public int delRole(int id){
         int m = -1;
         String sql = "delete from user_info where user_id = ?";
