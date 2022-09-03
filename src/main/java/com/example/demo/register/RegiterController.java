@@ -39,6 +39,8 @@ public class RegiterController implements Initializable {
         private ComboBox permission;
 
         @FXML
+        private Label tipaccount;
+        @FXML
         private Label passLabel;
         @FXML
         void regiter(ActionEvent event) throws SQLException {
@@ -51,14 +53,23 @@ public class RegiterController implements Initializable {
                 int role_id = roleId.charAt(0) - 48;
                 System.out.println(role_id);
 
-                if (password.equals(password1)){
-                        UserDAO userDAO = new UserDAO();
-                        userDAO.addRole(tel,password,userName,role_id);
 
+                UserDAO userDAO = new UserDAO();
+
+                if(userDAO.login(tel) != null){
+                        tipaccount.setText("用户已存在");
                 }
                 else{
-                        passLabel.setText("两次密码不一致");
+                        if (password.equals(password1)){
+
+                                userDAO.addRole(tel,password,userName,role_id);
+
+                        }
+                        else{
+                                passLabel.setText("两次密码不一致");
+                        }
                 }
+
 
         }
 
@@ -73,7 +84,7 @@ public class RegiterController implements Initializable {
                 permission.setPlaceholder(new Label("Placeholder"));
                 //设置可编辑
                 permission.setEditable(true);
-                permission.setPromptText("PromptText");
+                permission.setPromptText("请选择您的角色");
                 //设置可见行数, 超过显示滚动条
                 permission.setVisibleRowCount(3);
 

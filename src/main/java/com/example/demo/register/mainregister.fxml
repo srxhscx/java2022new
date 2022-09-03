@@ -61,5 +61,10 @@
             <Font size="20.0" />
          </font></Button>
       <Label fx:id="passLabel" layoutX="815.0" layoutY="231.0" prefHeight="20.0" prefWidth="143.0" textFill="#f50f0f" />
+      <Label fx:id="tipaccount" layoutX="832.0" layoutY="86.0" prefHeight="20.0" prefWidth="121.0" textFill="#ff0909">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
