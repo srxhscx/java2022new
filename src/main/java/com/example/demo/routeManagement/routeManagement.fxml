@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.roleManagement.roleManagementController">
+   <children>
+      <Button layoutX="165.0" layoutY="583.0" mnemonicParsing="false" text="保存" />
+      <Button layoutX="417.0" layoutY="583.0" mnemonicParsing="false" text="关闭" />
+      <ChoiceBox layoutX="108.0" layoutY="65.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="390.0" layoutY="65.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="108.0" layoutY="120.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="108.0" layoutY="170.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="108.0" layoutY="222.0" prefHeight="30.0" prefWidth="441.0" />
+      <ChoiceBox layoutX="108.0" layoutY="279.0" prefHeight="8.0" prefWidth="441.0" />
+      <TextArea layoutX="108.0" layoutY="329.0" prefHeight="146.0" prefWidth="441.0" />
+      <TextField layoutX="390.0" layoutY="120.0" prefHeight="30.0" prefWidth="150.0" />
+      <TextField layoutX="390.0" layoutY="170.0" prefHeight="30.0" prefWidth="150.0" />
+      <Label layoutX="41.0" layoutY="70.0" text="始发城市" />
+      <Label layoutX="41.0" layoutY="125.0" text="业务类型" />
+      <Label layoutX="41.0" layoutY="175.0" text="整车零担" />
+      <Label layoutX="26.0" layoutY="227.0" text="首选承运商" />
+      <Label layoutX="26.0" layoutY="284.0" text="备选承运商" />
+      <Label layoutX="71.0" layoutY="329.0" text="备注" />
+      <Label layoutX="313.0" layoutY="70.0" text="目的城市" />
+      <Label layoutX="313.0" layoutY="125.0" text="运输方式" />
+      <Label layoutX="313.0" layoutY="175.0" text="生效时间" />
+   </children>
+</AnchorPane>

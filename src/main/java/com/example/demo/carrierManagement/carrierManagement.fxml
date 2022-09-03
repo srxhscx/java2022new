@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="781.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.carrierManagement.carrierManagementController">
+   <children>
+      <TextField layoutX="190.0" layoutY="92.0" prefHeight="30.0" prefWidth="378.0" />
+      <TextField layoutX="190.0" layoutY="138.0" prefHeight="30.0" prefWidth="378.0" />
+      <TextField layoutX="190.0" layoutY="188.0" prefHeight="30.0" prefWidth="378.0" />
+      <TextField layoutX="190.0" layoutY="235.0" prefHeight="30.0" prefWidth="378.0" />
+      <TextField layoutX="190.0" layoutY="288.0" prefHeight="30.0" prefWidth="378.0" />
+      <TextField layoutX="190.0" layoutY="338.0" prefHeight="23.0" prefWidth="378.0" />
+      <TextField layoutX="190.0" layoutY="391.0" prefHeight="20.0" prefWidth="378.0" />
+      <Label layoutX="99.0" layoutY="97.0" text="承运商编号" />
+      <Label layoutX="99.0" layoutY="143.0" text="承运商名称" />
+      <Label layoutX="99.0" layoutY="193.0" text="承运商简写" />
+      <Label layoutX="99.0" layoutY="240.0" text="地址" />
+      <Label layoutX="99.0" layoutY="293.0" text="联系人" />
+      <Label layoutX="99.0" layoutY="343.0" text="电话" />
+      <Label layoutX="99.0" layoutY="396.0" text="手机" />
+      <Label layoutX="102.0" layoutY="452.0" text="备注" />
+      <TextArea layoutX="184.0" layoutY="452.0" prefHeight="164.0" prefWidth="378.0" />
+      <Button layoutX="132.0" layoutY="684.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="保存" />
+      <Button layoutX="451.0" layoutY="684.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="取消" />
+   </children>
+</AnchorPane>
