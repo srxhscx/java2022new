@@ -60,5 +60,6 @@
          <font>
             <Font size="20.0" />
          </font></Button>
+      <Label fx:id="passLabel" layoutX="815.0" layoutY="231.0" prefHeight="20.0" prefWidth="143.0" textFill="#f50f0f" />
    </children>
 </AnchorPane>
