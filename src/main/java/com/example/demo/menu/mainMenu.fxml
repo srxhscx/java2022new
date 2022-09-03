@@ -573,7 +573,7 @@
                                                         <TextField layoutX="790.0" layoutY="70.0" prefWidth="150.0" />
                                                         <Button layoutX="970.0" layoutY="70.0" mnemonicParsing="false" text="录入运输委托单" />
                                                         <Button layoutX="970.0" layoutY="115.0" mnemonicParsing="false" prefWidth="100.0" text="查询" />
-                                                        <TableView layoutY="161.0" prefHeight="530.0" prefWidth="1222.0">
+                                                        <TableView layoutY="144.0" prefHeight="540.0" prefWidth="1222.0">
                                                             <columns>
                                                                 <TableColumn prefWidth="92.0" text="委托书编号" />
                                                                 <TableColumn prefWidth="58.0" text="单据状态" />
