@@ -17,7 +17,6 @@ public class UserDAO {
  *
   */
 
-
     public User login(String account){
         int n = -1;
         String sql = "SELECT * FROM user_info WHERE user_account = ?";
@@ -43,8 +42,6 @@ public class UserDAO {
                 user.setUser_id(rs.getInt("user_id"));
                 user.setFace_img(rs.getString("face_img"));
                 user.setUser_name(rs.getString("user_name"));
-
-
             }
         }catch(SQLException e) {
             e.printStackTrace();
@@ -60,6 +57,39 @@ public class UserDAO {
         return user;
 
     }
+
+    /**
+     *
+     *创建用户
+     */
+    public int addRole(String userAccount,String userPassword,String userName,int userPermission) throws SQLException {
+        //获取连接
+        Connection cn = ConnectionUtil.getConnection();
+        String sql = "insert into user_info(user_account,user_password,user_name,role_id)values('"+userAccount+"','"+userPassword+"','"+userName+"',"+userPermission+")";
+        //发送给mysql执行
+        PreparedStatement pstmt =  null;
+
+        int n = -1;
+        //绑定到PreparedStatement对象中
+
+        try{
+            pstmt = cn.prepareStatement(sql);
+            //返回影响行数
+            n = pstmt.executeUpdate();
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }finally {
+            if (cn != null){
+                try {
+                    cn.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return n;
+    }
+
     public static void main(String[] args) throws SQLException {
         //RoleDAO roleDAO = new RoleDAO();
         //int m = roleDAO.addRole("超级管理员","修改");

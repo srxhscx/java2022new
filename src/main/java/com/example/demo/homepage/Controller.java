@@ -51,6 +51,8 @@ public class Controller {
     private TextField VerText;
 
     @FXML
+    private Label tippassword;
+    @FXML
     private ImageView verCodeImageView;
 
     //访问数据库的DAO对象
@@ -62,7 +64,7 @@ public class Controller {
         //验证是否是已注册用户
         User user = userDAO.login(account);
         if (user == null) {
-            System.out.println("用户不存在");
+
             tipLabel.setText("用户不存在");
         }
         else {
@@ -71,9 +73,8 @@ public class Controller {
             String pass = user.getUser_password();
 
             if (!password.equals(pass)) {
-                System.out.println(pass);
-                System.out.println(password);
-                System.out.println("密码不正确");
+
+                tippassword.setText("密码错误");
             }
             else {
                 //验证是否是已注册用户

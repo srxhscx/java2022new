@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -14,7 +16,10 @@ public class MainRegister extends Application {
         Scene scene = new Scene(anchorPane);
         primaryStage.setScene(scene);
         primaryStage.setTitle("账号注册");
+
         primaryStage.show();
+
+
     }
 
     public static void main(String[] args) {
