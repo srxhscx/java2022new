@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1256.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.claimChange.claimChangeController">
+   <children>
+      <TextField layoutX="87.0" layoutY="56.0" />
+      <TextField layoutX="406.0" layoutY="56.0" />
+      <TextField layoutX="709.0" layoutY="56.0" />
+      <TextField layoutX="1027.0" layoutY="56.0" />
+      <TextField layoutX="87.0" layoutY="114.0" />
+      <TextField layoutX="406.0" layoutY="114.0" />
+      <TextField layoutX="709.0" layoutY="114.0" />
+      <TextField layoutX="1027.0" layoutY="114.0" />
+      <TextField layoutX="87.0" layoutY="174.0" prefHeight="30.0" prefWidth="520.0" />
+      <TextField layoutX="709.0" layoutY="174.0" prefHeight="30.0" prefWidth="520.0" />
+      <TextField layoutX="87.0" layoutY="224.0" />
+      <TextField layoutX="87.0" layoutY="272.0" />
+      <TextField layoutX="87.0" layoutY="316.0" />
+      <TextField layoutX="420.0" layoutY="272.0" prefHeight="30.0" prefWidth="520.0" />
+      <TextField layoutX="1027.0" layoutY="224.0" />
+      <TextArea layoutX="1026.0" layoutY="263.0" prefHeight="95.0" prefWidth="202.0" />
+      <TextField layoutX="420.0" layoutY="316.0" />
+      <TextField layoutX="738.0" layoutY="316.0" />
+      <Button layoutX="596.0" layoutY="366.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="添加" />
+      <TableView layoutX="19.0" layoutY="407.0" prefHeight="269.0" prefWidth="1212.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Button layoutX="471.0" layoutY="797.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="保存" />
+      <Button layoutX="709.0" layoutY="797.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="关闭" />
+      <TextField layoutX="87.0" layoutY="703.0" prefHeight="30.0" prefWidth="491.0" />
+      <TextField layoutX="87.0" layoutY="743.0" />
+      <TextField layoutX="376.0" layoutY="743.0" />
+      <Label layoutX="9.0" layoutY="61.0" text="委托书编号" />
+      <Label layoutX="19.0" layoutY="114.0" text="始发城市" />
+      <Label layoutX="19.0" layoutY="179.0" text="发货单位" />
+      <Label layoutX="34.0" layoutY="229.0" text="箱号" />
+      <Label layoutX="19.0" layoutY="277.0" text="商品编码" />
+      <Label layoutX="34.0" layoutY="321.0" text="单价" />
+      <Label layoutX="320.0" layoutY="61.0" text="索赔函编号" />
+      <Label layoutX="327.0" layoutY="119.0" text="是发仓别" />
+      <Label layoutX="646.0" layoutY="61.0" text="承运商" />
+      <Label layoutX="639.0" layoutY="119.0" text="目的城市" />
+      <Label layoutX="957.0" layoutY="61.0" text="托运单号" />
+      <Label layoutX="957.0" layoutY="119.0" text="目的仓别" />
+      <Label layoutX="357.0" layoutY="277.0" text="商品名称" />
+      <Label layoutX="357.0" layoutY="321.0" text="索赔数量" />
+      <Label layoutX="957.0" layoutY="229.0" text="索赔类型" />
+      <Label layoutX="957.0" layoutY="277.0" text="索赔原因" />
+      <Label layoutX="27.0" layoutY="708.0" text="备注" />
+      <Label layoutX="27.0" layoutY="748.0" text="签字人" />
+      <Label layoutX="304.0" layoutY="748.0" text="签字时间" />
+      <Label layoutX="639.0" layoutY="179.0" text="收货单位" />
+      <Label layoutX="669.0" layoutY="321.0" text="索赔金额" />
+   </children>
+</AnchorPane>

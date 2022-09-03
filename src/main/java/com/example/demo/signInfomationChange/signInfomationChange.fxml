@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.signInfomationChange.signInfomationChangeController">
+   <children>
+      <Button layoutX="199.0" layoutY="597.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="84.0" text="保存" />
+      <Button layoutX="478.0" layoutY="597.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="84.0" text="关闭" />
+      <Label layoutX="30.0" layoutY="32.0" text="[到货签收信息]" textFill="#0400ff">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="88.0" text="完好箱数" />
+      <Label layoutX="274.0" layoutY="88.0" text="丢失箱数" />
+      <Label layoutX="517.0" layoutY="88.0" text="异常箱数" />
+      <Label layoutX="274.0" layoutY="148.0" text="差异箱数" />
+      <Label layoutX="517.0" layoutY="148.0" text="索赔函号" />
+      <Label layoutX="20.0" layoutY="203.0" text="收货单位" />
+      <Label layoutX="30.0" layoutY="264.0" text="送货人" />
+      <Label layoutX="20.0" layoutY="320.0" text="代签收人" />
+      <Label layoutX="291.0" layoutY="264.0" text="签收人" />
+      <Label layoutX="274.0" layoutY="310.0" text="代签收人&#10;身份证号" />
+      <Label layoutX="517.0" layoutY="264.0" text="签收时间" />
+      <Label layoutX="517.0" layoutY="310.0" text="代签收人&#10;联系方式" />
+      <Label layoutX="30.0" layoutY="382.0" prefHeight="30.0" prefWidth="39.0" text="备注" />
+      <TextField layoutX="86.0" layoutY="83.0" prefHeight="30.0" prefWidth="144.0" />
+      <TextField layoutX="343.0" layoutY="83.0" prefHeight="27.0" prefWidth="144.0" />
+      <TextField layoutX="588.0" layoutY="83.0" prefHeight="30.0" prefWidth="144.0" />
+      <TextField layoutX="343.0" layoutY="143.0" prefHeight="30.0" prefWidth="144.0" />
+      <TextField layoutX="588.0" layoutY="143.0" prefHeight="30.0" prefWidth="144.0" />
+      <TextField layoutX="86.0" layoutY="198.0" prefHeight="27.0" prefWidth="650.0" />
+      <TextField layoutX="83.0" layoutY="259.0" prefHeight="30.0" prefWidth="144.0" />
+      <TextField layoutX="83.0" layoutY="315.0" prefHeight="30.0" prefWidth="144.0" />
+      <TextField layoutX="83.0" layoutY="382.0" prefHeight="30.0" prefWidth="650.0" />
+      <TextField layoutX="343.0" layoutY="259.0" prefHeight="27.0" prefWidth="144.0" />
+      <TextField layoutX="343.0" layoutY="315.0" prefHeight="30.0" prefWidth="144.0" />
+      <TextField layoutX="588.0" layoutY="259.0" prefHeight="20.0" prefWidth="144.0" />
+      <TextField layoutX="588.0" layoutY="315.0" prefHeight="30.0" prefWidth="144.0" />
+   </children>
+</AnchorPane>

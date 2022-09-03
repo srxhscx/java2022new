@@ -13,6 +13,11 @@ module com.example.demo {
         opens com.example.demo.accountManagement to javafx.fxml;
         opens com.example.demo.roleManagement to javafx.fxml;
         opens com.example.demo.business to javafx.fxml;
+        opens com.example.demo.shippingInfomationChange to javafx.fxml;
+        opens com.example.demo.carrierManagement to javafx.fxml;
+        opens com.example.demo.freightManagement to javafx.fxml;
+        opens com.example.demo.signInfomationChange to javafx.fxml;
+        opens com.example.demo.claimChange to javafx.fxml;
 
         exports com.example.demo.register;
         exports com.example.demo.homepage;
@@ -20,6 +25,12 @@ module com.example.demo {
         exports com.example.demo.accountManagement;
         exports com.example.demo.roleManagement;
         exports com.example.demo.business;
+        exports com.example.demo.shippingInfomationChange;
+        exports com.example.demo.carrierManagement;
+        exports com.example.demo.freightManagement;
+        exports com.example.demo.routeManagement;
+        exports com.example.demo.signInfomationChange;
+        exports com.example.demo.claimChange;
 
 
         }
