@@ -7,10 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import javax.print.DocFlavor;
 import java.net.URL;
@@ -51,7 +48,7 @@ public class RegiterController implements Initializable {
 
                 String roleId = permission.getValue().toString();
                 int role_id = roleId.charAt(0) - 48;
-                System.out.println(role_id);
+                //System.out.println(role_id);
 
 
                 UserDAO userDAO = new UserDAO();
@@ -63,7 +60,7 @@ public class RegiterController implements Initializable {
                         if (password.equals(password1)){
 
                                 userDAO.addRole(tel,password,userName,role_id);
-
+                                new Alert(Alert.AlertType.NONE, "注册成功", new ButtonType[]{ButtonType.CLOSE}).show();
                         }
                         else{
                                 passLabel.setText("两次密码不一致");

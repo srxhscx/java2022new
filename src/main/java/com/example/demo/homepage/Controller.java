@@ -120,9 +120,6 @@ public class Controller {
         }
 
 
-
-
-
     }
     @FXML
     void regiter(ActionEvent event) {
@@ -140,6 +137,7 @@ public class Controller {
             }
         });
     }
+
     String str1 ;//保存验证码
     @FXML
     void OnCodeChange(MouseEvent event) {

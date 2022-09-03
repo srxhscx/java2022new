@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="578.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.menu.MenuController">
+<AnchorPane prefHeight="578.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.menu.MenuController">
     <children>
         <TabPane prefHeight="748.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
@@ -98,71 +95,71 @@
                                         <Tab text="车辆备案">
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                       <children>
-                                          <Label layoutX="113.0" layoutY="81.0" text="承运商：" />
-                                          <Label layoutX="376.0" layoutY="81.0" text="车牌号：" />
-                                          <ComboBox layoutX="171.0" layoutY="76.0" prefWidth="150.0" />
-                                          <TextField layoutX="436.0" layoutY="76.0" prefHeight="30.0" prefWidth="152.0" />
-                                          <Label layoutX="630.0" layoutY="81.0" text="挂车车牌号：" />
-                                          <TextField layoutX="720.0" layoutY="76.0" prefHeight="30.0" prefWidth="148.0" />
-                                          <Button layoutX="959.0" layoutY="76.0" mnemonicParsing="false" text="查询" />
-                                          <Button layoutX="1091.0" layoutY="76.0" mnemonicParsing="false" text="新车辆备案" />
-                                          <TableView layoutX="13.0" layoutY="180.0" prefHeight="478.0" prefWidth="1198.0">
-                                            <columns>
-                                              <TableColumn prefWidth="75.0" text="状态" />
-                                              <TableColumn prefWidth="75.0" text="承运商" />
-                                                <TableColumn prefWidth="69.0" text="车牌号" />
-                                                <TableColumn prefWidth="118.0" text="挂车车牌号" />
-                                                <TableColumn prefWidth="95.0" text="车型" />
-                                                <TableColumn prefWidth="160.0" text="车辆容积（立方米）" />
-                                                <TableColumn prefWidth="130.0" text="车辆载重（吨）" />
-                                                <TableColumn prefWidth="111.0" text="联系人" />
-                                                <TableColumn prefWidth="152.0" text="联系方式" />
-                                                <TableColumn prefWidth="144.0" text="备注" />
-                                                <TableColumn prefWidth="63.0" text="操作" />
-                                            </columns>
-                                          </TableView>
-                                       </children></AnchorPane>
+                                                    <children>
+                                                        <Label layoutX="113.0" layoutY="81.0" text="承运商：" />
+                                                        <Label layoutX="376.0" layoutY="81.0" text="车牌号：" />
+                                                        <ComboBox layoutX="171.0" layoutY="76.0" prefWidth="150.0" />
+                                                        <TextField layoutX="436.0" layoutY="76.0" prefHeight="30.0" prefWidth="152.0" />
+                                                        <Label layoutX="630.0" layoutY="81.0" text="挂车车牌号：" />
+                                                        <TextField layoutX="720.0" layoutY="76.0" prefHeight="30.0" prefWidth="148.0" />
+                                                        <Button layoutX="959.0" layoutY="76.0" mnemonicParsing="false" text="查询" />
+                                                        <Button layoutX="1091.0" layoutY="76.0" mnemonicParsing="false" text="新车辆备案" />
+                                                        <TableView layoutX="13.0" layoutY="180.0" prefHeight="478.0" prefWidth="1198.0">
+                                                            <columns>
+                                                                <TableColumn prefWidth="75.0" text="状态" />
+                                                                <TableColumn prefWidth="75.0" text="承运商" />
+                                                                <TableColumn prefWidth="69.0" text="车牌号" />
+                                                                <TableColumn prefWidth="118.0" text="挂车车牌号" />
+                                                                <TableColumn prefWidth="95.0" text="车型" />
+                                                                <TableColumn prefWidth="160.0" text="车辆容积（立方米）" />
+                                                                <TableColumn prefWidth="130.0" text="车辆载重（吨）" />
+                                                                <TableColumn prefWidth="111.0" text="联系人" />
+                                                                <TableColumn prefWidth="152.0" text="联系方式" />
+                                                                <TableColumn prefWidth="144.0" text="备注" />
+                                                                <TableColumn prefWidth="63.0" text="操作" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children></AnchorPane>
                                             </content>
                                         </Tab>
                                         <Tab text="货物名称管理">
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                       <children>
-                                          <Label layoutX="111.0" layoutY="65.0" text="货物名称：" />
-                                          <ComboBox layoutX="204.0" layoutY="60.0" prefWidth="150.0" />
-                                          <Button layoutX="513.0" layoutY="60.0" mnemonicParsing="false" text="查询" />
-                                          <Button layoutX="716.0" layoutY="60.0" mnemonicParsing="false" text="新增货物名称" />
-                                          <TableView layoutX="18.0" layoutY="166.0" prefHeight="490.0" prefWidth="1116.0">
-                                            <columns>
-                                              <TableColumn prefWidth="158.0" text="状态" />
-                                              <TableColumn prefWidth="180.0" text="货物名称" />
-                                                <TableColumn prefWidth="425.0" text="备注" />
-                                                <TableColumn prefWidth="342.0" text="操作" />
-                                            </columns>
-                                          </TableView>
-                                       </children></AnchorPane>
+                                                    <children>
+                                                        <Label layoutX="111.0" layoutY="65.0" text="货物名称：" />
+                                                        <ComboBox layoutX="204.0" layoutY="60.0" prefWidth="150.0" />
+                                                        <Button layoutX="513.0" layoutY="60.0" mnemonicParsing="false" text="查询" />
+                                                        <Button layoutX="716.0" layoutY="60.0" mnemonicParsing="false" text="新增货物名称" />
+                                                        <TableView layoutX="18.0" layoutY="166.0" prefHeight="490.0" prefWidth="1116.0">
+                                                            <columns>
+                                                                <TableColumn prefWidth="158.0" text="状态" />
+                                                                <TableColumn prefWidth="180.0" text="货物名称" />
+                                                                <TableColumn prefWidth="425.0" text="备注" />
+                                                                <TableColumn prefWidth="342.0" text="操作" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children></AnchorPane>
                                             </content>
                                         </Tab>
-                                        <Tab text="业务类型管理">
+                                        <Tab fx:id="businessManagement" text="业务类型管理">
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                       <children>
-                                          <Button layoutX="719.0" layoutY="82.0" mnemonicParsing="false" text="查询" />
-                                          <Button layoutX="915.0" layoutY="82.0" mnemonicParsing="false" text="新建业务类型" />
-                                          <Label layoutX="87.0" layoutY="87.0" text="业务类型：" />
-                                          <TextField layoutX="187.0" layoutY="82.0" />
-                                          <TableView layoutX="14.0" layoutY="187.0" prefHeight="475.0" prefWidth="1195.0">
-                                            <columns>
-                                              <TableColumn prefWidth="107.0" text="状态" />
-                                              <TableColumn prefWidth="205.0" text="业务类型" />
-                                                <TableColumn prefWidth="218.0" text="配送模式" />
-                                                <TableColumn prefWidth="259.0" text="备注" />
-                                                <TableColumn prefWidth="120.0" text="是否初始" />
-                                                <TableColumn prefWidth="274.0" text="操作" />
-                                            </columns>
-                                          </TableView>
-                                       </children></AnchorPane>
+                                                    <children>
+                                                        <Button layoutX="719.0" layoutY="82.0" mnemonicParsing="false" text="查询" />
+                                                        <Button fx:id="buildBusinessBtn" layoutX="915.0" layoutY="82.0" mnemonicParsing="false" onAction="#buildBusiness" text="新建业务类型" />
+                                                        <Label layoutX="87.0" layoutY="87.0" text="业务类型：" />
+                                                        <TextField layoutX="187.0" layoutY="82.0" />
+                                                        <TableView layoutX="14.0" layoutY="187.0" prefHeight="475.0" prefWidth="1195.0">
+                                                            <columns>
+                                                                <TableColumn prefWidth="107.0" text="状态" />
+                                                                <TableColumn prefWidth="205.0" text="业务类型" />
+                                                                <TableColumn prefWidth="218.0" text="配送模式" />
+                                                                <TableColumn prefWidth="259.0" text="备注" />
+                                                                <TableColumn prefWidth="120.0" text="是否初始" />
+                                                                <TableColumn prefWidth="274.0" text="操作" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children></AnchorPane>
                                             </content>
                                         </Tab>
                                         <Tab text="GPS车辆部门管理">
