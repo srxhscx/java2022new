@@ -1,10 +1,15 @@
 package com.example.demo.dao;
 
+import com.example.demo.model.Role;
 import com.example.demo.util.ConnectionUtil;
+import com.example.demo.vo.Buisness;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BuisnessDAO {
 
@@ -39,6 +44,77 @@ public class BuisnessDAO {
         return n;
     }
 
+        public List<Buisness> getBusinessByBusinessType(String businessType){
+        Connection cn = ConnectionUtil.getConnection();
+        String sql = "SELECT * FROM business_info WHERE business_type = ?";
+        //发送给mysql执行
+        PreparedStatement pstmt =  null;
+        ResultSet rs=null;
 
+        List<Buisness> buisnessList = new ArrayList<>();
+        try{
+            pstmt = cn.prepareStatement(sql);
+            //返回影响行数
+            pstmt.setString(1,businessType);
+            rs=pstmt.executeQuery();
+            while (rs.next()){
+                Buisness buisness =new Buisness();
 
+                buisness.setBusiness_state(rs.getString("business_state"));
+                buisness.setBusiness_type(rs.getString("business_type"));
+                buisness.setBusiness_distribution(rs.getString("business_distribution"));
+                buisness.setBusiness_remark(rs.getString("business_remark"));
+
+                buisnessList.add(buisness);
+            }
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }finally {
+            if (cn != null){
+                try {
+                    cn.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return buisnessList;
+    }
+
+    public List<Buisness> getBusiness(){
+        Connection cn = ConnectionUtil.getConnection();
+        String sql = "SELECT * FROM business_info";
+        //发送给mysql执行
+        PreparedStatement pstmt =  null;
+        ResultSet rs = null;
+
+        List<Buisness> buisnessList = new ArrayList<>();
+        try{
+            pstmt = cn.prepareStatement(sql);
+            //返回影响行数
+            //pstmt.setString(1,businessType);
+            rs=pstmt.executeQuery();
+            while (rs.next()){
+                Buisness buisness =new Buisness();
+
+                buisness.setBusiness_state(rs.getString("business_state"));
+                buisness.setBusiness_type(rs.getString("business_type"));
+                buisness.setBusiness_distribution(rs.getString("business_distribution"));
+                buisness.setBusiness_remark(rs.getString("business_remark"));
+
+                buisnessList.add(buisness);
+            }
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }finally {
+            if (cn != null){
+                try {
+                    cn.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return buisnessList;
+    }
 }

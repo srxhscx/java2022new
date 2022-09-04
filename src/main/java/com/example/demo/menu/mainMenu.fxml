@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -18,11 +19,20 @@
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
-                                                        <Label layoutX="162.0" layoutY="83.0" text="城市名称：" />
-                                                        <TextField layoutX="243.0" layoutY="78.0" prefHeight="30.0" prefWidth="181.0" />
-                                                        <Button layoutX="601.0" layoutY="78.0" mnemonicParsing="false" text="查询" />
-                                                        <Button layoutX="782.0" layoutY="78.0" mnemonicParsing="false" text="新建城市信息" />
-                                                        <TableView layoutX="14.0" layoutY="204.0" prefHeight="460.0" prefWidth="1194.0">
+                                                        <Label layoutX="58.0" layoutY="83.0" prefHeight="32.0" prefWidth="90.0" text="城市名称：">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
+                                                        <TextField layoutX="176.0" layoutY="80.0" prefHeight="38.0" prefWidth="205.0" />
+                                                        <Button layoutX="685.0" layoutY="81.0" mnemonicParsing="false" text="查询">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
+                                                        <Button layoutX="874.0" layoutY="81.0" mnemonicParsing="false" text="新建城市信息">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
+                                                        <TableView layoutX="14.0" layoutY="170.0" prefHeight="485.0" prefWidth="1194.0">
                                                             <columns>
                                                                 <TableColumn prefWidth="218.0" text="操作" />
                                                                 <TableColumn minWidth="0.0" prefWidth="114.0" text="状态" />
@@ -45,7 +55,7 @@
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
-                                                        <TableView layoutX="13.0" layoutY="187.0" prefHeight="463.0" prefWidth="1197.0">
+                                                        <TableView layoutX="13.0" layoutY="173.0" prefHeight="485.0" prefWidth="1197.0">
                                                             <columns>
                                                                 <TableColumn prefWidth="173.0" text="操作" />
                                                                 <TableColumn prefWidth="113.0" text="状态" />
@@ -57,14 +67,29 @@
                                                                 <TableColumn prefWidth="155.0" text="节点名称" />
                                                             </columns>
                                                         </TableView>
-                                                        <Label layoutX="41.0" layoutY="105.0" text="所在城市：" />
-                                                        <Label layoutX="268.0" layoutY="105.0" text="节点类型：" />
-                                                        <Label layoutX="511.0" layoutY="105.0" text="节点名称：" />
-                                                        <TextField layoutX="585.0" layoutY="100.0" prefHeight="30.0" prefWidth="171.0" />
-                                                        <Button layoutX="889.0" layoutY="100.0" mnemonicParsing="false" text="查询" />
-                                                        <Button layoutX="1049.0" layoutY="100.0" mnemonicParsing="false" text="新建节点信息" />
-                                                        <ComboBox layoutX="116.0" layoutY="100.0" prefWidth="150.0" promptText="沈阳" />
-                                                        <ComboBox layoutX="353.0" layoutY="100.0" prefWidth="150.0" />
+                                                        <Label layoutX="14.0" layoutY="81.0" text="所在城市：">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
+                                                        <Label layoutX="305.0" layoutY="81.0" text="节点类型：">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
+                                                        <Label layoutX="552.0" layoutY="81.0" text="节点名称：">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
+                                                        <TextField layoutX="642.0" layoutY="78.0" prefHeight="30.0" prefWidth="159.0" />
+                                                        <Button layoutX="863.0" layoutY="75.0" mnemonicParsing="false" text="查询">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
+                                                        <Button layoutX="999.0" layoutY="75.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="134.0" text="新建节点信息">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
+                                                        <ComboBox layoutX="104.0" layoutY="76.0" prefHeight="34.0" prefWidth="180.0" promptText="沈阳" />
+                                                        <ComboBox layoutX="395.0" layoutY="78.0" prefWidth="150.0" />
                                                     </children></AnchorPane>
                                             </content>
 
@@ -76,7 +101,7 @@
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
-                                                        <TableView layoutX="2.0" layoutY="225.0" prefHeight="441.0" prefWidth="1213.0">
+                                                        <TableView layoutX="11.0" layoutY="180.0" prefHeight="483.0" prefWidth="1200.0">
                                                             <columns>
                                                                 <TableColumn prefWidth="108.0" text="状态" />
                                                                 <TableColumn prefWidth="145.0" text="车型" />
@@ -86,10 +111,19 @@
                                                                 <TableColumn prefWidth="146.0" text="操作" />
                                                             </columns>
                                                         </TableView>
-                                                        <Label layoutX="112.0" layoutY="126.0" text="车型：" />
-                                                        <Button layoutX="823.0" layoutY="121.0" mnemonicParsing="false" text="查询" />
-                                                        <Button layoutX="980.0" layoutY="121.0" mnemonicParsing="false" text="新建车型" />
-                                                        <ComboBox layoutX="188.0" layoutY="121.0" prefHeight="30.0" prefWidth="173.0" />
+                                                        <Label layoutX="76.0" layoutY="91.0" text="车型：">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
+                                                        <Button layoutX="815.0" layoutY="85.0" mnemonicParsing="false" text="查询">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
+                                                        <Button layoutX="962.0" layoutY="85.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="121.0" text="新建车型">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
+                                                        <ComboBox layoutX="157.0" layoutY="88.0" prefHeight="30.0" prefWidth="173.0" />
                                                     </children></AnchorPane>
                                             </content>
                                         </Tab>
@@ -97,14 +131,29 @@
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
-                                                        <Label layoutX="113.0" layoutY="81.0" text="承运商：" />
-                                                        <Label layoutX="376.0" layoutY="81.0" text="车牌号：" />
-                                                        <ComboBox layoutX="171.0" layoutY="76.0" prefWidth="150.0" />
-                                                        <TextField layoutX="436.0" layoutY="76.0" prefHeight="30.0" prefWidth="152.0" />
-                                                        <Label layoutX="630.0" layoutY="81.0" text="挂车车牌号：" />
+                                                        <Label layoutX="33.0" layoutY="80.0" text="承运商：">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
+                                                        <Label layoutX="351.0" layoutY="81.0" text="车牌号：">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
+                                                        <ComboBox layoutX="142.0" layoutY="75.0" prefHeight="33.0" prefWidth="168.0" />
+                                                        <TextField layoutX="413.0" layoutY="75.0" prefHeight="36.0" prefWidth="154.0" />
+                                                        <Label layoutX="630.0" layoutY="81.0" text="挂车车牌号：">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
                                                         <TextField layoutX="720.0" layoutY="76.0" prefHeight="30.0" prefWidth="148.0" />
-                                                        <Button layoutX="959.0" layoutY="76.0" mnemonicParsing="false" text="查询" />
-                                                        <Button layoutX="1091.0" layoutY="76.0" mnemonicParsing="false" text="新车辆备案" />
+                                                        <Button layoutX="936.0" layoutY="75.0" mnemonicParsing="false" text="查询">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
+                                                        <Button layoutX="1059.0" layoutY="75.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" text="新车辆备案">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
                                                         <TableView layoutX="13.0" layoutY="180.0" prefHeight="478.0" prefWidth="1198.0">
                                                             <columns>
                                                                 <TableColumn prefWidth="75.0" text="状态" />
@@ -127,16 +176,25 @@
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
-                                                        <Label layoutX="111.0" layoutY="65.0" text="货物名称：" />
-                                                        <ComboBox layoutX="204.0" layoutY="60.0" prefWidth="150.0" />
-                                                        <Button layoutX="513.0" layoutY="60.0" mnemonicParsing="false" text="查询" />
-                                                        <Button layoutX="716.0" layoutY="60.0" mnemonicParsing="false" text="新增货物名称" />
-                                                        <TableView layoutX="18.0" layoutY="166.0" prefHeight="490.0" prefWidth="1116.0">
+                                                        <Label layoutX="51.0" layoutY="63.0" text="货物名称：">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
+                                                        <ComboBox layoutX="165.0" layoutY="57.0" prefHeight="36.0" prefWidth="164.0" />
+                                                        <Button layoutX="513.0" layoutY="60.0" mnemonicParsing="false" text="查询">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
+                                                        <Button layoutX="716.0" layoutY="60.0" mnemonicParsing="false" text="新增货物名称">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
+                                                        <TableView layoutX="18.0" layoutY="166.0" prefHeight="490.0" prefWidth="1167.0">
                                                             <columns>
                                                                 <TableColumn prefWidth="158.0" text="状态" />
-                                                                <TableColumn prefWidth="180.0" text="货物名称" />
-                                                                <TableColumn prefWidth="425.0" text="备注" />
-                                                                <TableColumn prefWidth="342.0" text="操作" />
+                                                                <TableColumn prefWidth="191.0" text="货物名称" />
+                                                                <TableColumn prefWidth="433.0" text="备注" />
+                                                                <TableColumn prefWidth="323.0" text="操作" />
                                                             </columns>
                                                         </TableView>
                                                     </children></AnchorPane>
@@ -146,20 +204,27 @@
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
-                                                        <Button layoutX="719.0" layoutY="82.0" mnemonicParsing="false" text="查询" />
-                                                        <Button fx:id="buildBusinessBtn" layoutX="915.0" layoutY="82.0" mnemonicParsing="false" onAction="#buildBusiness" text="新建业务类型" />
-                                                        <Label layoutX="87.0" layoutY="87.0" text="业务类型：" />
-                                                        <TextField layoutX="187.0" layoutY="82.0" />
-                                                        <TableView layoutX="14.0" layoutY="187.0" prefHeight="475.0" prefWidth="1195.0">
-                                                            <columns>
-                                                                <TableColumn prefWidth="107.0" text="状态" />
-                                                                <TableColumn prefWidth="205.0" text="业务类型" />
-                                                                <TableColumn prefWidth="218.0" text="配送模式" />
-                                                                <TableColumn prefWidth="259.0" text="备注" />
-                                                                <TableColumn prefWidth="120.0" text="是否初始" />
-                                                                <TableColumn prefWidth="274.0" text="操作" />
-                                                            </columns>
-                                                        </TableView>
+                                                        <Button fx:id="businesscheckBtn" layoutX="532.0" layoutY="82.0" mnemonicParsing="false" onAction="#businesscheck" prefHeight="41.0" prefWidth="97.0" text="查询">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
+                                                        <Button fx:id="buildBusinessBtn" layoutX="759.0" layoutY="82.0" mnemonicParsing="false" onAction="#buildBusiness" prefHeight="43.0" prefWidth="188.0" text="新建业务类型">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Button>
+                                                        <Label layoutX="72.0" layoutY="81.0" prefHeight="49.0" prefWidth="96.0" text="业务类型：">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
+                                                        <TextField fx:id="businessText" layoutX="192.0" layoutY="83.0" prefHeight="44.0" prefWidth="224.0" />
+                                                        <TableView fx:id="tableView" layoutX="14.0" layoutY="187.0" prefHeight="475.0" prefWidth="1194.0">
+                                             <columns>
+                                                <TableColumn fx:id="businessState" prefWidth="128.0" text="状态" />
+                                                <TableColumn fx:id="businessType" prefWidth="240.0" text="业务类型" />
+                                                <TableColumn fx:id="businessDistribution" prefWidth="212.0" text="配送模式" />
+                                                <TableColumn fx:id="businessRemark" prefWidth="388.0" text="备注" />
+                                                <TableColumn fx:id="businessOperate" prefWidth="212.0" text="操作" />
+                                             </columns></TableView>
                                                     </children></AnchorPane>
                                             </content>
                                         </Tab>

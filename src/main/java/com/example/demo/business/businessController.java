@@ -59,6 +59,8 @@ public class businessController implements Initializable {
 
         businessDAO.addBusiness(businesstype,businessstate,distribution,businessremark);
         new Alert(Alert.AlertType.NONE, "保存成功", new ButtonType[]{ButtonType.CLOSE}).show();
+        this.businessremarkText.clear();
+        this.businesstypeText.clear();
 
     }
 
