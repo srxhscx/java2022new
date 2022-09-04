@@ -18,6 +18,7 @@ module com.example.demo {
         opens com.example.demo.freightManagement to javafx.fxml;
         opens com.example.demo.signInfomationChange to javafx.fxml;
         opens com.example.demo.claimChange to javafx.fxml;
+        opens com.example.demo.permissionManagement to javafx.fxml;
 
         exports com.example.demo.register;
         exports com.example.demo.homepage;
@@ -31,6 +32,7 @@ module com.example.demo {
         exports com.example.demo.routeManagement;
         exports com.example.demo.signInfomationChange;
         exports com.example.demo.claimChange;
+        exports com.example.demo.permissionManagement;
 
 
         }
