@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="568.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.transportationPlanGeneration.transportationPlanGenerationController">
+    <children>
+        <Label layoutX="80.0" layoutY="35.0" text="运输计划号" />
+        <Label layoutX="337.0" layoutY="38.0" text="状态" />
+        <Label layoutX="90.0" layoutY="70.0" text="业务类型" />
+        <Label layoutX="90.0" layoutY="105.0" text="始发城市" />
+        <Label layoutX="90.0" layoutY="140.0" text="目的城市" />
+        <Label layoutX="315.0" layoutY="105.0" text="*" textFill="#dd1111" />
+        <Label layoutX="55.0" layoutY="175.0" text="预估数量（箱数）" />
+        <Label layoutX="45.0" layoutY="210.0" text="预估体积（立方米）" />
+        <Label layoutX="55.0" layoutY="245.0" text="预估重量（公斤）" />
+        <Label layoutX="115.0" layoutY="280.0" text="备注" />
+        <TextArea layoutX="150.0" layoutY="275.0" prefHeight="141.0" prefWidth="385.0" />
+        <Button layoutX="150.0" layoutY="450.0" mnemonicParsing="false" prefWidth="60.0" text="保存" />
+        <Button fx:id="closeBtn" layoutX="350.0" layoutY="450.0" mnemonicParsing="false" onAction="#close" prefWidth="60.0" text="关闭" />
+        <ChoiceBox fx:id="businessTypeChoiceBox" layoutX="150.0" layoutY="65.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="originatingCityChoiceBox" layoutX="150.0" layoutY="100.0" onMouseReleased="#flash" prefWidth="150.0" />
+        <ChoiceBox fx:id="destinationCityChoiceBox" layoutX="150.0" layoutY="135.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="originatingWarehouseChoiceBox" layoutX="380.0" layoutY="100.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="destinationWarehouseChoiceBox" layoutX="380.0" layoutY="135.0" prefWidth="150.0" />
+        <TextField fx:id="transportPlanNumberTextField" layoutX="150.0" layoutY="30.0" prefWidth="150.0" />
+        <TextField layoutX="380.0" layoutY="30.0" prefWidth="150.0" />
+        <TextField layoutX="150.0" layoutY="170.0" prefWidth="150.0" />
+        <TextField layoutX="150.0" layoutY="205.0" prefWidth="150.0" />
+        <TextField layoutX="150.0" layoutY="240.0" prefWidth="150.0" />
+        <Label layoutX="320.0" layoutY="105.0" text="始发仓别" />
+        <Label layoutX="320.0" layoutY="140.0" text="目的仓别" />
+        <Label layoutX="315.0" layoutY="140.0" text="*" textFill="#dd1111" />
+        <Label layoutX="85.0" layoutY="70.0" text="*" textFill="#dd1111" />
+        <Label layoutX="85.0" layoutY="105.0" text="*" textFill="#dd1111" />
+        <Label layoutX="85.0" layoutY="140.0" text="*" textFill="#dd1111" />
+        <Label layoutX="50.0" layoutY="175.0" text="*" textFill="#dd1111" />
+        <Label layoutX="40.0" layoutY="210.0" text="*" textFill="#dd1111" />
+        <Label layoutX="50.0" layoutY="245.0" text="*" textFill="#dd1111" />
+    </children>
+</AnchorPane>
