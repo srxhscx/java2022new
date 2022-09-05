@@ -20,6 +20,8 @@ module com.example.demo {
         opens com.example.demo.claimChange to javafx.fxml;
         opens com.example.demo.permissionManagement to javafx.fxml;
         opens com.example.demo.characterManagement to javafx.fxml;
+        opens com.example.demo.good to javafx.fxml;
+
 
 
         exports com.example.demo.register;
@@ -36,6 +38,7 @@ module com.example.demo {
         exports com.example.demo.claimChange;
         exports com.example.demo.permissionManagement;
         exports com.example.demo.characterManagement;
+        exports com.example.demo.good;
 
 
         }
