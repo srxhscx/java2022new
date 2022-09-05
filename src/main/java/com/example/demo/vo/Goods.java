@@ -10,9 +10,7 @@ public class Goods {
     private final StringProperty good_remark;
 
     public Goods() {
-        good_name = null;
-        good_state = null;
-        good_remark = null;
+        this(null,null,null);
     }
 
     public StringProperty good_nameProperty() {

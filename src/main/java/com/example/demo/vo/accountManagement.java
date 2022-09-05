@@ -1,5 +1,6 @@
 package com.example.demo.vo;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class accountManagement {
@@ -13,25 +14,18 @@ public class accountManagement {
     private final StringProperty am_mail;
 
     public accountManagement() {
-        am_city = null;
-        am_account = null;
-        am_password=null;
-        am_name = null;
-        am_institution = null;
-        am_node  = null;
-        am_contact=null;
-        am_mail=null;
+        this(null,null,null,null,null,null,null,null);
     }
 
-    public accountManagement(StringProperty am_account, StringProperty am_name, StringProperty am_password, StringProperty am_institution, StringProperty am_city, StringProperty am_node, StringProperty am_contact, StringProperty am_mail) {
-        this.am_account = am_account;
-        this.am_name = am_name;
-        this.am_password = am_password;
-        this.am_institution = am_institution;
-        this.am_city = am_city;
-        this.am_node = am_node;
-        this.am_contact = am_contact;
-        this.am_mail = am_mail;
+    public accountManagement(String am_account, String am_name, String am_password, String am_institution, String am_city, String am_node, String am_contact, String am_mail) {
+        this.am_account = new SimpleStringProperty(am_account) ;
+        this.am_name = new SimpleStringProperty(am_name);
+        this.am_password = new SimpleStringProperty(am_password);
+        this.am_institution = new SimpleStringProperty(am_institution);
+        this.am_city = new SimpleStringProperty(am_city);
+        this.am_node = new SimpleStringProperty(am_node);
+        this.am_contact = new SimpleStringProperty(am_contact);
+        this.am_mail = new SimpleStringProperty(am_mail);
     }
 
     public String getAm_account() {

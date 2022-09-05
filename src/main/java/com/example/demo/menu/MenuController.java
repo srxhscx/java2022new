@@ -9,61 +9,108 @@ import com.example.demo.vo.Buisness;
 import com.example.demo.vo.Goods;
 import com.example.demo.vo.accountManagement;
 import javafx.application.Platform;
-import javafx.beans.value.ObservableValue;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 import java.net.URL;
 import java.util.Iterator;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class MenuController implements Initializable{
 
     //初始化函数
     //显示TableView表格数据
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /**
-         //动态添加HBox容器，在HBox容器中动态添加label和textfield
-         Label label = new Label("名称:");
-         TextField textField1 = new TextField();
-         hBox.getChildren().add(label);
-         hBox.getChildren().add(textField1);
-         rootPane.setCenter(hBox);
-         */
+
 
         //添加数据, 这些数据可以从数据库中查询出
         //业务类型管理
         BuisnessDAO buisnessDAO = new BuisnessDAO();
         Iterator<Buisness> businessiter = buisnessDAO.getBusiness().iterator();
-        while(businessiter.hasNext()) {
+        //int num=0;
+
+        //AtomicInteger finalNum = new AtomicInteger(0);
+        int i = 0;
+        while(businessiter.hasNext())
+        {
+            //finalNum.getAndIncrement() ;
             businessdata.add(businessiter.next());
+            StringProperty businessstate = buisnessDAO.getBusiness().get(i).business_stateProperty();
+            System.out.println(buisnessDAO.getBusiness().get(i).business_stateProperty());
+
+
+            int finalI = i;
+            businessOperate.setCellFactory((col)->{
+
+                TableCell<Buisness, String> cell = new TableCell<Buisness, String>()
+                {
+                    @Override
+                    protected void updateItem(String item, boolean empty)
+                    {
+                        super.updateItem(item, empty);
+                        if(businessstate.getValue().equals("正常") ){
+                            Button button1 = new Button("停用");
+                            button1.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
+
+                            button1.setOnMouseClicked((col) -> {
+                                //获取list列表中的位置，进而获取列表对应的信息数据
+                                // Buisness buisness = list.get(getIndex());
+                                //按钮事件自己添加
+
+
+                                //buisnessDAO.updateBusinessState(  buisnessDAO.getBusiness().get().getBusiness_id());
+                                System.out.println(finalI);
+                                System.out.println("修改成功");
+                                //buisnessDAO.getBusiness().get(finalNum.get()).getBusiness_id()
+
+
+
+
+
+                            });
+                            if (empty) {
+                                //如果此列为空默认不添加元素
+                                setText(null);
+                                setGraphic(null);
+                            } else {
+                                this.setGraphic(button1);
+                            }
+
+                        }
+
+
+
+                    }
+                };
+                        return cell;
+            }
+            );
+            i++;
         }
 
-//        //货物管理
-//        GoodsDAO goodsDAO = new GoodsDAO();
-//        Iterator<Goods> goodsiter = goodsDAO.getGoods().iterator();
-//        while(goodsiter.hasNext()) {
-//            goodsdata.add(goodsiter.next());
-//        }
-//
-//        //accountManagement
-//        accountManagementDAO accountManagementdao = new accountManagementDAO();
-//        Iterator<accountManagement> iteram= accountManagementdao.getAccountManagement().iterator();
-//        while(iteram.hasNext()) {
-//            accountManagementdata.add(iteram.next());
-//        }
 
+        //货物管理
+        GoodsDAO goodsDAO = new GoodsDAO();
+        Iterator<Goods> goodsiter = goodsDAO.getGoods().iterator();
+        while(goodsiter.hasNext()) {
+          goodsdata.add(goodsiter.next());
+       }
 
-
+        //accountManagement
+        accountManagementDAO accountManagementdao = new accountManagementDAO();
+        Iterator<accountManagement> iteram= accountManagementdao.getAccountManagement().iterator();
+        while(iteram.hasNext()) {
+            accountManagementdata.add(iteram.next());
+        }
 
 
 
@@ -73,57 +120,27 @@ public class MenuController implements Initializable{
         businessType.setCellValueFactory( cellData-> cellData.getValue().business_typeProperty());
         businessDistribution.setCellValueFactory( cellData-> cellData.getValue().business_distributionProperty());
         businessRemark.setCellValueFactory( cellData-> cellData.getValue().business_remarkProperty());
-        //businessOperate.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Buisness, String>, ObservableValue<String>>) new Button());
 
-//        //设置货物管理数据
-//        goodState.setCellValueFactory(cellData-> cellData.getValue().good_stateProperty());
-//        goodName.setCellValueFactory(cellData-> cellData.getValue().good_nameProperty());
-//        goodRemark.setCellValueFactory(cellData-> cellData.getValue().good_remarkProperty());
-//
-//        //设置accountManagement
-//        amaccount.setCellValueFactory(cellData-> cellData.getValue().am_accountProperty());
-//        amname.setCellValueFactory( cellData-> cellData.getValue().am_nameProperty());
-//        aminstitution.setCellValueFactory( cellData-> cellData.getValue().am_institutionProperty());
-//        amcity.setCellValueFactory( cellData-> cellData.getValue().am_cityProperty());
-//        amnode.setCellValueFactory( cellData-> cellData.getValue().am_nodeProperty());
-//        amtel.setCellValueFactory( cellData-> cellData.getValue().am_contactProperty());
-//        ammail.setCellValueFactory( cellData-> cellData.getValue().am_mailProperty());
+
+        //设置货物管理数据
+        goodState.setCellValueFactory(cellData-> cellData.getValue().good_stateProperty());
+        goodName.setCellValueFactory(cellData-> cellData.getValue().good_nameProperty());
+        goodRemark.setCellValueFactory(cellData-> cellData.getValue().good_remarkProperty());
+
+        //设置accountManagement
+        amaccount.setCellValueFactory(cellData-> cellData.getValue().am_accountProperty());
+        amname.setCellValueFactory( cellData-> cellData.getValue().am_nameProperty());
+        aminstitution.setCellValueFactory( cellData-> cellData.getValue().am_institutionProperty());
+        amcity.setCellValueFactory( cellData-> cellData.getValue().am_cityProperty());
+        amnode.setCellValueFactory( cellData-> cellData.getValue().am_nodeProperty());
+        amtel.setCellValueFactory( cellData-> cellData.getValue().am_contactProperty());
+        ammail.setCellValueFactory( cellData-> cellData.getValue().am_mailProperty());
 
 
         //设置表格数据
         businessTableView.setItems(businessdata);
-        businessOperate.setCellFactory((col)->{
-
-                    //UserLoad换成你自己的实体名称
-                    TableCell<Buisness, String> cell = new TableCell<Buisness, String>(){
-                        @Override
-                        protected void updateItem(String item, boolean empty) {
-                            super.updateItem(item, empty);
-                            Button button1 = new Button("编辑");
-                            button1.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
-
-                            button1.setOnMouseClicked((col) -> {
-
-                                //获取list列表中的位置，进而获取列表对应的信息数据
-                                // Buisness buisness = list.get(getIndex());
-                                //按钮事件自己添加
-
-                            });
-
-                            if (empty) {
-                                //如果此列为空默认不添加元素
-                                setText(null);
-                                setGraphic(null);
-                            } else {
-                                this.setGraphic(button1);
-                            }
-                        }
-                    };
-                    return cell;
-                }
-        );
-//        GoodsTableView.setItems(goodsdata);
-//        amtableView.setItems(accountManagementdata);
+        GoodsTableView.setItems(goodsdata);
+        amtableView.setItems(accountManagementdata);
 
 
 

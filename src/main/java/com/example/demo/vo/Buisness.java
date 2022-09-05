@@ -1,10 +1,10 @@
 package com.example.demo.vo;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 public class Buisness {
 
+    private final IntegerProperty business_id;
     private final StringProperty business_type;
     private final StringProperty business_state;
     private final StringProperty business_distribution;
@@ -27,10 +27,11 @@ public class Buisness {
     }
 
     public Buisness(){
-        this(null,null,null,null);
+        this(0,null,null,null,null);
     }
 
-    public Buisness(String business_state ,String business_type,String business_distribution, String business_remark){
+    public Buisness(int business_id,String business_state ,String business_type,String business_distribution, String business_remark){
+        this.business_id = new SimpleIntegerProperty(business_id);
         this.business_state = new SimpleStringProperty(business_state);
         this.business_type = new SimpleStringProperty(business_type);
         this.business_distribution = new SimpleStringProperty(business_distribution);
@@ -38,8 +39,21 @@ public class Buisness {
        //数据类型double this.price = new SimpleDoubleProperty(price);
     }
 
+    public int getBusiness_id() {
+        return business_id.get();
+    }
+
     public void setBusiness_type(String business_type) {
         this.business_type.set(business_type);
+    }
+
+
+    public IntegerProperty business_idProperty() {
+        return business_id;
+    }
+
+    public void setBusiness_id(int business_id) {
+        this.business_id.set(business_id);
     }
 
     public void setBusiness_state(String business_state) {

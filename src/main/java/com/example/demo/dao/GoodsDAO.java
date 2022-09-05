@@ -102,6 +102,7 @@ public class GoodsDAO {
             while (rs.next()){
 
                 Goods goods = new Goods();
+
                 goods.setGood_name(rs.getString("good_name"));
                 goods.setGood_state(rs.getString("good_state"));
                 goods.setGood_remark(rs.getString("good_remark"));
@@ -121,4 +122,5 @@ public class GoodsDAO {
         }
         return goodsList;
     }
+
 }
