@@ -501,7 +501,31 @@ public class MenuController implements Initializable{
     }
     @FXML
     void cartypeCheck(ActionEvent event) {
+        String carType1 = this.CarTypeCB.getValue().toString();
+        if(carType1 == null || carType1.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
 
+        else{
+            CarTypeTableView.getItems().clear();
+        }
+
+        //添加数据, 这些数据从数据库中查询出
+        CarTypeDAO carTypeDAO = new CarTypeDAO();
+
+        Iterator<Cartype> cartypesiter = carTypeDAO.getCarTypeBycarType(carType1).iterator();
+        while(cartypesiter.hasNext()) {
+            cartypedata.add(cartypesiter.next());
+        }
+
+       // carType.setCellValueFactory(cellData-> cellData.getValue().car_typeProperty());
+        carTypeState.setCellValueFactory(cellData-> cellData.getValue().car_stateProperty());
+        carTypeVolume.setCellValueFactory(cellData-> cellData.getValue().car_volumeProperty());
+        carTypeLoad.setCellValueFactory(cellData-> cellData.getValue().car_volumeProperty());
+        carTypeRemark.setCellValueFactory(cellData-> cellData.getValue().car_remarkProperty());
+
+        //设置表格数据
+        CarTypeTableView.setItems(cartypedata);
     }
 
 }
