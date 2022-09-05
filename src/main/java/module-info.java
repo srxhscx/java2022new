@@ -24,7 +24,7 @@ module com.example.demo {
         opens com.example.demo.transportationPlanGeneration to javafx.fxml;
         opens com.example.demo.commissionedByTransport to javafx.fxml;
         opens com.example.demo.newClaimLetter to javafx.fxml;
-
+        opens com.example.demo.carType to javafx.fxml;
 
 
 
@@ -46,6 +46,6 @@ module com.example.demo {
         exports com.example.demo.transportationPlanGeneration;
         exports com.example.demo.commissionedByTransport;
         exports com.example.demo.newClaimLetter;
-
+        exports com.example.demo.carType;
 
         }
