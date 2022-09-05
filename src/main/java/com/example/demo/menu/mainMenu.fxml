@@ -180,21 +180,21 @@
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Label>
-                                                        <ComboBox layoutX="165.0" layoutY="57.0" prefHeight="36.0" prefWidth="164.0" />
-                                                        <Button layoutX="513.0" layoutY="60.0" mnemonicParsing="false" text="查询">
+                                                        <ComboBox fx:id="goodsNameCB" layoutX="165.0" layoutY="57.0" prefHeight="36.0" prefWidth="164.0" />
+                                                        <Button fx:id="goodsCheckBtn" layoutX="513.0" layoutY="60.0" mnemonicParsing="false" onAction="#goodsCheck" text="查询">
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Button>
-                                                        <Button layoutX="716.0" layoutY="60.0" mnemonicParsing="false" text="新增货物名称">
+                                                        <Button fx:id="addGoodsBtn" layoutX="716.0" layoutY="60.0" mnemonicParsing="false" onAction="#addGoods" text="新增货物名称">
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Button>
-                                                        <TableView layoutX="18.0" layoutY="166.0" prefHeight="490.0" prefWidth="1167.0">
+                                                        <TableView fx:id="GoodsTableView" layoutX="18.0" layoutY="166.0" prefHeight="490.0" prefWidth="1167.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="158.0" text="状态" />
-                                                                <TableColumn prefWidth="191.0" text="货物名称" />
-                                                                <TableColumn prefWidth="433.0" text="备注" />
-                                                                <TableColumn prefWidth="323.0" text="操作" />
+                                                                <TableColumn fx:id="goodState" prefWidth="158.0" text="状态" />
+                                                                <TableColumn fx:id="goodName" prefWidth="191.0" text="货物名称" />
+                                                                <TableColumn fx:id="goodRemark" prefWidth="433.0" text="备注" />
+                                                                <TableColumn fx:id="goodOperator" prefWidth="323.0" text="操作" />
                                                             </columns>
                                                         </TableView>
                                                     </children></AnchorPane>
@@ -217,7 +217,7 @@
                                                 <Font size="18.0" />
                                              </font></Label>
                                                         <TextField fx:id="businessText" layoutX="192.0" layoutY="83.0" prefHeight="44.0" prefWidth="224.0" />
-                                                        <TableView fx:id="tableView" layoutX="14.0" layoutY="187.0" prefHeight="475.0" prefWidth="1194.0">
+                                                        <TableView fx:id="businessTableView" layoutX="14.0" layoutY="187.0" prefHeight="475.0" prefWidth="1194.0">
                                              <columns>
                                                 <TableColumn fx:id="businessState" prefWidth="128.0" text="状态" />
                                                 <TableColumn fx:id="businessType" prefWidth="240.0" text="业务类型" />
