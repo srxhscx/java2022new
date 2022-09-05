@@ -4,11 +4,10 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="589.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.accountManagement.accountManagementController">
    <children>
-      <Button layoutX="174.0" layoutY="623.0" mnemonicParsing="false" text="保存" />
-      <Button layoutX="360.0" layoutY="623.0" mnemonicParsing="false" text="关闭" />
+      <Button fx:id="save" layoutX="174.0" layoutY="623.0" mnemonicParsing="false" onAction="#checkSave" text="保存" />
+      <Button fx:id="close" layoutX="360.0" layoutY="623.0" mnemonicParsing="false" onAction="#checkedClose" text="关闭" />
       <Label layoutX="114.0" layoutY="60.0" text="账号" />
       <Label layoutX="114.0" layoutY="116.0" text="姓名" />
       <Label layoutX="114.0" layoutY="174.0" text="密码" />
@@ -18,14 +17,14 @@
       <Label layoutX="114.0" layoutY="392.0" text="节点" />
       <Label layoutX="114.0" layoutY="451.0" text="联系方式" />
       <Label layoutX="114.0" layoutY="515.0" text="邮箱" />
-      <TextField layoutX="214.0" layoutY="55.0" />
-      <TextField layoutX="214.0" layoutY="111.0" />
-      <TextField layoutX="214.0" layoutY="169.0" />
-      <TextField layoutX="214.0" layoutY="223.0" />
-      <ChoiceBox layoutX="214.0" layoutY="278.0" prefHeight="30.0" prefWidth="202.0" />
-      <ChoiceBox layoutX="214.0" layoutY="335.0" prefHeight="30.0" prefWidth="202.0" />
-      <ChoiceBox layoutX="214.0" layoutY="387.0" prefHeight="30.0" prefWidth="202.0" />
-      <TextField layoutX="214.0" layoutY="446.0" />
-      <TextField layoutX="214.0" layoutY="510.0" />
+      <TextField fx:id="accountText" layoutX="214.0" layoutY="55.0" />
+      <TextField fx:id="nameText" layoutX="214.0" layoutY="111.0" />
+      <TextField fx:id="passwordText" layoutX="214.0" layoutY="169.0" />
+      <TextField fx:id="passwordConfirmText" layoutX="214.0" layoutY="223.0" />
+      <TextField fx:id="contactText" layoutX="214.0" layoutY="446.0" />
+      <TextField fx:id="mailText" layoutX="214.0" layoutY="510.0" />
+      <ComboBox fx:id="institutionText" layoutX="214.0" layoutY="278.0" prefHeight="30.0" prefWidth="202.0" />
+      <ComboBox fx:id="cityText" layoutX="214.0" layoutY="335.0" prefHeight="30.0" prefWidth="202.0" />
+      <ComboBox fx:id="nodeText" layoutX="214.0" layoutY="387.0" prefHeight="30.0" prefWidth="202.0" />
    </children>
 </AnchorPane>
