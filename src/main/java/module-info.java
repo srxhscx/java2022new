@@ -11,7 +11,6 @@ module com.example.demo {
         opens com.example.demo.register to javafx.fxml;
         opens com.example.demo.menu to javafx.fxml;
         opens com.example.demo.accountManagement to javafx.fxml;
-        opens com.example.demo.roleManagement to javafx.fxml;
         opens com.example.demo.business to javafx.fxml;
         opens com.example.demo.shippingInfomationChange to javafx.fxml;
         opens com.example.demo.carrierManagement to javafx.fxml;
@@ -37,7 +36,6 @@ module com.example.demo {
         exports com.example.demo.homepage;
         exports com.example.demo.menu;
         exports com.example.demo.accountManagement;
-        exports com.example.demo.roleManagement;
         exports com.example.demo.business;
         exports com.example.demo.shippingInfomationChange;
         exports com.example.demo.carrierManagement;
@@ -51,6 +49,11 @@ module com.example.demo {
         exports com.example.demo.transportationPlanGeneration;
         exports com.example.demo.commissionedByTransport;
         exports com.example.demo.newClaimLetter;
+        exports com.example.demo.carType;
+        exports com.example.demo.changeClaimLetter;
+        exports com.example.demo.newSignInDoc;
+        exports com.example.demo.confirmDoc;
+        exports com.example.demo.confirmationOfLetter;
 
 
         }
