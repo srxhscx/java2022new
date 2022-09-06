@@ -7,6 +7,7 @@ import com.example.demo.carrierManagement.carrierManagementMain;
 import com.example.demo.characterManagement.characterManagementMain;
 import com.example.demo.citymanagement.citymanagementMain;
 import com.example.demo.dao.*;
+import com.example.demo.freightManagement.freightManagementMain;
 import com.example.demo.good.goodmain;
 import com.example.demo.node.nodeMain;
 import com.example.demo.routeManagement.routeManagementMain;
@@ -427,6 +428,14 @@ public class MenuController implements Initializable{
             rmdata.add(rmiter.next());
         }
 
+        //routeManagement
+        freightManagementDAO freightmanagementdao = new freightManagementDAO();
+        Iterator<freightManagement> friter = freightmanagementdao.getFreightManagement().iterator();
+        while(friter.hasNext()) {
+            frdata.add(friter.next());
+        }
+
+
 
         //设置每列的数据
         //设置业务类型管理数据
@@ -532,6 +541,19 @@ public class MenuController implements Initializable{
         rmstarttime.setCellValueFactory(cellData-> cellData.getValue().rmstarttimeProperty());
         rmremark.setCellValueFactory(cellData-> cellData.getValue().rmoperateProperty());
 
+        //set freightManagemant
+        frcarrier.setCellValueFactory(cellData-> cellData.getValue(). frcarrierProperty());
+        frstartcity.setCellValueFactory(cellData-> cellData.getValue().frstartcityProperty());
+        frdestinationcity.setCellValueFactory(cellData-> cellData.getValue().frdestinationcityProperty());
+        frtransport.setCellValueFactory(cellData-> cellData.getValue().frtransportProperty());
+        froneall.setCellValueFactory(cellData-> cellData.getValue().froneallProperty());
+        frweight.setCellValueFactory(cellData-> cellData.getValue().frweightProperty());
+        frtime.setCellValueFactory(cellData-> cellData.getValue().frtimeProperty());
+        frpermium.setCellValueFactory(cellData-> cellData.getValue().frpermiumProperty());
+        frstarttime.setCellValueFactory(cellData-> cellData.getValue().frstarttimeProperty());
+        frdeadtime.setCellValueFactory(cellData-> cellData.getValue().frdeadtimeProperty());
+        froperator.setCellValueFactory(cellData-> cellData.getValue().froperatorProperty());
+
         //设置表格数据
         businessTableView.setItems(businessdata);
         GoodsTableView.setItems(goodsdata);
@@ -544,6 +566,7 @@ public class MenuController implements Initializable{
         nodeTableView.setItems(citynodedata);
         crTableView.setItems(crdata);
         rmTableView.setItems(rmdata);
+        frTableView.setItems(frdata);
 
 
 
@@ -1316,6 +1339,59 @@ public class MenuController implements Initializable{
             //加载注册窗口
             try {
                 new carrierManagementMain().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+    /**
+     * freightManagement
+     */
+    @FXML
+    private TableColumn<freightManagement,String> frid;
+    @FXML
+    private TableColumn<freightManagement,String> frcarrier;
+    @FXML
+    private TableColumn<freightManagement,String> frstartcity;
+    @FXML
+    private TableColumn<freightManagement,String> frdestinationcity;
+    @FXML
+    private TableColumn<freightManagement,String> frtransport;
+    @FXML
+    private TableColumn<freightManagement,String> froneall;
+    @FXML
+    private TableColumn<freightManagement,String> frweight;
+    @FXML
+    private TableColumn<freightManagement,String> frtime;
+    @FXML
+    private TableColumn<freightManagement,String> frpermium;
+    @FXML
+    private TableColumn<freightManagement,String> frstarttime;
+    @FXML
+    private TableColumn<freightManagement,String> frdeadtime;
+    @FXML
+    private TableColumn<freightManagement,String> froperator;
+    @FXML
+    //创建TableView
+    private TableView<freightManagement> frTableView = new TableView<>();
+    //创建数据集合
+    private ObservableList<freightManagement> frdata = FXCollections.observableArrayList();
+    @FXML
+    private Button frnewchecked;
+    @FXML
+    private Button frfindchecked;
+    @FXML
+    void frnew(ActionEvent event) {
+        Platform.runLater(()->{
+            //获取按钮所在的窗口
+            //BtSign可以为当前窗口任意一个控件
+            Stage primaryStage = (Stage) frnewchecked.getScene().getWindow();
+            //当前窗口隐藏
+            primaryStage.hide();
+            //加载注册窗口
+            try {
+                new freightManagementMain().start(primaryStage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -43,7 +43,7 @@ public class freightManagementDAO {
     }
     public List<freightManagement> getFreightManagement(){
         Connection cn = ConnectionUtil.getConnection();
-        String sql = "SELECT * FROM freightsetting_info";
+        String sql = "SELECT * FROM freight_setting";
         //发送给mysql执行
         PreparedStatement pstmt =  null;
         ResultSet rs = null;
