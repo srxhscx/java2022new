@@ -6,6 +6,7 @@ import com.example.demo.carType.carTypeMain;
 import com.example.demo.carrierManagement.carrierManagementMain;
 import com.example.demo.characterManagement.characterManagementMain;
 import com.example.demo.citymanagement.citymanagementMain;
+import com.example.demo.commissionedByTransport.commissionedByTransportMain;
 import com.example.demo.dao.*;
 import com.example.demo.freightManagement.freightManagementMain;
 import com.example.demo.good.goodmain;
@@ -22,8 +23,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -435,6 +439,56 @@ public class MenuController implements Initializable{
             frdata.add(friter.next());
         }
 
+        //设置运输委托
+        commissionedByTransportNumber.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_numberProperty());
+        commissionedByTransportType.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_typeProperty());
+        commissionedByTransportCarrier.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_carrierProperty());
+        commissionedByTransportWay.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_wayProperty());
+        commissionedByTransportFromPeo.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_from_peoProperty());
+        commissionedByTransportToPeo.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_to_peoProperty());
+        commissionedByTransportRemark.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_remarkProperty());
+
+        //设置在途信息录入
+        preInformationNumber.setCellValueFactory(cellData-> cellData.getValue().preInformation_numberProperty());
+        preInformationState.setCellValueFactory(cellData-> cellData.getValue().preInformation_stateProperty());
+        preInformationLicense.setCellValueFactory(cellData-> cellData.getValue().preInformation_licenseProperty());
+        preInformationOnWay.setCellValueFactory(cellData-> cellData.getValue().preInformation_on_wayProperty());
+        preInformationCarrier.setCellValueFactory(cellData-> cellData.getValue().preInformation_carrierProperty());
+
+        //设置在途监控
+        informationNumber.setCellValueFactory(cellData-> cellData.getValue().information_numberProperty());
+        informationState.setCellValueFactory(cellData-> cellData.getValue().information_stateProperty());
+        informationLicense.setCellValueFactory(cellData-> cellData.getValue().information_licenseProperty());
+        informationOnWay.setCellValueFactory(cellData-> cellData.getValue().information_on_wayProperty());
+        informationCarrier.setCellValueFactory(cellData-> cellData.getValue().information_carrierProperty());
+
+
+
+
+
+
+        //运输委托
+        commissionedByTransportDAO commissionedByTransportationDAO = new commissionedByTransportDAO();
+        Iterator<CommissionedByTransport> commissionedByTransportior = commissionedByTransportationDAO.getCommissionedByTransport().iterator();
+        while(commissionedByTransportior.hasNext()) {
+            commissionedByTransportdata.add(commissionedByTransportior.next());
+        }
+
+        //在途监控
+        TransitMonitorDAO transitMonitor = new TransitMonitorDAO();
+        Iterator<TransitMonitor> transitMonitorier = transitMonitor.getTransitMonitor().iterator();
+        while(transitMonitorier.hasNext()) {
+            transitMonitordata.add(transitMonitorier.next());
+        }
+        //在途信息录入
+        PreTransitMonitorDAO preTransitMonitor = new PreTransitMonitorDAO();
+        Iterator<PreTransitMonitor> preTransitMonitorier = preTransitMonitor.getPreTransitMonitor().iterator();
+        while(preTransitMonitorier.hasNext()) {
+            preTransitMonitordata.add(preTransitMonitorier.next());
+        }
+
+
+
 
 
         //设置每列的数据
@@ -567,9 +621,9 @@ public class MenuController implements Initializable{
         crTableView.setItems(crdata);
         rmTableView.setItems(rmdata);
         frTableView.setItems(frdata);
-
-
-
+        commissionedByTransportTableView.setItems(commissionedByTransportdata);
+        preInformationTableView.setItems(preTransitMonitordata);
+        informationTableView.setItems(transitMonitordata);
     }
     /**
      * 业务类型管理
@@ -641,6 +695,218 @@ public class MenuController implements Initializable{
             }
         });
 
+    }
+
+    /**
+     * 发运管理——运输委托
+     */
+    @FXML
+    private ChoiceBox commissionedByTransportChoice;
+    @FXML
+    private TableColumn<CommissionedByTransport, String> commissionedByTransportNumber;
+    @FXML
+    private TableColumn<CommissionedByTransport, String> commissionedByTransportType;
+    @FXML
+    private TableColumn<CommissionedByTransport, String> commissionedByTransportCarrier;
+    @FXML
+    private TableColumn<CommissionedByTransport, String> commissionedByTransportWay;
+    @FXML
+    private TableColumn<CommissionedByTransport, String> commissionedByTransportFromPeo;
+    @FXML
+    private TableColumn<CommissionedByTransport, String> commissionedByTransportToPeo;
+    @FXML
+    private TableColumn<CommissionedByTransport, String> commissionedByTransportRemark;
+    @FXML
+    private TableColumn<CommissionedByTransport, String> commissionedByTransportOperator;
+
+
+
+    @FXML
+    private Button checkcommissionedByTransportBtn;
+    @FXML
+    void checkcommissionedByTransport(ActionEvent event) {
+
+        String typeText = this.commissionedByTransportChoice.getValue().toString();
+        if(typeText == null || typeText.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+        else{
+            commissionedByTransportTableView.getItems().clear();
+        }
+
+        //添加数据, 这些数据从数据库中查询出
+        commissionedByTransportDAO commissionedByTransportationDAO = new commissionedByTransportDAO();
+
+        Iterator<CommissionedByTransport> iter1 = commissionedByTransportationDAO.getCommissionedByTransportByCommissionedByTransportType(typeText).iterator();
+        while(iter1.hasNext()) {
+            commissionedByTransportdata.add(iter1.next());
+        }
+
+        //设置每列的数据
+
+
+        commissionedByTransportNumber.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_numberProperty());
+        commissionedByTransportType.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_typeProperty());
+        commissionedByTransportCarrier.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_carrierProperty());
+        commissionedByTransportWay.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_wayProperty());
+        commissionedByTransportFromPeo.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_from_peoProperty());
+        commissionedByTransportToPeo.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_to_peoProperty());
+        commissionedByTransportRemark.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_remarkProperty());
+
+        //设置表格数据
+        commissionedByTransportTableView.setItems(commissionedByTransportdata);
+
+    }
+
+
+
+
+    @FXML
+    private Button buildcommissionedByTransportBtn;
+    @FXML
+    void buildcommissionedByTransport(ActionEvent event) {
+        Platform.runLater(() -> {
+            //获取按钮所在的窗口
+            //BtSign可以为当前窗口任意一个控件
+            Stage primaryStage = (Stage) buildcommissionedByTransportBtn.getScene().getWindow();
+            //当前窗口隐藏
+            primaryStage.hide();
+            //加载注册窗口
+            try {
+                new commissionedByTransportMain().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+    @FXML
+    //创建TableView
+    private TableView<CommissionedByTransport> commissionedByTransportTableView = new TableView<>();
+    //创建数据集合
+    private ObservableList<CommissionedByTransport> commissionedByTransportdata = FXCollections.observableArrayList();
+
+
+    /**
+     * 在途监控——在途信息录入
+     */
+    @FXML
+    private TableColumn<PreTransitMonitor, String> preInformationNumber;
+    @FXML
+    private TableColumn<PreTransitMonitor, String> preInformationState;
+    @FXML
+    private TableColumn<PreTransitMonitor, String> preInformationLicense;
+    @FXML
+    private TableColumn<PreTransitMonitor, String> preInformationOnWay;
+    @FXML
+    private TableColumn<PreTransitMonitor, String> preInformationCarrier;
+
+
+    @FXML
+    private TableView<PreTransitMonitor> preInformationTableView = new TableView<>();
+    private ObservableList<PreTransitMonitor> preTransitMonitordata = FXCollections.observableArrayList();
+
+
+    @FXML
+    private TextField preInformationCarrier_Text;
+    @FXML
+    private TextField preInformationLicense_Text;
+    @FXML
+    private TextField preInformationNumber_Text;
+    @FXML
+    private TextField preInformationState_Text;
+    @FXML
+    private TextField preInformationOnWay_Text;
+
+    @FXML
+    private Button preInformationSaveBtn;
+    @FXML
+    void preInformationSave(ActionEvent event) throws SQLException {
+        String PICarrier = preInformationCarrier_Text.getText();
+        String PILicense = preInformationLicense_Text.getText();
+        String PINumber = preInformationNumber_Text.getText();
+        String PIState = preInformationState_Text.getText();
+        String PIOnWay = preInformationOnWay_Text.getText();
+
+        PreTransitMonitorDAO preTransitMonitorDAO = new PreTransitMonitorDAO();
+        preTransitMonitorDAO.addPreTransitMonitor(PINumber,PILicense,PIState,PICarrier,PIOnWay);
+        new Alert(Alert.AlertType.NONE, "保存成功", new ButtonType[]{ButtonType.CLOSE}).show();
+
+        this.preInformationCarrier_Text.clear();
+        this.preInformationLicense_Text.clear();
+        this.preInformationNumber_Text.clear();
+        this.preInformationState_Text.clear();
+        this.preInformationOnWay_Text.clear();
+
+    }
+
+
+    /**
+     * 在途监控——在途监控
+     */
+    @FXML
+    private TableColumn<TransitMonitor, String> informationNumber;
+    @FXML
+    private TableColumn<TransitMonitor, String> informationState;
+    @FXML
+    private TableColumn<TransitMonitor, String> informationLicense;
+    @FXML
+    private TableColumn<TransitMonitor, String> informationOnWay;
+    @FXML
+    private TableColumn<TransitMonitor, String> informationCarrier;
+    @FXML
+    private TableColumn<TransitMonitor, String> informationOperator;
+    @FXML
+    private TextField informationState_Text;
+
+    @FXML
+    private TableView<TransitMonitor> informationTableView = new TableView<>();
+    private ObservableList<TransitMonitor> transitMonitordata = FXCollections.observableArrayList();
+
+    @FXML
+    private Button checkInformationBtn;
+    @FXML
+    public void checkInformation(ActionEvent event) {
+        String typeText = this.informationState_Text.getText();
+        if(typeText == null || typeText.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+        else{
+            informationTableView.getItems().clear();
+        }
+
+        //添加数据, 这些数据从数据库中查询出
+        TransitMonitorDAO transitMonitorDAO = new TransitMonitorDAO();
+
+        Iterator<TransitMonitor> iter1 = transitMonitorDAO.getTransitMonitorByTransitMonitorState(typeText).iterator();
+        while(iter1.hasNext()) {
+            transitMonitordata.add(iter1.next());
+        }
+
+        //设置每列的数据
+
+
+        informationNumber.setCellValueFactory(cellData-> cellData.getValue().information_numberProperty());
+        informationState.setCellValueFactory(cellData-> cellData.getValue().information_stateProperty());
+        informationLicense.setCellValueFactory(cellData-> cellData.getValue().information_licenseProperty());
+        informationOnWay.setCellValueFactory(cellData-> cellData.getValue().information_on_wayProperty());
+        informationCarrier.setCellValueFactory(cellData-> cellData.getValue().information_carrierProperty());
+
+
+        informationTableView.setItems(transitMonitordata);
+    }
+    @FXML
+    private Button flashBtn;
+    @FXML
+    public void flash(ActionEvent event) {
+        Platform.runLater(() -> {
+            Stage primaryStage = (Stage) flashBtn.getScene().getWindow();
+            primaryStage.hide();
+            try {
+                new MainMenu().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
 

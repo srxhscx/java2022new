@@ -403,19 +403,19 @@
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
                                                         <Label layoutX="78.0" layoutY="45.0" text="业务类型" />
-                                                        <ChoiceBox layoutX="176.0" layoutY="40.0" prefWidth="150.0" />
-                                                        <Button layoutX="549.0" layoutY="65.0" mnemonicParsing="false" text="录入运输委托单" />
-                                                        <Button layoutX="389.0" layoutY="40.0" mnemonicParsing="false" prefWidth="100.0" text="查询" />
-                                                        <TableView layoutY="107.0" prefHeight="563.0" prefWidth="1222.0">
+                                                        <ChoiceBox fx:id="commissionedByTransportChoice" layoutX="176.0" layoutY="40.0" prefWidth="150.0" />
+                                                        <Button fx:id="buildcommissionedByTransportBtn" layoutX="549.0" layoutY="65.0" mnemonicParsing="false" onAction="#buildcommissionedByTransport" text="录入运输委托单" />
+                                                        <Button fx:id="checkcommissionedByTransportBtn" layoutX="389.0" layoutY="40.0" mnemonicParsing="false" onAction="#checkcommissionedByTransport" prefWidth="100.0" text="查询" />
+                                                        <TableView fx:id="commissionedByTransportTableView" layoutY="107.0" prefHeight="563.0" prefWidth="1222.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="92.0" text="订单号" />
-                                                                <TableColumn prefWidth="112.0" text="业务类型" />
-                                                                <TableColumn prefWidth="108.0" text="承运商" />
-                                                                <TableColumn prefWidth="111.0" text="运输方式" />
-                                                                <TableColumn prefWidth="164.0" text="发货人姓名" />
-                                                                <TableColumn prefWidth="156.0" text="收货人姓名" />
-                                                                <TableColumn prefWidth="230.0" text="备注" />
-                                                <TableColumn prefWidth="248.0" text="操作" />
+                                                                <TableColumn fx:id="commissionedByTransportNumber" prefWidth="92.0" text="订单号" />
+                                                                <TableColumn fx:id="commissionedByTransportType" prefWidth="112.0" text="业务类型" />
+                                                                <TableColumn fx:id="commissionedByTransportCarrier" prefWidth="108.0" text="承运商" />
+                                                                <TableColumn fx:id="commissionedByTransportWay" prefWidth="111.0" text="运输方式" />
+                                                                <TableColumn fx:id="commissionedByTransportFromPeo" prefWidth="164.0" text="发货人姓名" />
+                                                                <TableColumn fx:id="commissionedByTransportToPeo" prefWidth="156.0" text="收货人姓名" />
+                                                                <TableColumn fx:id="commissionedByTransportRemark" prefWidth="230.0" text="备注" />
+                                                <TableColumn fx:id="commissionedByTransportOperator" prefWidth="248.0" text="操作" />
                                                             </columns>
                                                         </TableView>
                                                     </children></AnchorPane>
@@ -436,41 +436,20 @@
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="268.0" prefWidth="459.0">
                                                     <children>
-                                                        <TableView layoutY="130.0" prefHeight="560.0" prefWidth="1222.0">
+                                                        <TableView fx:id="informationTableView" layoutY="130.0" prefHeight="560.0" prefWidth="1222.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="54.0" text="选择" />
-                                                                <TableColumn prefWidth="116.0" text="委托书编号" />
-                                                                <TableColumn prefWidth="55.0" text="在途状态" />
-                                                                <TableColumn prefWidth="75.0" text="承运商" />
-                                                                <TableColumn prefWidth="75.0" text="始发城市" />
-                                                                <TableColumn prefWidth="75.0" text="目的城市" />
-                                                                <TableColumn prefWidth="75.0" text="在途信息" />
-                                                                <TableColumn prefWidth="99.0" text="当前行驶位置" />
-                                                                <TableColumn prefWidth="108.0" text="车牌号" />
-                                                                <TableColumn prefWidth="108.0" text="挂车车牌号" />
-                                                                <TableColumn prefWidth="114.0" text="更新时间" />
-                                                                <TableColumn prefWidth="267.0" text="操作" />
+                                                                <TableColumn fx:id="informationNumber" prefWidth="116.0" text="委托书编号" />
+                                                                <TableColumn fx:id="informationState" prefWidth="102.0" text="在途状态" />
+                                                                <TableColumn fx:id="informationCarrier" prefWidth="145.0" text="承运商" />
+                                                                <TableColumn fx:id="informationOnWay" prefWidth="136.0" text="在途信息" />
+                                                                <TableColumn fx:id="informationLicense" prefWidth="176.0" text="车牌号" />
+                                                                <TableColumn fx:id="informationOperator" prefWidth="288.0" text="操作" />
                                                             </columns>
                                                         </TableView>
-                                                        <Button layoutX="1100.0" layoutY="70.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="100.0" text="导入异常信息" />
-                                                        <Button layoutX="970.0" layoutY="70.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="100.0" text="查询" />
-                                                        <ChoiceBox layoutX="100.0" layoutY="25.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="330.0" layoutY="25.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="560.0" layoutY="25.0" prefWidth="150.0" />
-                                                        <Label layoutX="50.0" layoutY="30.0" text="始发城市" />
-                                                        <Label layoutX="280.0" layoutY="30.0" text="目的城市" />
-                                                        <Label layoutX="510.0" layoutY="30.0" text="承运商" />
-                                                        <Label layoutX="720.0" layoutY="30.0" text="委托书编号" />
-                                                        <Label layoutX="50.0" layoutY="75.0" text="起始时间" />
-                                                        <Label layoutX="280.0" layoutY="75.0" text="截止时间" />
-                                                        <Label layoutX="510.0" layoutY="75.0" text="在途状态" />
-                                                        <Label layoutX="740.0" layoutY="75.0" text="车牌号" />
-                                                        <TextField layoutX="790.0" layoutY="70.0" prefHeight="23.0" prefWidth="150.0" />
-                                          <Button layoutX="1100.0" layoutY="25.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="100.0" text="导入在途信息" />
-                                          <TextField layoutX="790.0" layoutY="25.0" prefHeight="23.0" prefWidth="150.0" />
-                                          <TextField layoutX="100.0" layoutY="70.0" prefHeight="22.0" prefWidth="150.0" />
-                                          <TextField layoutX="330.0" layoutY="70.0" prefHeight="22.0" prefWidth="150.0" />
-                                          <ChoiceBox layoutX="560.0" layoutY="70.0" prefWidth="150.0" />
+                                                        <Button fx:id="checkInformationBtn" layoutX="476.0" layoutY="59.0" mnemonicParsing="false" onAction="#checkInformation" prefHeight="23.0" prefWidth="100.0" text="查询" />
+                                                        <Label layoutX="112.0" layoutY="63.0" text="在途状态" />
+                                          <TextField fx:id="informationState_Text" layoutX="173.0" layoutY="59.0" />
+                                          <Button fx:id="flashBtn" layoutX="876.0" layoutY="92.0" mnemonicParsing="false" onAction="#flash" text="刷新" />
                                                     </children></AnchorPane>
                                             </content>
                                         </Tab>
@@ -481,54 +460,24 @@
                                                         <Label layoutX="50.0" layoutY="50.0" text="委托书编号" />
                                                         <Label layoutX="300.0" layoutY="50.0" text="车牌号" />
                                                         <Label layoutX="550.0" layoutY="50.0" text="在途状态" />
-                                                        <TextField layoutX="119.0" layoutY="45.0" />
-                                                        <TextField layoutX="360.0" layoutY="45.0" />
+                                                        <TextField fx:id="preInformationNumber_Text" layoutX="119.0" layoutY="45.0" />
+                                                        <TextField fx:id="preInformationLicense_Text" layoutX="360.0" layoutY="45.0" />
                                                         <TextField layoutX="937.0" layoutY="6445.0" />
-                                                        <TableView layoutX="50.0" layoutY="100.0" prefHeight="450.0" prefWidth="1100.0">
+                                                        <TableView fx:id="preInformationTableView" layoutX="50.0" layoutY="100.0" prefHeight="461.0" prefWidth="877.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="396.0" text="发生时间" />
-                                                                <TableColumn minWidth="0.0" prefWidth="437.0" text="在途信息" />
-                                                                <TableColumn minWidth="0.0" prefWidth="266.0" text="当前城市" />
+                                                                <TableColumn fx:id="preInformationNumber" prefWidth="207.0" text="委托书编号" />
+                                                                <TableColumn fx:id="preInformationState" minWidth="0.0" prefWidth="98.0" text="在途状态" />
+                                                <TableColumn fx:id="preInformationOnWay" prefWidth="142.0" text="在途信息" />
+                                                <TableColumn fx:id="preInformationLicense" prefWidth="201.0" text="车牌号" />
+                                                <TableColumn fx:id="preInformationCarrier" prefWidth="228.0" text="承运商" />
                                                             </columns>
                                                         </TableView>
                                                         <Label layoutX="50.0" layoutY="580.0" text="在途信息" />
-                                                        <Label layoutX="550.0" layoutY="580.0" text="当前城市" />
-                                                        <Label layoutX="300.0" layoutY="580.0" text="发生时间" />
-                                                        <ComboBox layoutX="110.0" layoutY="575.0" prefWidth="150.0" />
-                                                        <TextField layoutX="600.0" layoutY="575.0" />
-                                                        <Button layoutX="838.0" layoutY="575.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="100.0" text="保存" />
-                                                        <Button layoutX="1000.0" layoutY="575.0" mnemonicParsing="false" prefWidth="100.0" text="关闭" />
-                                                        <TextField layoutX="360.0" layoutY="575.0" />
-                                                        <TextField layoutX="600.0" layoutY="45.0" />
-                                                    </children></AnchorPane>
-                                            </content>
-                                        </Tab>
-                                        <Tab text="异常信息录入">
-                                            <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                    <children>
-                                                        <Label layoutX="50.0" layoutY="50.0" text="委托书编号" />
-                                                        <Label layoutX="300.0" layoutY="50.0" text="车牌号" />
-                                                        <Label layoutX="550.0" layoutY="50.0" text="在途状态" />
-                                                        <TextField layoutX="119.0" layoutY="45.0" />
-                                                        <TextField layoutX="360.0" layoutY="45.0" />
-                                                        <TextField layoutX="937.0" layoutY="6445.0" />
-                                                        <TableView layoutX="50.0" layoutY="100.0" prefHeight="450.0" prefWidth="1100.0">
-                                                            <columns>
-                                                                <TableColumn prefWidth="396.0" text="发生时间" />
-                                                                <TableColumn minWidth="0.0" prefWidth="366.0" text="异常类型" />
-                                                                <TableColumn minWidth="0.0" prefWidth="337.0" text="异常原因" />
-                                                            </columns>
-                                                        </TableView>
-                                                        <Label layoutX="50.0" layoutY="580.0" text="异常类型" />
-                                                        <Label layoutX="300.0" layoutY="580.0" text="发生时间" />
-                                                        <ComboBox layoutX="110.0" layoutY="575.0" prefWidth="150.0" />
-                                                        <Button layoutX="550.0" layoutY="575.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="100.0" text="保存" />
-                                                        <Button layoutX="660.0" layoutY="575.0" mnemonicParsing="false" prefWidth="100.0" text="关闭" />
-                                                        <TextField layoutX="360.0" layoutY="575.0" />
-                                                        <TextField layoutX="600.0" layoutY="45.0" />
-                                          <Label layoutX="50.0" layoutY="610.0" text="异常原因" />
-                                          <TextArea layoutX="110.0" layoutY="605.0" prefHeight="65.0" prefWidth="410.0" />
+                                                        <Label layoutX="300.0" layoutY="580.0" text="承运商" />
+                                                        <Button fx:id="preInformationSaveBtn" layoutX="611.0" layoutY="576.0" mnemonicParsing="false" onAction="#preInformationSave" prefHeight="23.0" prefWidth="100.0" text="保存" />
+                                                        <TextField fx:id="preInformationCarrier_Text" layoutX="360.0" layoutY="575.0" />
+                                                        <TextField fx:id="preInformationState_Text" layoutX="600.0" layoutY="45.0" />
+                                          <TextField fx:id="preInformationOnWay_Text" layoutX="110.0" layoutY="575.0" />
                                                     </children></AnchorPane>
                                             </content>
                                         </Tab>
