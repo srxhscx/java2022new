@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="507.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.citymanagement.citymanagementController">
+   <children>
+      <Label layoutX="59.0" layoutY="64.0" text="城市代码：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="138.0" text="城市名称：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="209.0" text="机构名称：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="299.0" text="配送中心：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="cityidText" layoutX="149.0" layoutY="57.0" prefHeight="43.0" prefWidth="226.0" />
+      <TextField fx:id="citynameText" layoutX="149.0" layoutY="132.0" prefHeight="43.0" prefWidth="226.0" />
+      <TextField fx:id="cityinstitutionText" layoutX="149.0" layoutY="212.0" prefHeight="43.0" prefWidth="226.0" />
+      <TextField fx:id="citydistributionText" layoutX="149.0" layoutY="290.0" prefHeight="43.0" prefWidth="226.0" />
+      <Button fx:id="citysaveBtn" layoutX="149.0" layoutY="395.0" mnemonicParsing="false" onAction="#citysave" prefHeight="43.0" prefWidth="90.0" text="保存">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="citycloseBtn" layoutX="285.0" layoutY="395.0" mnemonicParsing="false" onAction="#cityclose" prefHeight="43.0" prefWidth="90.0" text="关闭">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

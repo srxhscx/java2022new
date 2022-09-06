@@ -5,6 +5,7 @@ module com.example.demo {
         requires java.desktop;
         requires java.sql;
 
+
         opens com.example.demo.homepage to javafx.fxml;
         opens com.example.demo to javafx.fxml;
         opens com.example.demo.register to javafx.fxml;
@@ -27,6 +28,8 @@ module com.example.demo {
         opens com.example.demo.confirmationOfLetter to javafx.fxml;
         opens com.example.demo.routeManagement to javafx.fxml;
         opens com.example.demo.carType to javafx.fxml;
+        opens com.example.demo.citymanagement to javafx.fxml;
+
 
         exports com.example.demo.register;
         exports com.example.demo.homepage;
