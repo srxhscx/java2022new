@@ -2,6 +2,7 @@ package com.example.demo.menu;
 import com.example.demo.accountManagement.accountManagementMain;
 import com.example.demo.business.businessmain;
 import com.example.demo.carType.carTypeMain;
+import com.example.demo.characterManagement.characterManagementMain;
 import com.example.demo.citymanagement.citymanagementMain;
 import com.example.demo.dao.*;
 import com.example.demo.good.goodmain;
@@ -278,6 +279,14 @@ public class MenuController implements Initializable{
             transportationPlanGenerationdata.add(transportationPlanGeneratoriter.next());
         }
 
+        //characterManagement
+        characterManagementDAO characterManagementdao = new characterManagementDAO();
+        Iterator<characterManagement> cmiter = characterManagementdao.getCharacterManagement().iterator();
+        while(cmiter.hasNext()) {
+           cmdata.add(cmiter.next());
+        }
+
+
 
         //设置每列的数据
         //设置业务类型管理数据
@@ -331,7 +340,11 @@ public class MenuController implements Initializable{
         transportationPlanGenerationWeight.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_weightProperty());
         transportationPlanGenerationRemark.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_remarkProperty());
 
-
+        //set characterManagement
+        cmrole.setCellValueFactory(cellData-> cellData.getValue(). cmroleProperty());
+        cmremark.setCellValueFactory(cellData-> cellData.getValue().cmremarkProperty());
+        cmpermission.setCellValueFactory(cellData-> cellData.getValue().cmpermissionProperty());
+        cmoperate.setCellValueFactory(cellData-> cellData.getValue().cmoperateProperty());
 
         //设置表格数据
         businessTableView.setItems(businessdata);
@@ -340,6 +353,7 @@ public class MenuController implements Initializable{
         CarTypeTableView.setItems(cartypedata);
         citynodeTableView.setItems(citynodedata);
         TPGTableView.setItems(transportationPlanGenerationdata);
+        cmTableView.setItems(cmdata);
 
 
 
@@ -790,17 +804,71 @@ public class MenuController implements Initializable{
 
     /**
      * characterManagement
-//     */
-//    @FXML
-//    private TableColumn<characterManagement,String> amnode;
-//    @FXML
-//    private TableColumn<accountManagement,String> amtel;
-//    @FXML
-//    private TableColumn<accountManagement,String> ammail;
-//    @FXML
-//    private TableColumn<accountManagement,String> amremark;
-//    @FXML
-//    private TableColumn<accountManagement,String> amoperate;
+     */
+    @FXML
+    private TableColumn<characterManagement,String> cmstate;
+    @FXML
+    private TableColumn<characterManagement,String> cmrole;
+    @FXML
+    private TableColumn<characterManagement,String> cmremark;
+    @FXML
+    private TableColumn<characterManagement,String> cmpermission;
+    @FXML
+    private TableColumn<characterManagement,String> cmoperate;
+    @FXML
+    private Button cmnew;
+    @FXML
+    //创建TableView
+    private TableView<characterManagement> cmTableView = new TableView<>();
+    //创建数据集合
+    private ObservableList<characterManagement> cmdata = FXCollections.observableArrayList();
+    @FXML
+    void cmnewchecked(ActionEvent event) {
+        Platform.runLater(()->{
+            //获取按钮所在的窗口
+            //BtSign可以为当前窗口任意一个控件
+            Stage primaryStage = (Stage) cmnew.getScene().getWindow();
+            //当前窗口隐藏
+            primaryStage.hide();
+            //加载注册窗口
+            try {
+                new characterManagementMain().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+    @FXML
+    private Button cmfind;
+    @FXML
+    private TextField cmtext;
+    @FXML
+    void checkedcmfind(ActionEvent event) {
+        if(cmtext.getText().length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+        else{
+            cmTableView.getItems().clear();
+        }
+
+
+        //添加数据, 这些数据从数据库中查询出
+        characterManagementDAO characterManagementdao = new characterManagementDAO();
+        Iterator<characterManagement> cmiter = characterManagementdao.getCharacterManagement().iterator();
+        while(cmiter.hasNext()) {
+            cmdata.add(cmiter.next());
+        }
+
+        cmrole.setCellValueFactory(cellData-> cellData.getValue(). cmroleProperty());
+        cmremark.setCellValueFactory(cellData-> cellData.getValue().cmremarkProperty());
+        cmpermission.setCellValueFactory(cellData-> cellData.getValue().cmpermissionProperty());
+        cmoperate.setCellValueFactory(cellData-> cellData.getValue().cmoperateProperty());
+        cmTableView.setItems(cmdata);
+
+
+    }
+
 
 
 }
