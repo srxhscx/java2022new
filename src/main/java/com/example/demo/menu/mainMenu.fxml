@@ -23,23 +23,23 @@
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Label>
-                                                        <TextField layoutX="176.0" layoutY="80.0" prefHeight="38.0" prefWidth="205.0" />
-                                                        <Button layoutX="685.0" layoutY="81.0" mnemonicParsing="false" text="查询">
+                                                        <TextField fx:id="citynameText" layoutX="176.0" layoutY="80.0" prefHeight="38.0" prefWidth="205.0" />
+                                                        <Button fx:id="citynodeCheckBtn" layoutX="685.0" layoutY="81.0" mnemonicParsing="false" onAction="#citynodeCheck" text="查询">
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Button>
-                                                        <Button layoutX="874.0" layoutY="81.0" mnemonicParsing="false" text="新建城市信息">
+                                                        <Button fx:id="citynodeBuildBtn" layoutX="874.0" layoutY="81.0" mnemonicParsing="false" onAction="#citynodeBuild" text="新建城市信息">
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Button>
-                                                        <TableView layoutX="14.0" layoutY="170.0" prefHeight="485.0" prefWidth="1194.0">
+                                                        <TableView fx:id="citynodeTableView" layoutX="14.0" layoutY="170.0" prefHeight="485.0" prefWidth="1194.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="218.0" text="操作" />
-                                                                <TableColumn minWidth="0.0" prefWidth="114.0" text="状态" />
-                                                                <TableColumn prefWidth="206.0" text="城市代码" />
-                                                                <TableColumn prefWidth="172.0" text="城市名称" />
-                                                                <TableColumn prefWidth="169.0" text="机构名称" />
-                                                                <TableColumn prefWidth="240.0" text="配送中心名称" />
+                                                                <TableColumn fx:id="citynodeOperator" prefWidth="136.0" text="操作" />
+                                                                <TableColumn fx:id="citynodeState" minWidth="0.0" prefWidth="173.0" text="状态" />
+                                                                <TableColumn fx:id="citynodeId" prefWidth="229.0" text="城市代码" />
+                                                                <TableColumn fx:id="citynodename" prefWidth="172.0" text="城市名称" />
+                                                                <TableColumn fx:id="citynodeinstitution" prefWidth="169.0" text="机构名称" />
+                                                                <TableColumn fx:id="citynodedistribution" prefWidth="314.0" text="配送中心名称" />
                                                             </columns>
                                                         </TableView>
                                                     </children></AnchorPane>

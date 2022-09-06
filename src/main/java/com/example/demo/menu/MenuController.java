@@ -2,15 +2,10 @@ package com.example.demo.menu;
 import com.example.demo.accountManagement.accountManagementMain;
 import com.example.demo.business.businessmain;
 import com.example.demo.carType.carTypeMain;
-import com.example.demo.dao.BuisnessDAO;
-import com.example.demo.dao.CarTypeDAO;
-import com.example.demo.dao.GoodsDAO;
-import com.example.demo.dao.accountManagementDAO;
+import com.example.demo.citymanagement.citymanagementMain;
+import com.example.demo.dao.*;
 import com.example.demo.good.goodmain;
-import com.example.demo.vo.Buisness;
-import com.example.demo.vo.Cartype;
-import com.example.demo.vo.Goods;
-import com.example.demo.vo.accountManagement;
+import com.example.demo.vo.*;
 import javafx.application.Platform;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -219,6 +214,63 @@ public class MenuController implements Initializable{
         //设置可见行数, 超过显示滚动条
         CarTypeCB.setVisibleRowCount(5);
 
+        //城市管理
+        city_nodeDAO city_nodeDAO = new city_nodeDAO();
+        Iterator<CityNode> citynodeiter = city_nodeDAO.getCityNode().iterator();
+        //int num=0;
+
+        //AtomicInteger finalNum = new AtomicInteger(0);
+        int i4 = 0;
+        while(citynodeiter.hasNext())
+        {
+            //finalNum.getAndIncrement() ;
+            citynodedata.add(citynodeiter.next());
+            StringProperty citynodestate = city_nodeDAO.getCityNode().get(i4).city_stateProperty();
+            // System.out.println(buisnessDAO.getBusiness().get(i).business_stateProperty());
+
+
+            int finalI = i;
+            citynodeOperator.setCellFactory((col)->{
+
+                        TableCell<CityNode, String> citynodecell = new TableCell<CityNode, String>()
+                        {
+                            @Override
+                            protected void updateItem(String item, boolean empty)
+                            {
+                                super.updateItem(item, empty);
+                                if(citynodestate.getValue().equals("正常") ){
+                                    Button button1 = new Button("停用");
+                                    button1.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
+
+                                    button1.setOnMouseClicked((col) -> {
+                                        //获取list列表中的位置，进而获取列表对应的信息数据
+                                        // Buisness buisness = list.get(getIndex());
+                                        //按钮事件自己添加
+
+
+                                        //buisnessDAO.updateBusinessState(  buisnessDAO.getBusiness().get().getBusiness_id());
+                                        System.out.println(finalI);
+                                        System.out.println("修改成功");
+                                        //buisnessDAO.getBusiness().get(finalNum.get()).getBusiness_id()
+                                    });
+                                    if (empty) {
+                                        //如果此列为空默认不添加元素
+                                        setText(null);
+                                        setGraphic(null);
+                                    } else {
+                                        this.setGraphic(button1);
+                                    }
+                                }
+
+                            }
+                        };
+                        return citynodecell;
+                    }
+            );
+            i++;
+        }
+
+
         //设置每列的数据
         //设置业务类型管理数据
         businessState.setCellValueFactory(cellData-> cellData.getValue().business_stateProperty());
@@ -250,13 +302,25 @@ public class MenuController implements Initializable{
         carTypeRemark.setCellValueFactory(cellData-> cellData.getValue().car_remarkProperty());
         //carTypeOperator.setCellValueFactory(cellData-> cellData.getValue().ca);
 
+        //设置城市管理数据
+        //citynodeOperator.setCellValueFactory(cellData-> cellData.getValue().city_stateProperty());
+        citynodeState.setCellValueFactory(cellData-> cellData.getValue().city_stateProperty());
+        citynodeId.setCellValueFactory(cellData-> cellData.getValue().city_idProperty());
+        citynodename.setCellValueFactory(cellData-> cellData.getValue().city_nameProperty());
+        citynodeinstitution.setCellValueFactory(cellData-> cellData.getValue().city_institutionProperty());
+        citynodedistribution.setCellValueFactory(cellData-> cellData.getValue().city_distributionProperty());
+
+
+
+
+
 
         //设置表格数据
         businessTableView.setItems(businessdata);
         GoodsTableView.setItems(goodsdata);
         amtableView.setItems(accountManagementdata);
         CarTypeTableView.setItems(cartypedata);
-
+        citynodeTableView.setItems(citynodedata);
 
     }
     /**
@@ -527,5 +591,85 @@ public class MenuController implements Initializable{
         //设置表格数据
         CarTypeTableView.setItems(cartypedata);
     }
+
+    /**
+    * 城市管理
+    */
+    @FXML
+    private Button citynodeCheckBtn;
+    @FXML
+    private Button citynodeBuildBtn;
+    @FXML
+    private TextField citynameText;
+
+    @FXML
+    private TableView<CityNode> citynodeTableView = new TableView<>();
+
+    //创建数据集合
+    private ObservableList<CityNode> citynodedata = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn<CityNode, String> citynodename;
+    @FXML
+    private TableColumn<CityNode, String> citynodeState;
+    @FXML
+    private TableColumn<CityNode, String> citynodeId;
+    @FXML
+    private TableColumn<CityNode, String> citynodedistribution;
+    @FXML
+    private TableColumn<CityNode, String> citynodeOperator;
+    @FXML
+    private TableColumn<CityNode, String> citynodeinstitution;
+    @FXML
+    void citynodeCheck(ActionEvent event) {
+        String cityname1 = this.citynameText.getText();
+       // System.out.println(cityname1);
+        if(cityname1 == null || cityname1.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+
+        else{
+            citynodeTableView.getItems().clear();
+        }
+
+        //添加数据, 这些数据从数据库中查询出
+        city_nodeDAO city_nodeDAO1 = new city_nodeDAO();
+
+        Iterator<CityNode> cityNodeIterator1 = city_nodeDAO1.getCitynodeBycityName(cityname1).iterator();
+        while(cityNodeIterator1.hasNext()) {
+            citynodedata.add(cityNodeIterator1.next());
+
+        }
+
+        //设置城市管理数据
+        //citynodeOperator.setCellValueFactory(cellData-> cellData.getValue().city_stateProperty());
+        citynodeState.setCellValueFactory(cellData-> cellData.getValue().city_stateProperty());
+        citynodeId.setCellValueFactory(cellData-> cellData.getValue().city_idProperty());
+        citynodename.setCellValueFactory(cellData-> cellData.getValue().city_nameProperty());
+        citynodeinstitution.setCellValueFactory(cellData-> cellData.getValue().city_institutionProperty());
+        citynodedistribution.setCellValueFactory(cellData-> cellData.getValue().city_distributionProperty());
+
+
+        //设置表格数据
+        citynodeTableView.setItems(citynodedata);
+    }
+
+    @FXML
+    void citynodeBuild(ActionEvent event) {
+        Platform.runLater(()->{
+            //获取按钮所在的窗口
+            //BtSign可以为当前窗口任意一个控件
+            Stage primaryStage = (Stage) citynodeBuildBtn.getScene().getWindow();
+            //当前窗口隐藏
+            primaryStage.hide();
+            //加载注册窗口
+            try {
+                new citymanagementMain().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+
 
 }

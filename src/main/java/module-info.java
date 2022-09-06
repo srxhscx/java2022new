@@ -29,7 +29,7 @@ module com.example.demo {
         opens com.example.demo.confirmationOfLetter to javafx.fxml;
         opens com.example.demo.routeManagement to javafx.fxml;
         opens com.example.demo.carType to javafx.fxml;
-
+        opens com.example.demo.citymanagement to javafx.fxml;
 
 
         exports com.example.demo.register;
@@ -54,6 +54,6 @@ module com.example.demo {
         exports com.example.demo.newSignInDoc;
         exports com.example.demo.confirmDoc;
         exports com.example.demo.confirmationOfLetter;
-
+        exports com.example.demo.citymanagement;
 
         }
