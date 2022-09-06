@@ -6,8 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="568.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.transportationPlanGeneration.transportationPlanGenerationController">
     <children>
-        <Label layoutX="80.0" layoutY="35.0" text="运输计划号" />
-        <Label layoutX="337.0" layoutY="38.0" text="状态" />
+        <Label layoutX="115.0" layoutY="35.0" text="状态" />
         <Label layoutX="90.0" layoutY="70.0" text="业务类型" />
         <Label layoutX="90.0" layoutY="105.0" text="始发城市" />
         <Label layoutX="90.0" layoutY="140.0" text="目的城市" />
@@ -23,8 +22,7 @@
         <ChoiceBox fx:id="transportationPlanGenerationToCity" layoutX="150.0" layoutY="135.0" prefWidth="150.0" />
         <ChoiceBox fx:id="transportationPlanGenerationFromBase" layoutX="380.0" layoutY="100.0" prefWidth="150.0" />
         <ChoiceBox fx:id="transportationPlanGenerationToBase" layoutX="380.0" layoutY="135.0" prefWidth="150.0" />
-        <TextField fx:id="transportPlanIdText" layoutX="150.0" layoutY="30.0" prefWidth="150.0" />
-        <TextField fx:id="transportationPlanGenerationState" layoutX="380.0" layoutY="30.0" prefWidth="150.0" />
+        <TextField fx:id="transportationPlanGenerationState" layoutX="150.0" layoutY="30.0" prefWidth="150.0" />
         <TextField fx:id="transportationPlanGenerationNumber" layoutX="150.0" layoutY="170.0" prefWidth="150.0" />
         <TextField fx:id="transportationPlanGenerationVolume" layoutX="150.0" layoutY="205.0" prefWidth="150.0" />
         <TextField fx:id="transportationPlanGenerationWeight" layoutX="150.0" layoutY="240.0" prefWidth="150.0" />

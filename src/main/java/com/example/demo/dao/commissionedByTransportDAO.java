@@ -121,34 +121,5 @@ public class commissionedByTransportDAO {
         }
         return commissionedByTransportList;
     }
-    /**
-     * 更新业务类型状态
-     */
-
-//    public int updateBusinessState(int id){
-//        int m = -1;
-//        String sql = "UPDATE business_info SET business_state = '作废' WHERE business_id = ?;";
-//        Connection cn = ConnectionUtil.getConnection();
-//
-//        PreparedStatement pstmt =  null;
-//
-//        try{
-//            pstmt = cn.prepareStatement(sql);
-//
-//            pstmt.setInt(1,id);
-//            m = pstmt.executeUpdate();
-//        }catch(SQLException e) {
-//            e.printStackTrace();
-//        }finally {
-//            if (cn != null){
-//                try {
-//                    cn.close();
-//                }catch (SQLException e){
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//        return m;
-//    }
 
 }

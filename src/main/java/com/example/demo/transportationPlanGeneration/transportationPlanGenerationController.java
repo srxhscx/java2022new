@@ -20,7 +20,6 @@ import java.util.ResourceBundle;
 public class transportationPlanGenerationController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        transportPlanIdText.setEditable(false);
 
         transportationPlanGenerationType.getItems().addAll(
                 "内配发货",
@@ -33,46 +32,36 @@ public class transportationPlanGenerationController implements Initializable {
                 "行政物资"
         );
         transportationPlanGenerationFromCity.getItems().addAll(
-                "city1",
-                "city2",
-                "city3",
-                "city4"
+                "北京",
+                "沈阳",
+                "长沙",
+                "上海",
+                "长春","哈尔滨","呼和浩特","天津","石家庄","济南","西安","兰州","武汉","南京","广州","深圳","南京"
         );
 
         transportationPlanGenerationToCity.getItems().addAll(
-                "city1",
-                "city2",
-                "city3",
-                "city4"
+                "北京",
+                "沈阳",
+                "长沙",
+                "上海",
+                "长春","哈尔滨","呼和浩特","天津","石家庄","济南","西安","兰州","武汉","南京","广州","深圳","南京"
         );
 
         transportationPlanGenerationFromBase.getItems().addAll(
-                "warehouse1",
-                "warehouse2",
-                "warehouse3",
-                "warehouse4"
+                "3CA",
+                "3BA",
+                "3AA",
+                "2CA","2BA","2AA","1CA","1BA","1AA"
         );
 
         transportationPlanGenerationToBase.getItems().addAll(
-                "warehouse1",
-                "warehouse2",
-                "warehouse3",
-                "warehouse4"
+                "3CA",
+                "3BA",
+                "3AA",
+                "2CA","2BA","2AA","1CA","1BA","1AA"
         );
     }
-    @FXML
-    private TextField transportPlanIdText;
 
-//    transportationPlanGenerationState
-//    transportationPlanGenerationType
-//        transportationPlanGenerationFromCity
-//    transportationPlanGenerationToCity
-//        transportationPlanGenerationFromBase
-//    transportationPlanGenerationToBase
-//        transportationPlanGenerationNumber
-//    transportationPlanGenerationVolume
-//    transportationPlanGenerationWeight
-//            transportationPlanGenerationRemark
 
     @FXML
     private ChoiceBox transportationPlanGenerationFromCity;

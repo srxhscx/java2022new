@@ -39,6 +39,26 @@ public class MenuController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        TPGType.getItems().addAll(
+                "内配发货",
+                "采配发货",
+                "贵品发货",
+                "奢侈品发货",
+                "图书退货",
+                "非图书退货",
+                "耗材",
+                "行政物资"
+        );
+        commissionedByTransportChoice.getItems().addAll(
+                "内配发货",
+                "采配发货",
+                "贵品发货",
+                "奢侈品发货",
+                "图书退货",
+                "非图书退货",
+                "耗材",
+                "行政物资"
+        );
 
 
         //添加数据, 这些数据可以从数据库中查询出
