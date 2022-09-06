@@ -5,7 +5,6 @@ module com.example.demo {
         requires java.desktop;
         requires java.sql;
 
-
         opens com.example.demo.homepage to javafx.fxml;
         opens com.example.demo to javafx.fxml;
         opens com.example.demo.register to javafx.fxml;
@@ -17,7 +16,6 @@ module com.example.demo {
         opens com.example.demo.freightManagement to javafx.fxml;
         opens com.example.demo.signInfomationChange to javafx.fxml;
         opens com.example.demo.claimChange to javafx.fxml;
-        opens com.example.demo.permissionManagement to javafx.fxml;
         opens com.example.demo.characterManagement to javafx.fxml;
         opens com.example.demo.good to javafx.fxml;
         opens com.example.demo.transportationPlanGeneration to javafx.fxml;
@@ -30,8 +28,6 @@ module com.example.demo {
         opens com.example.demo.routeManagement to javafx.fxml;
         opens com.example.demo.carType to javafx.fxml;
 
-
-
         exports com.example.demo.register;
         exports com.example.demo.homepage;
         exports com.example.demo.menu;
@@ -43,7 +39,6 @@ module com.example.demo {
         exports com.example.demo.routeManagement;
         exports com.example.demo.signInfomationChange;
         exports com.example.demo.claimChange;
-        exports com.example.demo.permissionManagement;
         exports com.example.demo.characterManagement;
         exports com.example.demo.good;
         exports com.example.demo.transportationPlanGeneration;

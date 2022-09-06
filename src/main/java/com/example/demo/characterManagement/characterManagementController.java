@@ -6,10 +6,7 @@ import com.example.demo.menu.MainMenu;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
@@ -27,6 +24,8 @@ public class characterManagementController {
 
     @FXML
     private TextField id;
+    @FXML
+    private TextArea permission;
 
     @FXML
     private Button close;
@@ -34,7 +33,7 @@ public class characterManagementController {
     @FXML
     void saveChecked(ActionEvent event) throws SQLException {
         characterManagementDAO characterManagementdao = new characterManagementDAO();
-        characterManagementdao.addAccountManagement(Integer.valueOf(id.getText()),name.getText(),remark.getText());
+        characterManagementdao.addAccountManagement(Integer.valueOf(id.getText()),name.getText(),remark.getText(),permission.getText());
         new Alert(Alert.AlertType.NONE, "保存成功", new ButtonType[]{ButtonType.CLOSE}).show();
     }
 

@@ -258,6 +258,7 @@ public class MenuController implements Initializable{
         CarTypeTableView.setItems(cartypedata);
 
 
+
     }
     /**
      * 业务类型管理
@@ -472,6 +473,7 @@ public class MenuController implements Initializable{
     @FXML
     private TableColumn<Cartype, String> carType;
     @FXML
+
     private TableColumn<Cartype, String> carTypeOperator;
     @FXML
     private TableColumn<Cartype, String> carTypeLoad;

@@ -4,15 +4,17 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.example.demo.characterManagement.characterManagementController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.characterManagement.characterManagementController">
    <children>
-      <Label layoutX="107.0" layoutY="197.0" text="角色代码" />
-      <Label layoutX="107.0" layoutY="271.0" text="角色名称" />
-      <Label layoutX="137.0" layoutY="344.0" text="备注" />
+      <Label layoutX="107.0" layoutY="144.0" text="角色代码" />
+      <Label layoutX="107.0" layoutY="209.0" text="角色名称" />
+      <Label layoutX="137.0" layoutY="275.0" text="备注" />
       <Button fx:id="save" layoutX="127.0" layoutY="496.0" mnemonicParsing="false" onAction="#saveChecked" text="保存" />
       <Button fx:id="close" layoutX="393.0" layoutY="496.0" mnemonicParsing="false" onAction="#closeChecked" text="关闭" />
-      <TextField fx:id="id" layoutX="216.0" layoutY="192.0" />
-      <TextField fx:id="name" layoutX="216.0" layoutY="266.0" />
-      <TextField fx:id="remark" layoutX="216.0" layoutY="339.0" />
+      <TextField fx:id="id" layoutX="216.0" layoutY="139.0" />
+      <TextField fx:id="name" layoutX="216.0" layoutY="204.0" />
+      <TextField fx:id="remark" layoutX="216.0" layoutY="270.0" />
+      <Label layoutX="107.0" layoutY="339.0" text="角色权限" />
+      <TextArea fx:id="permission" layoutX="217.0" layoutY="325.0" prefHeight="117.0" prefWidth="202.0" />
    </children>
 </AnchorPane>

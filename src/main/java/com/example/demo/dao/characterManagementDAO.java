@@ -7,10 +7,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class characterManagementDAO {
-    public int addAccountManagement (int id,String name,String remark) throws SQLException {
+    public int addAccountManagement (int id,String name,String remark,String permission) throws SQLException {
         //获取连接
         Connection cn = ConnectionUtil.getConnection();
-        String sql = "insert role_info(role_id,role_name,role_remark)values("+id+",'"+name+"','"+remark+"')";
+        String sql = "insert role_info(role_id,role_name,role_remark,role_permission)values("+id+",'"+name+"','"+remark+"','"+permission+"')";
         //发送给mysql执行
         PreparedStatement pstmt =  null;
 
