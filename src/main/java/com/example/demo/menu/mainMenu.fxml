@@ -23,7 +23,7 @@
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Label>
-                                                        <TextField fx:id="citynameText" layoutX="176.0" layoutY="80.0" prefHeight="38.0" prefWidth="205.0" />
+                                                        <TextField fx:id="citynameText" layoutX="176.0" layoutY="80.0" prefHeight="38.0" prefWidth="205.0" promptText="输入城市名称" />
                                                         <Button fx:id="citynodeCheckBtn" layoutX="685.0" layoutY="81.0" mnemonicParsing="false" onAction="#citynodeCheck" text="查询">
                                              <font>
                                                 <Font size="18.0" />
@@ -55,41 +55,31 @@
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
-                                                        <TableView layoutX="13.0" layoutY="173.0" prefHeight="485.0" prefWidth="1197.0">
+                                                        <TableView fx:id="nodeTableView" layoutX="13.0" layoutY="173.0" prefHeight="485.0" prefWidth="1197.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="173.0" text="操作" />
-                                                                <TableColumn prefWidth="113.0" text="状态" />
-                                                                <TableColumn prefWidth="154.0" text="城市代码" />
-                                                                <TableColumn prefWidth="147.0" text="城市名称" />
-                                                                <TableColumn prefWidth="112.0" text="机构名称" />
-                                                                <TableColumn prefWidth="217.0" text="配送中心名称" />
-                                                                <TableColumn prefWidth="124.0" text="节点类型" />
-                                                                <TableColumn prefWidth="155.0" text="节点名称" />
+                                                                <TableColumn fx:id="nodeOperator" prefWidth="173.0" text="操作" />
+                                                                <TableColumn fx:id="nodeState" prefWidth="113.0" text="状态" />
+                                                                <TableColumn fx:id="nodecityId" prefWidth="154.0" text="城市代码" />
+                                                                <TableColumn fx:id="nodecityname" prefWidth="147.0" text="城市名称" />
+                                                                <TableColumn fx:id="nodeinstitutioonname" prefWidth="112.0" text="机构名称" />
+                                                                <TableColumn fx:id="nodedisitributionname" prefWidth="217.0" text="配送中心名称" />
+                                                                <TableColumn fx:id="nodename" prefWidth="124.0" text="节点类型" />
+                                                                <TableColumn fx:id="nodetype" prefWidth="155.0" text="节点名称" />
                                                             </columns>
                                                         </TableView>
-                                                        <Label layoutX="14.0" layoutY="81.0" text="所在城市：">
+                                                        <Label layoutX="130.0" layoutY="81.0" text="所在城市：">
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Label>
-                                                        <Label layoutX="305.0" layoutY="81.0" text="节点类型：">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font></Label>
-                                                        <Label layoutX="552.0" layoutY="81.0" text="节点名称：">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font></Label>
-                                                        <TextField layoutX="642.0" layoutY="78.0" prefHeight="30.0" prefWidth="159.0" />
-                                                        <Button layoutX="863.0" layoutY="75.0" mnemonicParsing="false" text="查询">
+                                                        <Button fx:id="nodeCheckBtn" layoutX="630.0" layoutY="75.0" mnemonicParsing="false" onAction="#nodeCheck" text="查询">
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Button>
-                                                        <Button layoutX="999.0" layoutY="75.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="134.0" text="新建节点信息">
+                                                        <Button fx:id="nodebuildBtn" layoutX="846.0" layoutY="75.0" mnemonicParsing="false" onAction="#nodebuild" prefHeight="18.0" prefWidth="134.0" text="新建节点信息">
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Button>
-                                                        <ComboBox layoutX="104.0" layoutY="76.0" prefHeight="34.0" prefWidth="180.0" promptText="沈阳" />
-                                                        <ComboBox layoutX="395.0" layoutY="78.0" prefWidth="150.0" />
+                                                        <ComboBox fx:id="CityCB" layoutX="233.0" layoutY="76.0" prefHeight="34.0" prefWidth="180.0" />
                                                     </children></AnchorPane>
                                             </content>
 
@@ -211,7 +201,7 @@
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Label>
-                                                        <TextField fx:id="businessText" layoutX="192.0" layoutY="83.0" prefHeight="44.0" prefWidth="224.0" />
+                                                        <TextField fx:id="businessText" layoutX="189.0" layoutY="91.0" prefHeight="34.0" prefWidth="217.0" promptText="输入业务类型" />
                                                         <TableView fx:id="businessTableView" layoutX="14.0" layoutY="187.0" prefHeight="475.0" prefWidth="1194.0">
                                              <columns>
                                                 <TableColumn fx:id="businessState" prefWidth="128.0" text="状态" />

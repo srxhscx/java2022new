@@ -7,6 +7,7 @@ import com.example.demo.characterManagement.characterManagementMain;
 import com.example.demo.citymanagement.citymanagementMain;
 import com.example.demo.dao.*;
 import com.example.demo.good.goodmain;
+import com.example.demo.node.nodeMain;
 import com.example.demo.transportationPlanGeneration.transportationPlanGenerationMain;
 import com.example.demo.vo.*;
 import javafx.application.Platform;
@@ -270,8 +271,50 @@ public class MenuController implements Initializable{
                         return citynodecell;
                     }
             );
+            //i++;
+            StringProperty citynodestate1 = city_nodeDAO.getCityNode().get(i4).city_stateProperty();
+           // System.out.println(buisnessDAO.getBusiness().get(i).business_stateProperty());
+
+            nodeOperator.setCellFactory((col)->{
+
+                        TableCell<CityNode, String> citynodecell1 = new TableCell<CityNode, String>()
+                        {
+                            @Override
+                            protected void updateItem(String item, boolean empty)
+                            {
+                                super.updateItem(item, empty);
+                                if(citynodestate1.getValue().equals("正常") ){
+                                    Button button2 = new Button("停用");
+                                    button2.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
+
+                                    button2.setOnMouseClicked((col) -> {
+                                        //获取list列表中的位置，进而获取列表对应的信息数据
+                                        // Buisness buisness = list.get(getIndex());
+                                        //按钮事件自己添加
+
+
+                                        //buisnessDAO.updateBusinessState(  buisnessDAO.getBusiness().get().getBusiness_id());
+                                        System.out.println(finalI);
+                                        System.out.println("修改成功");
+                                        //buisnessDAO.getBusiness().get(finalNum.get()).getBusiness_id()
+                                    });
+                                    if (empty) {
+                                        //如果此列为空默认不添加元素
+                                        setText(null);
+                                        setGraphic(null);
+                                    } else {
+                                        this.setGraphic(button2);
+                                    }
+                                }
+
+                            }
+                        };
+                        return citynodecell1;
+                    }
+            );
             i++;
         }
+
 
         //运输计划
         TransportationPlanGenerationDAO transportationPlanGenerationDAO = new TransportationPlanGenerationDAO();
@@ -347,6 +390,27 @@ public class MenuController implements Initializable{
            cmdata.add(cmiter.next());
         }
 
+        //节点管理
+        while(citynodeiter.hasNext()) {
+            //finalNum.getAndIncrement() ;
+            citynodedata.add(citynodeiter.next());
+        }
+        //货物管理的ComboBOX
+        CityCB.getItems().addAll(
+                "北京",
+                "沈阳",
+                "长沙",
+                "上海",
+                "长春","哈尔滨","呼和浩特","天津","石家庄","济南","西安","兰州","武汉","南京","广州","深圳","南京"
+
+        );
+        //数据源为空时显示
+        CityCB.setPlaceholder(new Label("Placeholder"));
+        //设置可编辑
+        CityCB.setEditable(true);
+        CityCB.setPromptText("选择所在城市");
+        //设置可见行数, 超过显示滚动条
+        CityCB.setVisibleRowCount(7);
 
 
         //设置每列的数据
@@ -418,6 +482,19 @@ public class MenuController implements Initializable{
         cmpermission.setCellValueFactory(cellData-> cellData.getValue().cmpermissionProperty());
         cmoperate.setCellValueFactory(cellData-> cellData.getValue().cmoperateProperty());
 
+
+        //节点管理
+        nodeState.setCellValueFactory(cellData-> cellData.getValue().city_stateProperty());
+        nodecityId.setCellValueFactory(cellData-> cellData.getValue().city_idProperty());
+        nodecityname.setCellValueFactory(cellData-> cellData.getValue().city_nameProperty());
+        nodeinstitutioonname.setCellValueFactory(cellData-> cellData.getValue().city_institutionProperty());
+        nodedisitributionname.setCellValueFactory(cellData-> cellData.getValue().city_distributionProperty());
+        nodetype.setCellValueFactory(cellData-> cellData.getValue().node_typeProperty());
+        nodename.setCellValueFactory(cellData-> cellData.getValue().node_nameProperty());
+
+
+
+
         //设置表格数据
         businessTableView.setItems(businessdata);
         GoodsTableView.setItems(goodsdata);
@@ -427,7 +504,7 @@ public class MenuController implements Initializable{
         TPGTableView.setItems(transportationPlanGenerationdata);
         carrecordTableView.setItems(carRecordsdata);
         cmTableView.setItems(cmdata);
-
+        nodeTableView.setItems(citynodedata);
 
 
     }
@@ -993,13 +1070,6 @@ public class MenuController implements Initializable{
     }
 
 
-
-
-
-
-
-
-
     /**
      * characterManagement
      */
@@ -1066,7 +1136,94 @@ public class MenuController implements Initializable{
 
 
     }
+    /**
+    * 节点管理
+    */
+
+    @FXML
+    private TextField nodenameText;
+    @FXML
+    private ComboBox CityCB;
+    @FXML
+    private Button nodeCheckBtn;
+    @FXML
+    private Button nodebuildBtn;
+
+    @FXML
+    private TableView<CityNode> nodeTableView = new TableView<>();
+
+    //创建数据集合
+    private ObservableList<CityNode> nodedata = FXCollections.observableArrayList();
+
+
+    @FXML
+    private TableColumn<CityNode, String> nodecityname;
+    @FXML
+    private TableColumn<CityNode, String> nodename;
+    @FXML
+    private TableColumn<CityNode, String> nodeinstitutioonname;
+    @FXML
+    private TableColumn<CityNode, String> nodecityId;
+    @FXML
+    private TableColumn<CityNode, String> nodeState;
+    @FXML
+    private TableColumn<CityNode, String> nodetype;
+    @FXML
+    private TableColumn<CityNode, String> nodedisitributionname;
+    @FXML
+    private TableColumn<CityNode, String> nodeOperator;
 
 
 
+    @FXML
+    void nodeCheck(ActionEvent event) {
+
+        String cityname2 = this.CityCB.getValue().toString();
+        // System.out.println(cityname1);
+        if(cityname2 == null || cityname2.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+
+        else{
+            nodeTableView.getItems().clear();
+        }
+
+        //添加数据, 这些数据从数据库中查询出
+        city_nodeDAO city_nodeDAO1 = new city_nodeDAO();
+
+        Iterator<CityNode> cityNodeIterator1 = city_nodeDAO1.getCitynodeBycityName(cityname2).iterator();
+        while(cityNodeIterator1.hasNext()) {
+            citynodedata.add(cityNodeIterator1.next());
+
+        }
+        //节点管理
+        nodeState.setCellValueFactory(cellData-> cellData.getValue().city_stateProperty());
+        nodecityId.setCellValueFactory(cellData-> cellData.getValue().city_idProperty());
+        nodecityname.setCellValueFactory(cellData-> cellData.getValue().city_nameProperty());
+        nodeinstitutioonname.setCellValueFactory(cellData-> cellData.getValue().city_institutionProperty());
+        nodedisitributionname.setCellValueFactory(cellData-> cellData.getValue().city_distributionProperty());
+        nodetype.setCellValueFactory(cellData-> cellData.getValue().node_typeProperty());
+        nodename.setCellValueFactory(cellData-> cellData.getValue().node_nameProperty());
+
+        //设置表格数据
+        nodeTableView.setItems(citynodedata);
+
+    }
+
+    @FXML
+    void nodebuild(ActionEvent event) {
+        Platform.runLater(()->{
+            //获取按钮所在的窗口
+            //BtSign可以为当前窗口任意一个控件
+            Stage primaryStage = (Stage) nodebuildBtn.getScene().getWindow();
+            //当前窗口隐藏
+            primaryStage.hide();
+            //加载注册窗口
+            try {
+                new nodeMain().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
 }

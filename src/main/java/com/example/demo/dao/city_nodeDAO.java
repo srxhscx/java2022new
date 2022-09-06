@@ -121,17 +121,21 @@ public class city_nodeDAO {
      * 更新业务类型状态
      */
 
-    public int updateBusinessState(int id){
+    public int update(String nodeType,String nodeName,String cityName){
         int m = -1;
-        String sql = "UPDATE business_info SET business_state = '作废' WHERE business_id = ?;";
+        String sql = "UPDATE city_node_info SET node_type = ?, node_name= ? WHERE city_name = ?;";
         Connection cn = ConnectionUtil.getConnection();
 
+//        info = 'my name is {my_name},i am {my_age} years old,my price is {my_price}'\
+//    .format(my_name=name,my_age=age,my_price=price)
         PreparedStatement pstmt =  null;
 
         try{
             pstmt = cn.prepareStatement(sql);
 
-            pstmt.setInt(1,id);
+            pstmt.setString(1,nodeType);
+            pstmt.setString(2,nodeName);
+            pstmt.setString(3,cityName);
             m = pstmt.executeUpdate();
         }catch(SQLException e) {
             e.printStackTrace();

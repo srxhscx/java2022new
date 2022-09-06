@@ -7,7 +7,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="507.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.citymanagement.citymanagementController">
    <children>
       <Label layoutX="59.0" layoutY="64.0" text="城市代码：">
@@ -44,5 +43,6 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Label layoutX="41.0" layoutY="140.0" prefHeight="20.0" prefWidth="8.0" text="*" textFill="#f51919" />
    </children>
 </AnchorPane>

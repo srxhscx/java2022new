@@ -30,6 +30,8 @@ module com.example.demo {
         opens com.example.demo.carType to javafx.fxml;
         opens com.example.demo.citymanagement to javafx.fxml;
         opens com.example.demo.carRecord to javafx.fxml;
+        opens com.example.demo.node to javafx.fxml;
+
 
         exports com.example.demo.register;
         exports com.example.demo.homepage;
@@ -53,5 +55,8 @@ module com.example.demo {
         exports com.example.demo.confirmDoc;
         exports com.example.demo.confirmationOfLetter;
         exports com.example.demo.carRecord;
+        exports com.example.demo.node;
+
+
 
         }
