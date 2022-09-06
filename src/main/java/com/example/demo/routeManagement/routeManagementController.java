@@ -55,7 +55,8 @@ public class routeManagementController  implements Initializable {
                 "中国东方航空",
                 "大众汽车公司",
                 "中国南方航空",
-                "东风汽车公司"
+                "东风汽车公司",
+                "圆通速递"
         );
 
         startCity.setPlaceholder(new Label("Placeholder"));
