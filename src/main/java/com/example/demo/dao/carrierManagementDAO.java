@@ -79,6 +79,45 @@ public class carrierManagementDAO {
         }
         return carrierManagementList;
     }
+    public List<carrierManagement> getCarrierByManagement(String cname){
+        Connection cn = ConnectionUtil.getConnection();
+        String sql = "SELECT * FROM carrier_info WHERE carrier_name=?";
+        //发送给mysql执行
+        PreparedStatement pstmt =  null;
+        ResultSet rs = null;
+
+        List<carrierManagement> carrierManagementList = new ArrayList<>();
+        try{
+            pstmt = cn.prepareStatement(sql);
+            //返回影响行数
+            pstmt.setString(1,cname);
+            rs=pstmt.executeQuery();
+            while (rs.next()){
+                carrierManagement carriermanagement =new carrierManagement();
+
+                carriermanagement.setFmname(rs.getString("carrier_name"));
+                carriermanagement.setFmshortname(rs.getString("carrier_shortname"));
+                carriermanagement.setFmcontact(rs.getString("carrier_contact"));
+                carriermanagement.setFmphone(rs.getString("carrier_phone"));
+                carriermanagement.setFmtel(rs.getString("carrier_tel"));
+                carriermanagement.setFmaddress(rs.getString("carrier_address"));
+                carriermanagement.setFmremark(rs.getString("carrier_remark"));
+
+                carrierManagementList.add(carriermanagement);
+            }
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }finally {
+            if (cn != null){
+                try {
+                    cn.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return carrierManagementList;
+    }
 
 }
 

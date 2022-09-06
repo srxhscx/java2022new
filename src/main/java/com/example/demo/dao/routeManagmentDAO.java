@@ -80,5 +80,47 @@ public class routeManagmentDAO {
         }
         return routeManagementList;
     }
+    public List<routeManagement> getRouteByManagement(String rmname){
+        Connection cn = ConnectionUtil.getConnection();
+        String sql = "SELECT * FROM remark_info WHERE originatingcity_name=?";
+        //发送给mysql执行
+        PreparedStatement pstmt =  null;
+        ResultSet rs = null;
+
+        List<routeManagement> routeManagementList = new ArrayList<>();
+        try{
+            pstmt = cn.prepareStatement(sql);
+            pstmt.setString(1,rmname);
+            //返回影响行数
+            //pstmt.setString(1,businessType);
+            rs=pstmt.executeQuery();
+            while (rs.next()){
+                routeManagement routemanagement =new routeManagement();
+
+                routemanagement.setRmstartcity(rs.getString("originatingcity_name"));
+                routemanagement.setRmdestinationcity(rs.getString("destination_name"));
+                routemanagement.setRmmode(rs.getString("business_type"));
+                routemanagement.setRmallone(rs.getString("all_zero"));
+                routemanagement.setRmtype(rs.getString("transport_mode"));
+                routemanagement.setRmfirstfreight(rs.getString("first_carrier"));
+                routemanagement.setRmlastfreight(rs.getString("last_carrier"));
+                routemanagement.setRmstarttime(rs.getString("effective_time"));
+                routemanagement.setRmoperate(rs.getString("route_remark"));
+
+                routeManagementList.add(routemanagement);
+            }
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }finally {
+            if (cn != null){
+                try {
+                    cn.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return routeManagementList;
+    }
 
 }

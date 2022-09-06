@@ -32,7 +32,7 @@
                                              <font>
                                                 <Font size="18.0" />
                                              </font></Button>
-                                                        <TableView fx:id="citynodeTableView" layoutX="14.0" layoutY="170.0" prefHeight="485.0" prefWidth="1194.0">
+                                                        <TableView fx:id="citynodeTableView" layoutX="12.0" layoutY="158.0" prefHeight="497.0" prefWidth="1196.0">
                                                             <columns>
                                                                 <TableColumn fx:id="citynodeOperator" prefWidth="136.0" text="操作" />
                                                                 <TableColumn fx:id="citynodeState" minWidth="0.0" prefWidth="173.0" text="状态" />
@@ -244,10 +244,10 @@
                                                             </columns>
                                                         </TableView>
                                                         <TextField layoutX="83.0" layoutY="51.0" prefHeight="30.0" prefWidth="151.0" />
-                                                        <TextField layoutX="292.0" layoutY="49.0" prefHeight="35.0" prefWidth="160.0" />
+                                                        <TextField fx:id="acnameText" layoutX="292.0" layoutY="49.0" prefHeight="35.0" prefWidth="160.0" />
                                                         <Label layoutX="47.0" layoutY="56.0" text="账号" />
                                                         <Label layoutX="262.0" layoutY="56.0" text="姓名" />
-                                                        <Button layoutX="539.0" layoutY="48.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="83.0" text="查询" />
+                                                        <Button fx:id="acfind" layoutX="539.0" layoutY="48.0" mnemonicParsing="false" onAction="#acfindchecked" prefHeight="37.0" prefWidth="83.0" text="查询" />
                                                         <Button fx:id="amnewaccount" layoutX="1063.0" layoutY="48.0" mnemonicParsing="false" onAction="#newAccountChecked" prefHeight="38.0" prefWidth="95.0" text="新建账号" />
                                                     </children></AnchorPane>
                                             </content>
@@ -259,7 +259,7 @@
                                                         <Button fx:id="cmfind" layoutX="407.0" layoutY="59.0" mnemonicParsing="false" onAction="#checkedcmfind" prefHeight="35.0" prefWidth="117.0" text="查询" />
                                                         <Button fx:id="cmnew" layoutX="1000.0" layoutY="58.0" mnemonicParsing="false" onAction="#cmnewchecked" prefHeight="36.0" prefWidth="114.0" text="新建角色" />
                                                         <TextField fx:id="cmtext" layoutX="160.0" layoutY="61.0" />
-                                                        <TableView fx:id="cmTableView" layoutX="5.0" layoutY="143.0" prefHeight="522.0" prefWidth="1208.0">
+                                                        <TableView fx:id="cmTableView" layoutX="5.0" layoutY="154.0" prefHeight="511.0" prefWidth="1208.0">
                                                             <columns>
                                                                 <TableColumn fx:id="cmstate" prefWidth="164.0" text="状态" />
                                                                 <TableColumn fx:id="cmrole" prefWidth="198.0" text="角色" />
@@ -301,10 +301,10 @@
                                                                 <TableColumn fx:id="fmoperate" prefWidth="116.0" text="操作" />
                                                             </columns>
                                                         </TableView>
-                                                        <Button fx:id="fmfindchecked" layoutX="409.0" layoutY="68.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="115.0" text="查询" />
+                                                        <Button fx:id="fmfind" layoutX="409.0" layoutY="68.0" mnemonicParsing="false" onAction="#fmfindchecked" prefHeight="35.0" prefWidth="115.0" text="查询" />
                                                         <Button fx:id="newCarrier" layoutX="1015.0" layoutY="66.0" mnemonicParsing="false" onAction="#fmnew" prefHeight="38.0" prefWidth="147.0" text="新建" />
                                                         <Label layoutX="53.0" layoutY="75.0" text="承运商名称" />
-                                                        <TextField layoutX="153.0" layoutY="70.0" />
+                                                        <TextField fx:id="fmname1" layoutX="153.0" layoutY="70.0" />
                                                     </children></AnchorPane>
                                             </content>
                                         </Tab>
@@ -328,10 +328,10 @@
                                                                 <TableColumn fx:id="froperator" prefWidth="172.0" text="操作" />
                                                             </columns>
                                                         </TableView>
-                                                        <Button fx:id="frfindchecked" layoutX="467.0" layoutY="63.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="89.0" text="查询" />
+                                                        <Button fx:id="frfind" layoutX="467.0" layoutY="63.0" mnemonicParsing="false" onAction="#frfindcheck" prefHeight="34.0" prefWidth="89.0" text="查询" />
                                                         <Button fx:id="frnewchecked" layoutX="1018.0" layoutY="61.0" mnemonicParsing="false" onAction="#frnew" prefHeight="39.0" prefWidth="146.0" text="新建运价信息" />
                                                         <Label layoutX="69.0" layoutY="70.0" text="始发城市" />
-                                          <TextField layoutX="159.0" layoutY="66.0" />
+                                          <TextField fx:id="frname" layoutX="159.0" layoutY="66.0" />
                                                     </children></AnchorPane>
                                             </content>
                                         </Tab>
@@ -354,10 +354,10 @@
                                                                 <TableColumn fx:id="rmoperate" prefWidth="157.0" text="操作" />
                                                             </columns>
                                                         </TableView>
-                                                        <Button fx:id="rmfindchecked" layoutX="507.0" layoutY="65.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="134.0" text="查询" />
+                                                        <Button fx:id="rmfind" layoutX="507.0" layoutY="65.0" mnemonicParsing="false" onAction="#rmfindchecked" prefHeight="38.0" prefWidth="134.0" text="查询" />
                                                         <Button fx:id="newroute" layoutX="1021.0" layoutY="66.0" mnemonicParsing="false" onAction="#rmnew" prefHeight="36.0" prefWidth="135.0" text="新建运营线路" />
                                                         <Label layoutX="63.0" layoutY="74.0" text="始发城市" />
-                                          <TextField layoutX="149.0" layoutY="69.0" />
+                                          <TextField fx:id="rmname" layoutX="149.0" layoutY="69.0" />
                                                     </children></AnchorPane>
                                             </content>
                                         </Tab>

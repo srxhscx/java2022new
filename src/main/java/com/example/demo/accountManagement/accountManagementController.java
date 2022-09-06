@@ -55,22 +55,24 @@ public class accountManagementController implements Initializable {
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cityText.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "北京",
+                "沈阳",
+                "长沙",
+                "上海",
+                "长春","哈尔滨","呼和浩特","天津","石家庄","济南","西安","兰州","武汉","南京","广州","深圳","南京"
         );
         nodeText.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "代理结点",
+                "转运中心",
+                "总代理结点"
         );
         institutionText.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "中国第一汽车集团公司",
+                "大众汽车公司",
+                "中国长安汽车集团股份有限公司",
+                "奇瑞汽车股份有限公司",
+                "北京现代汽车有限公司",
+                "东风汽车公司"
         );
         cityText.setPlaceholder(new Label("Placeholder"));
         //设置可编辑

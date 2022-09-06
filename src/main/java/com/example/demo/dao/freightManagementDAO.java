@@ -83,6 +83,49 @@ public class freightManagementDAO {
         }
         return freightManagementList;
     }
+    public List<freightManagement> getFreightByManagement(String fname){
+        Connection cn = ConnectionUtil.getConnection();
+        String sql = "SELECT * FROM freight_setting WHERE start_city=?";
+        //发送给mysql执行
+        PreparedStatement pstmt =  null;
+        ResultSet rs = null;
+
+        List<freightManagement> freightManagementList = new ArrayList<>();
+        try{
+            pstmt = cn.prepareStatement(sql);
+            pstmt.setString(1,fname);
+            //返回影响行数
+            //pstmt.setString(1,businessType);
+            rs=pstmt.executeQuery();
+            while (rs.next()){
+                freightManagement freightmanagement =new freightManagement();
+
+                freightmanagement.setFrcarrier(rs.getString("freight_name"));
+                freightmanagement.setFrstartcity(rs.getString("start_city"));
+                freightmanagement.setFrdestinationcity(rs.getString("destination_city"));
+                freightmanagement.setFrtransport(rs.getString("transport_mode"));
+                freightmanagement.setFroneall(rs.getString("all_one"));
+                freightmanagement.setFrweight(rs.getString("weight"));
+                freightmanagement.setFrtime(rs.getString("time"));
+                freightmanagement.setFrpermium(rs.getString("premium"));
+                freightmanagement.setFrstarttime(rs.getString("up_time"));
+                freightmanagement.setFrdeadtime(rs.getString("dead_time"));
+
+                freightManagementList.add(freightmanagement);
+            }
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }finally {
+            if (cn != null){
+                try {
+                    cn.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return freightManagementList;
+    }
 
 }
 

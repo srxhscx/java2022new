@@ -65,61 +65,63 @@ public class freightManagementController implements Initializable {
                 "点到点"
         );
         allOne.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "整车",
+                "零担"
         );
         freightName.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "中通快递",
+                "顺丰速递",
+                "中国东方航空",
+                "大众汽车公司",
+                "中国南方航空",
+                "东风汽车公司"
         );
         startCity.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "北京",
+                "沈阳",
+                "长沙",
+                "上海",
+                "长春","哈尔滨","呼和浩特","天津","石家庄","济南","西安","兰州","武汉","南京","广州","深圳","南京"
         );
         destinationCity.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "北京",
+                "沈阳",
+                "长沙",
+                "上海",
+                "长春","哈尔滨","呼和浩特","天津","石家庄","济南","西安","兰州","武汉","南京","广州","深圳","南京"
         );
         transportMode.setPlaceholder(new Label("Placeholder"));
         //设置可编辑
         transportMode.setEditable(true);
-        transportMode.setPromptText("选择配送模式");
+        transportMode.setPromptText("");
         //设置可见行数, 超过显示滚动条
         transportMode.setVisibleRowCount(4);
 
         allOne.setPlaceholder(new Label("Placeholder"));
         //设置可编辑
         allOne.setEditable(true);
-        allOne.setPromptText("选择配送模式");
+        allOne.setPromptText("");
         //设置可见行数, 超过显示滚动条
         allOne.setVisibleRowCount(4);
 
         freightName.setPlaceholder(new Label("Placeholder"));
         //设置可编辑
         freightName.setEditable(true);
-        freightName.setPromptText("选择配送模式");
+        freightName.setPromptText("");
         //设置可见行数, 超过显示滚动条
         freightName.setVisibleRowCount(4);
 
         startCity.setPlaceholder(new Label("Placeholder"));
         //设置可编辑
         startCity.setEditable(true);
-        startCity.setPromptText("选择配送模式");
+        startCity.setPromptText("");
         //设置可见行数, 超过显示滚动条
         startCity.setVisibleRowCount(4);
 
         destinationCity.setPlaceholder(new Label("Placeholder"));
         //设置可编辑
         destinationCity.setEditable(true);
-        destinationCity.setPromptText("选择配送模式");
+        destinationCity.setPromptText("");
         //设置可见行数, 超过显示滚动条
         destinationCity.setVisibleRowCount(4);
 

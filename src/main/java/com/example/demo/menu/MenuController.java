@@ -428,7 +428,7 @@ public class MenuController implements Initializable{
             rmdata.add(rmiter.next());
         }
 
-        //routeManagement
+        //freightManagement
         freightManagementDAO freightmanagementdao = new freightManagementDAO();
         Iterator<freightManagement> friter = freightmanagementdao.getFreightManagement().iterator();
         while(friter.hasNext()) {
@@ -764,6 +764,35 @@ public class MenuController implements Initializable{
                 e.printStackTrace();
             }
         });
+    }
+    @FXML
+    private Button acfind;
+    @FXML
+    private TextField acnameText;
+    @FXML
+    void acfindchecked(ActionEvent event) {
+        String acname1 = this.acnameText.getText();
+        // System.out.println(cityname1);
+        if(acname1 == null || acname1.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+        else{
+           amtableView.getItems().clear();
+        }
+        accountManagementDAO accountManagementdao = new accountManagementDAO();
+        Iterator<accountManagement> iteram= accountManagementdao.getAccountByManagement(acname1).iterator();
+        while(iteram.hasNext()) {
+            accountManagementdata.add(iteram.next());
+        }
+        amaccount.setCellValueFactory(cellData-> cellData.getValue().am_accountProperty());
+        amname.setCellValueFactory( cellData-> cellData.getValue().am_nameProperty());
+        aminstitution.setCellValueFactory( cellData-> cellData.getValue().am_institutionProperty());
+        amcity.setCellValueFactory( cellData-> cellData.getValue().am_cityProperty());
+        amnode.setCellValueFactory( cellData-> cellData.getValue().am_nodeProperty());
+        amtel.setCellValueFactory( cellData-> cellData.getValue().am_contactProperty());
+        ammail.setCellValueFactory( cellData-> cellData.getValue().am_mailProperty());
+        amtableView.setItems(accountManagementdata);
+
     }
 
 
@@ -1193,7 +1222,7 @@ public class MenuController implements Initializable{
 
         //添加数据, 这些数据从数据库中查询出
         characterManagementDAO characterManagementdao = new characterManagementDAO();
-        Iterator<characterManagement> cmiter = characterManagementdao.getCharacterManagement().iterator();
+        Iterator<characterManagement> cmiter = characterManagementdao.getCharacterByManagement(cmtext.getText()).iterator();
         while(cmiter.hasNext()) {
             cmdata.add(cmiter.next());
         }
@@ -1325,7 +1354,7 @@ public class MenuController implements Initializable{
     //创建数据集合
     private ObservableList<carrierManagement> crdata = FXCollections.observableArrayList();
     @FXML
-    private Button fmfindchecked;
+    private Button fmfind;
     @FXML
     private Button newCarrier;
     @FXML
@@ -1345,6 +1374,45 @@ public class MenuController implements Initializable{
         });
 
     }
+    @FXML
+    private TextField fmname1;
+    @FXML
+    void fmfindchecked(ActionEvent event) {
+
+        String fmname2 = this.fmname1.getText();
+        // System.out.println(cityname1);
+        if(fmname2 == null || fmname2.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+        else{
+            crTableView.getItems().clear();
+        }
+        carrierManagementDAO carrierManagementdao = new carrierManagementDAO();
+        Iterator<carrierManagement> criter = carrierManagementdao.getCarrierByManagement(fmname2).iterator();
+        while(criter.hasNext()) {
+            crdata.add(criter.next());
+        }
+
+
+        fmnum.setCellValueFactory(cellData-> cellData.getValue(). fmnumProperty());
+        fmname.setCellValueFactory(cellData-> cellData.getValue().fmnameProperty());
+        fmshortname.setCellValueFactory(cellData-> cellData.getValue().fmshortnameProperty());
+        fmcontact.setCellValueFactory(cellData-> cellData.getValue().fmcontactProperty());
+        fmphone.setCellValueFactory(cellData-> cellData.getValue().fmphoneProperty());
+        fmtel.setCellValueFactory(cellData-> cellData.getValue().fmtelProperty());
+        fmaddress.setCellValueFactory(cellData-> cellData.getValue().fmaddressProperty());
+        fmremark.setCellValueFactory(cellData-> cellData.getValue().fmremarkProperty());
+        crTableView.setItems(crdata);
+
+
+
+    }
+
+
+
+
+
+
     /**
      * freightManagement
      */
@@ -1395,7 +1463,46 @@ public class MenuController implements Initializable{
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
         });
+
+    }
+    @FXML
+    private Button frfind;
+    @FXML
+    private TextField frname;
+    @FXML
+    void frfindcheck(ActionEvent event) {
+
+        String frname1 = this.frname.getText();
+        // System.out.println(cityname1);
+        if(frname1 == null || frname1.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+        else{
+            frTableView.getItems().clear();
+        }
+
+        freightManagementDAO freightmanagementdao = new freightManagementDAO();
+        Iterator<freightManagement> friter = freightmanagementdao.getFreightByManagement(frname1).iterator();
+
+        while(friter.hasNext()) {
+            frdata.add(friter.next());
+        }
+        frTableView.setItems(frdata);
+        //set freightManagemant
+        frcarrier.setCellValueFactory(cellData-> cellData.getValue(). frcarrierProperty());
+        frstartcity.setCellValueFactory(cellData-> cellData.getValue().frstartcityProperty());
+        frdestinationcity.setCellValueFactory(cellData-> cellData.getValue().frdestinationcityProperty());
+        frtransport.setCellValueFactory(cellData-> cellData.getValue().frtransportProperty());
+        froneall.setCellValueFactory(cellData-> cellData.getValue().froneallProperty());
+        frweight.setCellValueFactory(cellData-> cellData.getValue().frweightProperty());
+        frtime.setCellValueFactory(cellData-> cellData.getValue().frtimeProperty());
+        frpermium.setCellValueFactory(cellData-> cellData.getValue().frpermiumProperty());
+        frstarttime.setCellValueFactory(cellData-> cellData.getValue().frstarttimeProperty());
+        frdeadtime.setCellValueFactory(cellData-> cellData.getValue().frdeadtimeProperty());
+        froperator.setCellValueFactory(cellData-> cellData.getValue().froperatorProperty());
+
 
     }
 
@@ -1431,7 +1538,7 @@ public class MenuController implements Initializable{
     //创建数据集合
     private ObservableList<routeManagement> rmdata = FXCollections.observableArrayList();
     @FXML
-    private Button rmfindchecked;
+    private Button rmfind;
     @FXML
     private Button newroute;
     @FXML
@@ -1450,6 +1557,43 @@ public class MenuController implements Initializable{
             }
         });
 
-    }}
+    }
+    @FXML
+    private TextField rmname;
+    @FXML
+    void rmfindchecked(ActionEvent event) {
+
+        String rmname1 = this.rmname.getText();
+        // System.out.println(cityname1);
+        if(rmname1 == null || rmname1.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+        else{
+            rmTableView.getItems().clear();
+        }
+
+        routeManagmentDAO routemanagementdao = new routeManagmentDAO();
+        Iterator<routeManagement> rmiter = routemanagementdao.getRouteByManagement(rmname1).iterator();
+        while(rmiter.hasNext()) {
+            rmdata.add(rmiter.next());
+        }
+
+        //set routeManagemant
+        rmstartcity.setCellValueFactory(cellData-> cellData.getValue(). rmstartcityProperty());
+        rmdestinationcity.setCellValueFactory(cellData-> cellData.getValue().rmdestinationcityProperty());
+        rmmode.setCellValueFactory(cellData-> cellData.getValue().rmmodeProperty());
+        allone.setCellValueFactory(cellData-> cellData.getValue().rmalloneProperty());
+        rmtype.setCellValueFactory(cellData-> cellData.getValue().rmtypeProperty());
+        rmfirstfreight.setCellValueFactory(cellData-> cellData.getValue().rmfirstfreightProperty());
+        rmlastfreight.setCellValueFactory(cellData-> cellData.getValue().rmlastfreightProperty());
+        rmstarttime.setCellValueFactory(cellData-> cellData.getValue().rmstarttimeProperty());
+        rmremark.setCellValueFactory(cellData-> cellData.getValue().rmoperateProperty());
+        rmTableView.setItems(rmdata);
+
+
+    }
+
+
+}
 
 

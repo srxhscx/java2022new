@@ -18,16 +18,18 @@ public class routeManagementController  implements Initializable {
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         startCity.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "北京",
+                "沈阳",
+                "长沙",
+                "上海",
+                "长春","哈尔滨","呼和浩特","天津","石家庄","济南","西安","兰州","武汉","南京","广州","深圳","南京"
         );
         destinationCity.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "北京",
+                "沈阳",
+                "长沙",
+                "上海",
+                "长春","哈尔滨","呼和浩特","天津","石家庄","济南","西安","兰州","武汉","南京","广州","深圳","南京"
         );
         type.getItems().addAll(
                 "仓到点",
@@ -36,22 +38,24 @@ public class routeManagementController  implements Initializable {
                 "点到点"
         );
         allone.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "整车",
+                "零担"
         );
         firstFreight.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "中通快递",
+                "顺丰速递",
+                "中国东方航空",
+                "大众汽车公司",
+                "中国南方航空",
+                "东风汽车公司"
         );
         secondFreight.getItems().addAll(
-                "仓到点",
-                "仓到仓",
-                "点到仓",
-                "点到点"
+                "中通快递",
+                "顺丰速递",
+                "中国东方航空",
+                "大众汽车公司",
+                "中国南方航空",
+                "东风汽车公司"
         );
 
         startCity.setPlaceholder(new Label("Placeholder"));
