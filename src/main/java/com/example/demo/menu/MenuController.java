@@ -1272,11 +1272,12 @@ public class MenuController implements Initializable{
             }
         });
     }
-} /**
+
+/**
  * carrierManagement
  */
-@FXML
-private TableColumn<carrierManagement,String> fmstate;
+    @FXML
+    private TableColumn<carrierManagement,String> fmstate;
     @FXML
     private TableColumn<carrierManagement,String> fmnum;
     @FXML
@@ -1359,7 +1360,7 @@ private TableColumn<carrierManagement,String> fmstate;
     private Button newroute;
     @FXML
     void rmnew(ActionEvent event) {
-        Platform.runLater(()->{
+        Platform.runLater(() -> {
             //获取按钮所在的窗口
             //BtSign可以为当前窗口任意一个控件
             Stage primaryStage = (Stage) newroute.getScene().getWindow();
@@ -1373,6 +1374,6 @@ private TableColumn<carrierManagement,String> fmstate;
             }
         });
 
-    }
+    }}
 
 
