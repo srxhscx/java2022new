@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.commissionedByFee.commissionedByFeeController">
+    <children>
+        <Accordion layoutX="135.0" layoutY="-98.0" />
+        <Label layoutX="53.0" layoutY="38.0" prefHeight="15.0" prefWidth="62.0" text="委托书编号" />
+        <Label layoutX="50.0" layoutY="93.0" prefHeight="15.0" prefWidth="62.0" text="新次提贷费" />
+        <Label layoutX="54.0" layoutY="156.0" prefHeight="15.0" prefWidth="55.0" text="延迟扣款" />
+        <Label layoutX="53.0" layoutY="225.0" prefHeight="15.0" prefWidth="62.0" text="新其他扣款" />
+        <Label layoutX="311.0" layoutY="38.0" prefHeight="15.0" prefWidth="55.0" text="托运单号" />
+        <Label layoutX="311.0" layoutY="225.0" prefHeight="15.0" prefWidth="55.0" text="扣款原因" />
+        <Button fx:id="csaveBtn" layoutX="171.0" layoutY="312.0" mnemonicParsing="false" onAction="#csave" prefHeight="32.0" prefWidth="76.0" text="保存" />
+        <Button fx:id="ccloseBtn" layoutX="328.0" layoutY="312.0" mnemonicParsing="false" onAction="#cclose" prefHeight="32.0" prefWidth="76.0" text="关闭" />
+        <TextField fx:id="cbooknodeText" layoutX="128.0" layoutY="34.0" />
+        <TextField fx:id="csubprimemoneyText" layoutX="128.0" layoutY="89.0" />
+        <TextField fx:id="clatemoneyText" layoutX="128.0" layoutY="152.0" />
+        <TextField fx:id="cothermoneyText" layoutX="128.0" layoutY="221.0" />
+        <TextField fx:id="ctransnodeText" layoutX="375.0" layoutY="34.0" />
+        <TextField fx:id="cwhyothermoneyText" layoutX="375.0" layoutY="221.0" />
+    </children>
+</AnchorPane>

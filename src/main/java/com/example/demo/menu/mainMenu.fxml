@@ -534,28 +534,20 @@
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="268.0" prefWidth="459.0">
                                                     <children>
-                                                        <Label layoutX="39.0" layoutY="31.0" prefHeight="15.0" prefWidth="64.0" text="委托书编号" />
-                                                        <Label layoutX="275.0" layoutY="32.0" prefHeight="15.0" prefWidth="53.0" text="托运单号" />
-                                                        <Label layoutX="514.0" layoutY="32.0" prefHeight="15.0" prefWidth="44.0" text="承运商" />
-                                                        <Label layoutX="47.0" layoutY="78.0" prefHeight="15.0" prefWidth="65.0" text="起始时间" />
-                                                        <Label layoutX="276.0" layoutY="78.0" prefHeight="15.0" prefWidth="50.0" text="截止时间" />
-                                                        <TextField layoutX="103.0" layoutY="28.0" />
-                                                        <TextField layoutX="103.0" layoutY="74.0" />
-                                                        <TextField layoutX="329.0" layoutY="28.0" />
-                                                        <TextField layoutX="329.0" layoutY="74.0" />
-                                                        <ChoiceBox layoutX="567.0" layoutY="27.0" prefWidth="150.0" />
-                                                        <Button layoutX="592.0" layoutY="74.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="93.0" text="查询" />
-                                                        <Button layoutX="767.0" layoutY="27.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="90.0" text="导出" />
-                                                        <Button layoutX="766.0" layoutY="74.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="92.0" text="其他调整" />
-                                                        <TableView layoutX="3.0" layoutY="157.0" prefHeight="518.0" prefWidth="1216.0">
+                                                        <Label layoutX="42.0" layoutY="58.0" prefHeight="15.0" prefWidth="64.0" text="委托书编号" />
+                                                        <Label layoutX="326.0" layoutY="58.0" prefHeight="15.0" prefWidth="53.0" text="托运单号" />
+                                                        <TextField fx:id="feeText" layoutX="125.0" layoutY="54.0" />
+                                                        <TextField layoutX="443.0" layoutY="54.0" />
+                                                        <Button fx:id="feecheckBtn" layoutX="678.0" layoutY="87.0" mnemonicParsing="false" onAction="#feecheck" prefHeight="23.0" prefWidth="93.0" text="查询" />
+                                                        <Button fx:id="buildFeeBtn" layoutX="680.0" layoutY="25.0" mnemonicParsing="false" onAction="#buildFee" prefHeight="23.0" prefWidth="90.0" text="新建" />
+                                                        <TableView fx:id="feeTableView" layoutX="3.0" layoutY="157.0" prefHeight="416.0" prefWidth="880.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="89.0" text="选择" />
-                                                                <TableColumn prefWidth="113.0" text="委托书编号" />
-                                                                <TableColumn prefWidth="96.0" text="托运单号" />
-                                                                <TableColumn prefWidth="104.0" text="次提贷费" />
-                                                                <TableColumn prefWidth="119.0" text="延迟扣款" />
-                                                                <TableColumn prefWidth="142.0" text="其他扣款" />
-                                                                <TableColumn prefWidth="216.0" text="其他扣款原因" />
+                                                                <TableColumn fx:id="feeBooknode" prefWidth="156.0" text="委托书编号" />
+                                                                <TableColumn fx:id="feeTransnode" prefWidth="143.0" text="托运单号" />
+                                                                <TableColumn fx:id="feeSubprimemoney" prefWidth="139.0" text="次提贷费" />
+                                                                <TableColumn fx:id="feeLatemoney" prefWidth="121.0" text="延迟扣款" />
+                                                                <TableColumn fx:id="feeOthermoney" prefWidth="121.0" text="其他扣款" />
+                                                                <TableColumn fx:id="feeWhyothermoney" prefWidth="199.0" text="其他扣款原因" />
                                                             </columns>
                                                         </TableView>
                                                     </children></AnchorPane>

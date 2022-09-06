@@ -6,6 +6,7 @@ import com.example.demo.carType.carTypeMain;
 import com.example.demo.carrierManagement.carrierManagementMain;
 import com.example.demo.characterManagement.characterManagementMain;
 import com.example.demo.citymanagement.citymanagementMain;
+import com.example.demo.commissionedByFee.commissionedByFeeMain;
 import com.example.demo.commissionedByTransport.commissionedByTransportMain;
 import com.example.demo.dao.*;
 import com.example.demo.freightManagement.freightManagementMain;
@@ -465,6 +466,12 @@ public class MenuController implements Initializable{
         while(friter.hasNext()) {
             frdata.add(friter.next());
         }
+        //账单调整
+        FeeDAO feeDAO = new FeeDAO();
+        Iterator<Fee> feeIterator = feeDAO.getFee().iterator();
+        while(feeIterator.hasNext()) {
+            feedata.add(feeIterator.next());
+        }
 
         //设置运输委托
         commissionedByTransportNumber.setCellValueFactory(cellData-> cellData.getValue().commissionedByTransport_numberProperty());
@@ -490,7 +497,7 @@ public class MenuController implements Initializable{
         informationCarrier.setCellValueFactory(cellData-> cellData.getValue().information_carrierProperty());
 
 
-//到货管理
+        //到货管理
         goodgetnub.setCellValueFactory(cellData-> cellData.getValue().goodget_nubProperty());
         goodgetfcity.setCellValueFactory(cellData-> cellData.getValue().goodget_fcityProperty());
         goodgetfhouse.setCellValueFactory(cellData-> cellData.getValue().goodget_fhouseProperty());
@@ -504,6 +511,15 @@ public class MenuController implements Initializable{
         goodgetgoodmuch.setCellValueFactory(cellData-> cellData.getValue().goodget_goodmuchProperty());
         goodgetwrite.setCellValueFactory(cellData-> cellData.getValue().goodget_writeProperty());
         goodgetaction.setCellValueFactory(cellData-> cellData.getValue().goodget_actionProperty());
+
+        //设置账单调整
+        feeBooknode.setCellValueFactory(cellData-> cellData.getValue().fee_booknodeProperty());
+        feeTransnode.setCellValueFactory(cellData-> cellData.getValue().fee_transnodeProperty());
+        feeSubprimemoney.setCellValueFactory(cellData-> cellData.getValue().fee_subprimemoneyProperty());
+        feeLatemoney.setCellValueFactory(cellData-> cellData.getValue().fee_latemoneyProperty());
+        feeOthermoney.setCellValueFactory(cellData-> cellData.getValue().fee_othermoneyProperty());
+        feeWhyothermoney.setCellValueFactory(cellData-> cellData.getValue().fee_whyothermoneyProperty());
+
 
 
 
@@ -668,6 +684,7 @@ public class MenuController implements Initializable{
         preInformationTableView.setItems(preTransitMonitordata);
         informationTableView.setItems(transitMonitordata);
         artableview.setItems(newSignInDocdate);
+        feeTableView.setItems(feedata);
     }
     /**
      * 业务类型管理
@@ -2001,7 +2018,82 @@ public class MenuController implements Initializable{
         artableview.setItems(newSignInDocdate);
     }
 
+    /**
+     * 账单调整
+     */
+    @FXML
+    private Button feecheckBtn;
+    @FXML
+    private TextField feeText;
+    @FXML
+    private TableColumn<Fee, String> feeBooknode;
+    @FXML
+    private TableColumn<Fee, String> feeTransnode;
+    @FXML
+    private TableColumn<Fee, String> feeSubprimemoney;
+    @FXML
+    private TableColumn<Fee, String> feeLatemoney;
+    @FXML
+    private TableColumn<Fee, String> feeOthermoney;
+    @FXML
+    private TableColumn<Fee, String> feeWhyothermoney;
+    //查询按钮
+    @FXML
+    void feecheck(ActionEvent event) {
+        String typeText = this.feeText.getText();
+        if(typeText == null || typeText.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+        else{
+            feeTableView.getItems().clear();
+        }
 
+        //添加数据, 这些数据从数据库中查询出
+        FeeDAO feeDAO = new FeeDAO();
+
+        Iterator<Fee> iter = feeDAO.getFeeByFeeBooknode(typeText).iterator();
+        while(iter.hasNext()) {
+            feedata.add(iter.next());
+        }
+
+        //设置每列的数据
+        feeBooknode.setCellValueFactory(cellData-> cellData.getValue().fee_booknodeProperty());
+        feeTransnode.setCellValueFactory(cellData-> cellData.getValue().fee_transnodeProperty());
+        feeSubprimemoney.setCellValueFactory(cellData-> cellData.getValue().fee_subprimemoneyProperty());
+        feeLatemoney.setCellValueFactory(cellData-> cellData.getValue().fee_latemoneyProperty());
+        feeOthermoney.setCellValueFactory(cellData-> cellData.getValue().fee_othermoneyProperty());
+        feeWhyothermoney.setCellValueFactory(cellData-> cellData.getValue().fee_whyothermoneyProperty());
+
+        //设置表格数据
+        feeTableView.setItems(feedata);
+
+    }
+    @FXML
+    //创建TableView
+    private TableView<Fee> feeTableView = new TableView<>();
+    //创建数据集合
+    private ObservableList<Fee> feedata = FXCollections.observableArrayList();
+    @FXML
+    private Button buildFeeBtn;
+    //新建业务类型的按钮
+    @FXML
+    void buildFee(ActionEvent event) {
+        //businessmain business = new businessmain();
+        Platform.runLater(()->{
+            //获取按钮所在的窗口
+            //BtSign可以为当前窗口任意一个控件
+            Stage primaryStage = (Stage) buildFeeBtn.getScene().getWindow();
+            //当前窗口隐藏
+            primaryStage.hide();
+            //加载注册窗口
+            try {
+                new commissionedByFeeMain().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
 
 }
 
