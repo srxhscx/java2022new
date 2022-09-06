@@ -292,29 +292,6 @@
                                                     </children></AnchorPane>
                                             </content>
                                         </Tab>
-                                        <Tab text="用户权限管理">
-                                            <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                    <children>
-                                                        <Label layoutX="128.0" layoutY="61.0" text="角色名" />
-                                                        <Label layoutX="469.0" layoutY="61.0" text="用户名" />
-                                                        <TableView layoutX="23.0" layoutY="137.0" prefHeight="509.0" prefWidth="1173.0">
-                                                            <columns>
-                                                                <TableColumn prefWidth="75.0" text="用户名" />
-                                                                <TableColumn prefWidth="181.0" text="姓名" />
-                                                                <TableColumn prefWidth="387.0" text="角色名" />
-                                                                <TableColumn prefWidth="276.0" text="备注" />
-                                                                <TableColumn prefWidth="253.0" text="操作" />
-                                                            </columns>
-                                                        </TableView>
-                                                        <TextField layoutX="539.0" layoutY="57.0" />
-                                                        <Button layoutX="822.0" layoutY="57.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="89.0" text="查询" />
-                                                        <Button layoutX="1006.0" layoutY="56.0" mnemonicParsing="false" text="用户维护" />
-                                                        <Button layoutX="1102.0" layoutY="56.0" mnemonicParsing="false" text="权限维护" />
-                                                        <ComboBox layoutX="181.0" layoutY="57.0" prefHeight="29.0" prefWidth="189.0" />
-                                                    </children></AnchorPane>
-                                            </content>
-                                        </Tab>
                                     </tabs>
                                 </TabPane>
                             </children></AnchorPane>
