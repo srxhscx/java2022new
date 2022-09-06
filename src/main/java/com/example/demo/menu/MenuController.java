@@ -787,4 +787,20 @@ public class MenuController implements Initializable{
     }
 
 
+
+    /**
+     * characterManagement
+//     */
+//    @FXML
+//    private TableColumn<characterManagement,String> amnode;
+//    @FXML
+//    private TableColumn<accountManagement,String> amtel;
+//    @FXML
+//    private TableColumn<accountManagement,String> ammail;
+//    @FXML
+//    private TableColumn<accountManagement,String> amremark;
+//    @FXML
+//    private TableColumn<accountManagement,String> amoperate;
+
+
 }
