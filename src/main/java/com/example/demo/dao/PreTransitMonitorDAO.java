@@ -93,7 +93,7 @@ public class PreTransitMonitorDAO {
             while (rs.next()){
                 PreTransitMonitor preTransitMonitor =new PreTransitMonitor();
 
-                preTransitMonitor.setPreInformation_license(rs.getString("information_carrier"));
+                preTransitMonitor.setPreInformation_license(rs.getString("information_license"));
                 preTransitMonitor.setPreInformation_carrier(rs.getString("information_carrier"));
                 preTransitMonitor.setPreInformation_number(rs.getString("information_number"));
                 preTransitMonitor.setPreInformation_state(rs.getString("information_state"));

@@ -10,6 +10,7 @@ import com.example.demo.commissionedByTransport.commissionedByTransportMain;
 import com.example.demo.dao.*;
 import com.example.demo.freightManagement.freightManagementMain;
 import com.example.demo.good.goodmain;
+import com.example.demo.newSignInDoc.newSignInDocMain;
 import com.example.demo.node.nodeMain;
 import com.example.demo.routeManagement.routeManagementMain;
 import com.example.demo.transportationPlanGeneration.transportationPlanGenerationMain;
@@ -349,6 +350,12 @@ public class MenuController implements Initializable{
         while(transportationPlanGeneratoriter.hasNext()) {
             transportationPlanGenerationdata.add(transportationPlanGeneratoriter.next());
         }
+        //到货管理
+        newSignInDocDAO newSignInDocdao = new newSignInDocDAO();
+        Iterator<newSignInDoc> newSignInDocDAOiter = newSignInDocdao.getNewSignInDoc().iterator();
+        while(newSignInDocDAOiter.hasNext()) {
+            newSignInDocdate.add(newSignInDocDAOiter.next());
+        }
 
         //车辆备案
         carRecordDAO carTypeDAO1 = new carRecordDAO();
@@ -481,6 +488,22 @@ public class MenuController implements Initializable{
         informationLicense.setCellValueFactory(cellData-> cellData.getValue().information_licenseProperty());
         informationOnWay.setCellValueFactory(cellData-> cellData.getValue().information_on_wayProperty());
         informationCarrier.setCellValueFactory(cellData-> cellData.getValue().information_carrierProperty());
+
+
+//到货管理
+        goodgetnub.setCellValueFactory(cellData-> cellData.getValue().goodget_nubProperty());
+        goodgetfcity.setCellValueFactory(cellData-> cellData.getValue().goodget_fcityProperty());
+        goodgetfhouse.setCellValueFactory(cellData-> cellData.getValue().goodget_fhouseProperty());
+        goodgetlcity.setCellValueFactory(cellData-> cellData.getValue().goodget_lcityProperty());
+        goodgetlhouse.setCellValueFactory(cellData-> cellData.getValue().goodget_lhouseProperty());
+        goodgetgoodarea.setCellValueFactory(cellData-> cellData.getValue().goodget_goodareaProperty());
+        goodgetgetarea.setCellValueFactory(cellData-> cellData.getValue().goodget_getareaProperty());
+        goodgetpeople.setCellValueFactory(cellData-> cellData.getValue().goodget_peopleProperty());
+        goodgetrunway.setCellValueFactory(cellData-> cellData.getValue().goodget_runwayProperty());
+        goodgettype.setCellValueFactory(cellData-> cellData.getValue().goodget_typeProperty());
+        goodgetgoodmuch.setCellValueFactory(cellData-> cellData.getValue().goodget_goodmuchProperty());
+        goodgetwrite.setCellValueFactory(cellData-> cellData.getValue().goodget_writeProperty());
+        goodgetaction.setCellValueFactory(cellData-> cellData.getValue().goodget_actionProperty());
 
 
 
@@ -644,6 +667,7 @@ public class MenuController implements Initializable{
         commissionedByTransportTableView.setItems(commissionedByTransportdata);
         preInformationTableView.setItems(preTransitMonitordata);
         informationTableView.setItems(transitMonitordata);
+        artableview.setItems(newSignInDocdate);
     }
     /**
      * 业务类型管理
@@ -1879,7 +1903,107 @@ public class MenuController implements Initializable{
 
     }
 
+    /**
+     * 到货管理
+     */
+    @FXML
+    private TableView<newSignInDoc> artableview = new TableView<>();
+    //创建数据集合
+    private ObservableList<newSignInDoc> newSignInDocdate = FXCollections.observableArrayList();
+    @FXML
+    private TextField goodgetbinubo;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetnub;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetfcity;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetfhouse;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetlcity;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetlhouse;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetgoodarea;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetgetarea;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetpeople;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetrunway;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgettype;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetgoodmuch;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetwrite;
+    @FXML
+    private TableColumn<newSignInDoc, String> goodgetaction;
+    @FXML
+    private Button goodcheckBtn;
+    @FXML
+    private Button goodbuildBtn;
+
+
+
+
+    @FXML
+    void goodbuild(ActionEvent event) {
+        //businessmain business = new businessmain();
+        Platform.runLater(()->{
+            //获取按钮所在的窗口
+            //BtSign可以为当前窗口任意一个控件
+            Stage primaryStage = (Stage) goodbuildBtn.getScene().getWindow();
+            //当前窗口隐藏
+            primaryStage.hide();
+            //加载注册窗口
+            try {
+                new newSignInDocMain().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @FXML
+    void gooddCheck(ActionEvent event) {//getCellValueFactory().toString();
+        String goodName1 = this.goodgetgoodmuch.getText();
+        if(goodName1 == null || goodName1.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+        else{
+            artableview.getItems().clear();
+        }
+
+        //添加数据, 这些数据从数据库中查询出
+        newSignInDocDAO NewSignInDocDAO = new newSignInDocDAO();
+
+        Iterator<newSignInDoc> newSignInDoctier = NewSignInDocDAO.getNewSignInDocByGoodGetType(goodName1).iterator();
+        while(newSignInDoctier.hasNext()) {
+            newSignInDocdate.add(newSignInDoctier.next());
+        }
+        //设置每列的数据
+        goodgetnub.setCellValueFactory(cellData-> cellData.getValue().goodget_nubProperty());
+        goodgetfcity.setCellValueFactory(cellData-> cellData.getValue().goodget_fcityProperty());
+        goodgetfhouse.setCellValueFactory(cellData-> cellData.getValue().goodget_fhouseProperty());
+        goodgetlcity.setCellValueFactory(cellData-> cellData.getValue().goodget_lcityProperty());
+        goodgetlhouse.setCellValueFactory(cellData-> cellData.getValue().goodget_lhouseProperty());
+        goodgetgoodarea.setCellValueFactory(cellData-> cellData.getValue().goodget_goodareaProperty());
+        goodgetgetarea.setCellValueFactory(cellData-> cellData.getValue().goodget_getareaProperty());
+        goodgetpeople.setCellValueFactory(cellData-> cellData.getValue().goodget_peopleProperty());
+        goodgetrunway.setCellValueFactory(cellData-> cellData.getValue().goodget_runwayProperty());
+        goodgettype.setCellValueFactory(cellData-> cellData.getValue().goodget_typeProperty());
+        goodgetgoodmuch.setCellValueFactory(cellData-> cellData.getValue().goodget_goodmuchProperty());
+        goodgetwrite.setCellValueFactory(cellData-> cellData.getValue().goodget_writeProperty());
+        goodgetaction.setCellValueFactory(cellData-> cellData.getValue().goodget_actionProperty());
+
+        //设置表格数据
+        artableview.setItems(newSignInDocdate);
+    }
+
+
 
 }
+
 
 

@@ -486,128 +486,36 @@
                             </children></AnchorPane>
                     </content>
                 </Tab>
-
                 <Tab text="到货管理">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
                                 <TabPane prefHeight="721.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
                                     <tabs>
-                                        <Tab text="索赔管理">
-                                            <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                    <children>
-                                                        <Label layoutX="21.0" layoutY="20.0" prefHeight="25.0" text="始发城市" />
-                                                        <Label layoutX="21.0" layoutY="70.0" prefHeight="25.0" text="始发仓别" />
-                                                        <Label layoutX="221.0" layoutY="20.0" prefHeight="25.0" text="目的城市" />
-                                                        <Label layoutX="221.0" layoutY="70.0" prefHeight="25.0" text="目的仓别" />
-                                                        <Label layoutX="437.0" layoutY="20.0" prefHeight="25.0" text="业务类型" />
-                                                        <Label layoutX="437.0" layoutY="70.0" prefHeight="25.0" text="运输方式" />
-                                                        <Label layoutX="682.0" layoutY="20.0" prefHeight="25.0" text="承运商" />
-                                                        <Label layoutX="673.0" layoutY="70.0" prefHeight="25.0" text="单据状态" />
-                                                        <Label layoutX="909.0" layoutY="20.0" prefHeight="25.0" text="索赔函编号" />
-                                                        <Label layoutX="927.0" layoutY="70.0" prefHeight="25.0" text="运单号" />
-                                                        <TextField layoutX="990.0" layoutY="14.0" prefHeight="34.0" prefWidth="208.0" />
-                                                        <TextField layoutX="990.0" layoutY="64.0" prefHeight="34.0" prefWidth="208.0" />
-                                                        <Button layoutX="912.0" layoutY="107.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="83.0" text="查询" />
-                                                        <Button layoutX="1055.0" layoutY="107.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="130.0" text="新建索赔函" />
-                                                        <ChoiceBox layoutX="736.0" layoutY="15.0" prefHeight="34.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="736.0" layoutY="64.0" prefHeight="34.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="86.0" layoutY="14.0" prefHeight="34.0" prefWidth="107.0" />
-                                                        <ChoiceBox layoutX="86.0" layoutY="65.0" prefHeight="34.0" prefWidth="107.0" />
-                                                        <ChoiceBox layoutX="285.0" layoutY="14.0" prefHeight="34.0" prefWidth="131.0" />
-                                                        <ChoiceBox layoutX="285.0" layoutY="64.0" prefHeight="34.0" prefWidth="131.0" />
-                                                        <ChoiceBox layoutX="499.0" layoutY="14.0" prefHeight="34.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="499.0" layoutY="64.0" prefHeight="34.0" prefWidth="150.0" />
-                                                        <Label layoutX="21.0" layoutY="118.0" prefHeight="25.0" text="起始时间" />
-                                                        <TextField layoutX="86.0" layoutY="113.0" prefHeight="34.0" prefWidth="146.0" />
-                                                        <TextField layoutX="312.0" layoutY="112.0" prefHeight="34.0" prefWidth="146.0" />
-                                                        <Label layoutX="249.0" layoutY="118.0" prefHeight="25.0" text="截止时间" />
-                                                        <Label layoutX="484.0" layoutY="118.0" prefHeight="25.0" text="委托书编号" />
-                                                        <TextField layoutX="566.0" layoutY="113.0" prefHeight="36.0" prefWidth="166.0" />
-                                                        <TableView layoutX="1.0" layoutY="159.0" prefHeight="501.0" prefWidth="1222.0">
-                                                            <columns>
-                                                                <TableColumn prefWidth="64.0" text="索赔函编号" />
-                                                                <TableColumn prefWidth="63.0" text="单据状态" />
-                                                                <TableColumn prefWidth="72.0" text="委托书编号" />
-                                                                <TableColumn prefWidth="50.0" text="运单号" />
-                                                                <TableColumn prefWidth="64.0" text="业务类型" />
-                                                                <TableColumn prefWidth="56.0" text="运输方式" />
-                                                                <TableColumn prefWidth="60.0" text="整车零担" />
-                                                                <TableColumn prefWidth="44.0" text="承运商" />
-                                                                <TableColumn prefWidth="54.0" text="始发城市" />
-                                                                <TableColumn prefWidth="57.0" text="始发仓别" />
-                                                                <TableColumn prefWidth="53.0" text="目的城市" />
-                                                                <TableColumn prefWidth="53.0" text="目的仓别" />
-                                                                <TableColumn prefWidth="65.0" text="索赔总数量" />
-                                                                <TableColumn prefWidth="64.0" text="索赔总金额" />
-                                                                <TableColumn prefWidth="71.0" text="备注" />
-                                                                <TableColumn prefWidth="53.0" text="签字人" />
-                                                                <TableColumn prefWidth="53.0" text="签字时间" />
-                                                                <TableColumn prefWidth="53.0" text="生成时间" />
-                                                                <TableColumn prefWidth="53.0" text="确认时间" />
-                                                                <TableColumn prefWidth="119.0" text="操作" />
-                                                            </columns>
-                                                        </TableView>
-                                                    </children></AnchorPane>
-                                            </content>
-                                        </Tab>
                                         <Tab text="委托书签收">
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
-                                                        <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" text="业务类型" />
-                                                        <Label layoutX="5.0" layoutY="64.0" prefHeight="25.0" text="委托书编号" />
-                                                        <ChoiceBox layoutX="86.0" layoutY="8.0" prefHeight="34.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="334.0" layoutY="8.0" prefHeight="34.0" prefWidth="150.0" />
-                                                        <Label layoutX="273.0" layoutY="15.0" prefHeight="25.0" text="始发城市" />
-                                                        <TextField layoutX="86.0" layoutY="58.0" prefHeight="34.0" prefWidth="150.0" />
-                                                        <Label layoutX="273.0" layoutY="64.0" prefHeight="25.0" text="始发仓别" />
-                                                        <ChoiceBox layoutX="334.0" layoutY="59.0" prefHeight="34.0" prefWidth="150.0" />
-                                                        <Label layoutX="526.0" layoutY="15.0" prefHeight="25.0" text="目的城市" />
-                                                        <Label layoutX="526.0" layoutY="64.0" prefHeight="25.0" text="目的仓别" />
-                                                        <ChoiceBox layoutX="586.0" layoutY="10.0" prefHeight="34.0" prefWidth="136.0" />
-                                                        <ChoiceBox layoutX="586.0" layoutY="58.0" prefHeight="34.0" prefWidth="136.0" />
-                                                        <Label layoutX="762.0" layoutY="15.0" prefHeight="25.0" text="承运商" />
-                                                        <Label layoutX="753.0" layoutY="64.0" prefHeight="25.0" text="运输方式" />
-                                                        <ChoiceBox layoutX="816.0" layoutY="10.0" prefHeight="34.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="816.0" layoutY="58.0" prefHeight="34.0" prefWidth="150.0" />
-                                                        <Label layoutX="1002.0" layoutY="16.0" prefHeight="25.0" text="运单号" />
-                                                        <Label layoutX="993.0" layoutY="65.0" prefHeight="25.0" text="整车零担" />
-                                                        <TextField layoutX="1056.0" layoutY="10.0" prefHeight="36.0" prefWidth="160.0" />
-                                                        <ChoiceBox layoutX="1056.0" layoutY="58.0" prefHeight="36.0" prefWidth="160.0" />
-                                                        <Label layoutX="14.0" layoutY="116.0" prefHeight="25.0" text="起始时间" />
-                                                        <Label layoutX="353.0" layoutY="116.0" text="截止时间" />
-                                                        <TextField layoutX="86.0" layoutY="111.0" prefHeight="34.0" />
-                                                        <TextField layoutX="409.0" layoutY="110.0" prefHeight="34.0" />
-                                                        <Button layoutX="825.0" layoutY="106.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="83.0" text="查询" />
-                                                        <Button layoutX="1029.0" layoutY="106.0" mnemonicParsing="false" prefHeight="46.0" text="签收委托书" />
-                                                        <TableView layoutX="-2.0" layoutY="152.0" prefHeight="505.0" prefWidth="1229.0">
+                                                        <TableView fx:id="artableview" layoutX="-2.0" layoutY="94.0" prefHeight="563.0" prefWidth="1229.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="43.0" text="状态" />
-                                                                <TableColumn prefWidth="70.0" text="委托书编号" />
-                                                                <TableColumn prefWidth="59.0" text="始发城市" />
-                                                                <TableColumn prefWidth="57.0" text="始发仓别" />
-                                                                <TableColumn prefWidth="57.0" text="目的城市" />
-                                                                <TableColumn prefWidth="59.0" text="目的仓别" />
-                                                                <TableColumn prefWidth="57.0" text="发货单位" />
-                                                                <TableColumn prefWidth="59.0" text="收货单位" />
-                                                                <TableColumn prefWidth="43.0" text="承运商" />
-                                                                <TableColumn prefWidth="55.0" text="运输方式" />
-                                                                <TableColumn prefWidth="56.0" text="整车零担" />
-                                                                <TableColumn prefWidth="60.0" text="业务类型" />
-                                                                <TableColumn prefWidth="43.0" text="总箱数" />
-                                                                <TableColumn prefWidth="64.0" text="完好箱数" />
-                                                                <TableColumn prefWidth="60.0" text="丢失箱数" />
-                                                                <TableColumn prefWidth="61.0" text="异常箱数" />
-                                                                <TableColumn prefWidth="60.0" text="差异箱数" />
-                                                                <TableColumn prefWidth="53.0" text="备注" />
-                                                                <TableColumn prefWidth="43.0" text="送货人" />
-                                                                <TableColumn prefWidth="44.0" text="签收人" />
-                                                                <TableColumn prefWidth="51.0" text="代签人" />
-                                                                <TableColumn prefWidth="75.0" text="操作" />
+                                                                <TableColumn fx:id="goodgetnub" prefWidth="84.0" text="委托书编号" />
+                                                                <TableColumn fx:id="goodgetfcity" prefWidth="76.0" text="始发城市" />
+                                                                <TableColumn fx:id="goodgetfhouse" prefWidth="66.0" text="始发仓别" />
+                                                                <TableColumn fx:id="goodgetlcity" prefWidth="63.0" text="目的城市" />
+                                                                <TableColumn fx:id="goodgetlhouse" prefWidth="75.0" text="目的仓别" />
+                                                                <TableColumn fx:id="goodgetgoodarea" prefWidth="69.0" text="发货单位" />
+                                                                <TableColumn fx:id="goodgetgetarea" prefWidth="76.0" text="收货单位" />
+                                                                <TableColumn fx:id="goodgetpeople" prefWidth="66.0" text="承运商" />
+                                                                <TableColumn fx:id="goodgetrunway" prefWidth="87.0" text="运输方式" />
+                                                                <TableColumn fx:id="goodgettype" prefWidth="121.0" text="业务类型" />
+                                                                <TableColumn fx:id="goodgetgoodmuch" prefWidth="79.0" text="总箱数" />
+                                                                <TableColumn fx:id="goodgetwrite" prefWidth="137.0" text="备注" />
+                                                                <TableColumn fx:id="goodgetaction" prefWidth="229.0" text="操作" />
                                                             </columns>
                                                         </TableView>
+                                                        <Label layoutX="85.0" layoutY="29.0" prefHeight="49.0" prefWidth="126.0" text="委托书编号" />
+                                                        <TextField fx:id="goodgetbinubo" layoutX="177.0" layoutY="44.0" />
+                                                        <Button fx:id="goodbuildBtn" layoutX="829.0" layoutY="28.0" mnemonicParsing="false" onAction="#goodbuild" prefHeight="52.0" prefWidth="101.0" text="新建" />
                                                     </children></AnchorPane>
                                             </content>
                                         </Tab>
@@ -639,7 +547,7 @@
                                                         <Button layoutX="592.0" layoutY="74.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="93.0" text="查询" />
                                                         <Button layoutX="767.0" layoutY="27.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="90.0" text="导出" />
                                                         <Button layoutX="766.0" layoutY="74.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="92.0" text="其他调整" />
-                                                        <TableView layoutX="3.0" layoutY="157.0" prefHeight="416.0" prefWidth="880.0">
+                                                        <TableView layoutX="3.0" layoutY="157.0" prefHeight="518.0" prefWidth="1216.0">
                                                             <columns>
                                                                 <TableColumn prefWidth="89.0" text="选择" />
                                                                 <TableColumn prefWidth="113.0" text="委托书编号" />
@@ -697,132 +605,6 @@
                                                             </columns>
                                                         </TableView>
                                                     </children></AnchorPane>
-                                            </content>
-                                        </Tab>
-                                    </tabs>
-                                </TabPane>
-                            </children></AnchorPane>
-                    </content>
-                </Tab>
-                <Tab text="查询统计">
-                    <content>
-                        <AnchorPane>
-                            <children>
-                                <TabPane prefHeight="720.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
-                                    <tabs>
-                                        <Tab text="监控明细查询">
-                                            <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="592.0" prefWidth="1116.0">
-                                                    <children>
-                                                        <Label layoutX="14.0" layoutY="27.0" prefHeight="15.0" prefWidth="43.0" text="承运商" />
-                                                        <Label layoutX="14.0" layoutY="60.0" prefHeight="15.0" prefWidth="50.0" text="运输方式" />
-                                                        <Label layoutX="13.0" layoutY="97.0" prefHeight="15.0" prefWidth="55.0" text="整车零担" />
-                                                        <Label layoutX="212.0" layoutY="27.0" text="始发城市" />
-                                                        <Label layoutX="212.0" layoutY="61.0" text="始发仓别" />
-                                                        <Label layoutX="212.0" layoutY="97.0" text="起始时间" />
-                                                        <Label layoutX="409.0" layoutY="28.0" text="目的城市" />
-                                                        <Label layoutX="409.0" layoutY="61.0" text="目的仓别" />
-                                                        <Label layoutX="409.0" layoutY="97.0" text="截止时间" />
-                                                        <Label layoutX="615.0" layoutY="27.0" prefHeight="13.0" prefWidth="48.0" text="托运单号" />
-                                                        <Label layoutX="615.0" layoutY="61.0" text="委托书编号" />
-                                                        <Label layoutX="615.0" layoutY="97.0" text="索赔函编号" />
-                                                        <Label layoutX="822.0" layoutY="28.0" text="业务类型" />
-                                                        <ChoiceBox layoutX="68.0" layoutY="23.0" prefHeight="23.0" prefWidth="124.0" />
-                                                        <ChoiceBox layoutX="68.0" layoutY="56.0" prefHeight="23.0" prefWidth="126.0" />
-                                                        <ChoiceBox layoutX="68.0" layoutY="93.0" prefHeight="23.0" prefWidth="125.0" />
-                                                        <ChoiceBox layoutX="269.0" layoutY="24.0" prefHeight="23.0" prefWidth="127.0" />
-                                                        <ChoiceBox layoutX="269.0" layoutY="57.0" prefHeight="23.0" prefWidth="128.0" />
-                                                        <TextField layoutX="269.0" layoutY="93.0" prefHeight="23.0" prefWidth="129.0" />
-                                                        <TextField layoutX="471.0" layoutY="24.0" prefHeight="23.0" prefWidth="127.0" />
-                                                        <TextField layoutX="470.0" layoutY="57.0" prefHeight="23.0" prefWidth="130.0" />
-                                                        <TextField layoutX="470.0" layoutY="93.0" prefHeight="23.0" prefWidth="132.0" />
-                                                        <TextField layoutX="691.0" layoutY="24.0" prefHeight="23.0" prefWidth="112.0" />
-                                                        <TextField layoutX="691.0" layoutY="57.0" prefHeight="23.0" prefWidth="115.0" />
-                                                        <TextField layoutX="691.0" layoutY="93.0" prefHeight="23.0" prefWidth="118.0" />
-                                                        <ChoiceBox layoutX="878.0" layoutY="24.0" prefHeight="23.0" prefWidth="133.0" />
-                                                        <Button layoutX="836.0" layoutY="75.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" text="查询" />
-                                                        <Button layoutX="928.0" layoutY="75.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="72.0" text="导出" />
-                                                        <TableView layoutY="137.0" prefHeight="552.0" prefWidth="1222.0">
-                                                            <columns>
-                                                                <TableColumn prefWidth="75.0" text="委托书编号" />
-                                                                <TableColumn prefWidth="75.0" text="始发城市" />
-                                                            </columns>
-                                                        </TableView>
-                                                    </children>
-                                                </AnchorPane>
-                                            </content>
-                                        </Tab>
-                                        <Tab text="对账明细查询">
-                                            <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="592.0" prefWidth="1116.0">
-                                                    <children>
-                                                        <Label layoutX="14.0" layoutY="27.0" prefHeight="15.0" prefWidth="43.0" text="承运商" />
-                                                        <Label layoutX="14.0" layoutY="60.0" prefHeight="15.0" prefWidth="50.0" text="运输方式" />
-                                                        <Label layoutX="13.0" layoutY="97.0" prefHeight="15.0" prefWidth="55.0" text="整车零担" />
-                                                        <Label layoutX="212.0" layoutY="27.0" text="始发城市" />
-                                                        <Label layoutX="212.0" layoutY="61.0" text="始发仓别" />
-                                                        <Label layoutX="212.0" layoutY="97.0" text="起始时间" />
-                                                        <Label layoutX="409.0" layoutY="28.0" text="目的城市" />
-                                                        <Label layoutX="409.0" layoutY="61.0" text="目的仓别" />
-                                                        <Label layoutX="409.0" layoutY="97.0" text="截止时间" />
-                                                        <Label layoutX="615.0" layoutY="27.0" prefHeight="13.0" prefWidth="48.0" text="托运单号" />
-                                                        <Label layoutX="615.0" layoutY="61.0" text="委托书编号" />
-                                                        <Label layoutX="615.0" layoutY="97.0" text="索赔函编号" />
-                                                        <Label layoutX="822.0" layoutY="28.0" text="业务类型" />
-                                                        <ChoiceBox layoutX="68.0" layoutY="23.0" prefHeight="23.0" prefWidth="124.0" />
-                                                        <ChoiceBox layoutX="68.0" layoutY="56.0" prefHeight="23.0" prefWidth="126.0" />
-                                                        <ChoiceBox layoutX="68.0" layoutY="93.0" prefHeight="23.0" prefWidth="125.0" />
-                                                        <ChoiceBox layoutX="269.0" layoutY="24.0" prefHeight="23.0" prefWidth="127.0" />
-                                                        <ChoiceBox layoutX="269.0" layoutY="57.0" prefHeight="23.0" prefWidth="128.0" />
-                                                        <TextField layoutX="269.0" layoutY="93.0" prefHeight="23.0" prefWidth="129.0" />
-                                                        <TextField layoutX="471.0" layoutY="24.0" prefHeight="23.0" prefWidth="127.0" />
-                                                        <TextField layoutX="470.0" layoutY="57.0" prefHeight="23.0" prefWidth="130.0" />
-                                                        <TextField layoutX="470.0" layoutY="93.0" prefHeight="23.0" prefWidth="132.0" />
-                                                        <TextField layoutX="691.0" layoutY="24.0" prefHeight="23.0" prefWidth="112.0" />
-                                                        <TextField layoutX="691.0" layoutY="57.0" prefHeight="23.0" prefWidth="115.0" />
-                                                        <TextField layoutX="691.0" layoutY="93.0" prefHeight="23.0" prefWidth="118.0" />
-                                                        <ChoiceBox layoutX="878.0" layoutY="24.0" prefHeight="23.0" prefWidth="133.0" />
-                                                        <Button layoutX="836.0" layoutY="75.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" text="查询" />
-                                                        <Button layoutX="928.0" layoutY="75.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="72.0" text="导出" />
-                                                        <TableView layoutY="137.0" prefHeight="552.0" prefWidth="1222.0">
-                                                            <columns>
-                                                                <TableColumn prefWidth="75.0" text="委托书编号" />
-                                                                <TableColumn prefWidth="75.0" text="始发城市" />
-                                                            </columns>
-                                                        </TableView>
-                                                    </children>
-                                                </AnchorPane>
-                                            </content>
-                                        </Tab>
-                                        <Tab text="修改日志查询">
-                                            <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="699.0" prefWidth="1028.0">
-                                                    <children>
-                                                        <Label layoutX="29.0" layoutY="24.0" prefHeight="15.0" prefWidth="63.0" text=" 起始时间" />
-                                                        <Label layoutX="29.0" layoutY="60.0" prefHeight="15.0" prefWidth="68.0" text="委托书编号" />
-                                                        <Label layoutX="278.0" layoutY="24.0" text=" 截止时间" />
-                                                        <Label layoutX="278.0" layoutY="60.0" text="索赔函编号" />
-                                                        <Label layoutX="538.0" layoutY="24.0" text="账号" />
-                                                        <TextField layoutX="97.0" layoutY="20.0" />
-                                                        <TextField layoutX="97.0" layoutY="56.0" />
-                                                        <TextField layoutX="353.0" layoutY="20.0" />
-                                                        <TextField layoutX="353.0" layoutY="56.0" />
-                                                        <TextField layoutX="581.0" layoutY="20.0" />
-                                                        <Button layoutX="581.0" layoutY="56.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="96.0" text="查询" />
-                                                        <TableView layoutX="7.0" layoutY="96.0" prefHeight="478.0" prefWidth="793.0">
-                                                            <columns>
-                                                                <TableColumn prefWidth="102.0" text="账号" />
-                                                                <TableColumn prefWidth="83.0" text="姓名" />
-                                                                <TableColumn prefWidth="93.0" text="机构" />
-                                                                <TableColumn prefWidth="86.0" text="配送中心" />
-                                                                <TableColumn prefWidth="78.0" text="仓库" />
-                                                                <TableColumn prefWidth="100.0" text="修改时间" />
-                                                                <TableColumn prefWidth="124.0" text="修改单据" />
-                                                                <TableColumn prefWidth="126.0" text="单据编号" />
-                                                            </columns>
-                                                        </TableView>
-                                                    </children>
-                                                </AnchorPane>
                                             </content>
                                         </Tab>
                                     </tabs>
