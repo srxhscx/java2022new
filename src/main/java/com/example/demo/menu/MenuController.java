@@ -3,10 +3,13 @@ import com.example.demo.accountManagement.accountManagementMain;
 import com.example.demo.business.businessmain;
 import com.example.demo.dao.BuisnessDAO;
 import com.example.demo.dao.GoodsDAO;
+import com.example.demo.dao.TransportationPlanGenerationDAO;
 import com.example.demo.dao.accountManagementDAO;
 import com.example.demo.good.goodmain;
+import com.example.demo.transportationPlanGeneration.transportationPlanGenerationMain;
 import com.example.demo.vo.Buisness;
 import com.example.demo.vo.Goods;
+import com.example.demo.vo.TransportationPlanGeneration;
 import com.example.demo.vo.accountManagement;
 import javafx.application.Platform;
 import javafx.beans.property.StringProperty;
@@ -112,6 +115,13 @@ public class MenuController implements Initializable{
             accountManagementdata.add(iteram.next());
         }
 
+        //运输计划
+        TransportationPlanGenerationDAO transportationPlanGenerationDAO = new TransportationPlanGenerationDAO();
+        Iterator<TransportationPlanGeneration> transportationPlanGeneratoriter = transportationPlanGenerationDAO.getTransportationPlanGeneration().iterator();
+        while(transportationPlanGeneratoriter.hasNext()) {
+            transportationPlanGenerationdata.add(transportationPlanGeneratoriter.next());
+        }
+
 
 
         //设置每列的数据
@@ -136,12 +146,25 @@ public class MenuController implements Initializable{
         amtel.setCellValueFactory( cellData-> cellData.getValue().am_contactProperty());
         ammail.setCellValueFactory( cellData-> cellData.getValue().am_mailProperty());
 
+        //设置运输计划
+        transportationPlanGenerationState.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_stateProperty());
+        transportationPlanGenerationType.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_typeProperty());
+        transportationPlanGenerationFromCity.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_from_cityProperty());
+        transportationPlanGenerationToCity.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_to_cityProperty());
+        transportationPlanGenerationFromBase.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_from_baseProperty());
+        transportationPlanGenerationToBase.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_to_baseProperty());
+        transportationPlanGenerationNumber.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_numberProperty());
+        transportationPlanGenerationVolume.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_volumeProperty());
+        transportationPlanGenerationWeight.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_weightProperty());
+        transportationPlanGenerationRemark.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_remarkProperty());
+
+
 
         //设置表格数据
         businessTableView.setItems(businessdata);
         GoodsTableView.setItems(goodsdata);
         amtableView.setItems(accountManagementdata);
-
+        TPGTableView.setItems(transportationPlanGenerationdata);
 
 
     }
@@ -320,6 +343,103 @@ public class MenuController implements Initializable{
         });
     }
 
+
+    /**
+     * 发运管理——运输计划生成
+     */
+    @FXML
+    private ChoiceBox TPGType;
+    @FXML
+    private TableColumn<TransportationPlanGeneration, String> transportationPlanGenerationState;
+    @FXML
+    private TableColumn<TransportationPlanGeneration, String> transportationPlanGenerationType;
+    @FXML
+    private TableColumn<TransportationPlanGeneration, String> transportationPlanGenerationFromCity;
+    @FXML
+    private TableColumn<TransportationPlanGeneration, String> transportationPlanGenerationToCity;
+    @FXML
+    private TableColumn<TransportationPlanGeneration, String> transportationPlanGenerationFromBase;
+    @FXML
+    private TableColumn<TransportationPlanGeneration, String> transportationPlanGenerationToBase;
+    @FXML
+    private TableColumn<TransportationPlanGeneration, String> transportationPlanGenerationNumber;
+    @FXML
+    private TableColumn<TransportationPlanGeneration, String> transportationPlanGenerationVolume;
+    @FXML
+    private TableColumn<TransportationPlanGeneration, String> transportationPlanGenerationWeight;
+    @FXML
+    private TableColumn<TransportationPlanGeneration, String> transportationPlanGenerationRemark;
+    @FXML
+    private TableColumn<TransportationPlanGeneration, String> transportationPlanGenerationOperation;
+
+
+    //查询按钮
+    @FXML
+    private Button checkTPGBtn;
+    @FXML
+    void checkTPG(ActionEvent event) {
+        String typeText = this.TPGType.getValue().toString();
+        if(typeText == null || typeText.length() <= 0){
+            new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+        }
+        else{
+            TPGTableView.getItems().clear();
+        }
+
+        //添加数据, 这些数据从数据库中查询出
+        TransportationPlanGenerationDAO transportationPlanGenerationDAO = new TransportationPlanGenerationDAO();
+
+        Iterator<TransportationPlanGeneration> iter1 = transportationPlanGenerationDAO.getTransportationPlanGenerationByTransportationPlanGenerationType(typeText).iterator();
+        while(iter1.hasNext()) {
+            transportationPlanGenerationdata.add(iter1.next());
+        }
+
+        //设置每列的数据
+
+        transportationPlanGenerationState.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_stateProperty());
+        transportationPlanGenerationType.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_typeProperty());
+        transportationPlanGenerationFromCity.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_from_cityProperty());
+        transportationPlanGenerationToCity.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_to_cityProperty());
+        transportationPlanGenerationFromBase.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_from_baseProperty());
+        transportationPlanGenerationToBase.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_to_baseProperty());
+        transportationPlanGenerationNumber.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_numberProperty());
+        transportationPlanGenerationVolume.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_volumeProperty());
+        transportationPlanGenerationWeight.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_weightProperty());
+        transportationPlanGenerationRemark.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_remarkProperty());
+
+        //设置表格数据
+        TPGTableView.setItems(transportationPlanGenerationdata);
+
+    }
+    @FXML
+    //创建TableView
+    private TableView<TransportationPlanGeneration> TPGTableView = new TableView<>();
+    //创建数据集合
+    private ObservableList<TransportationPlanGeneration> transportationPlanGenerationdata = FXCollections.observableArrayList();
+    @FXML
+    private Button buildTPGBtn;
+    //新建业务类型的按钮
+    @FXML
+    void buildTPG(ActionEvent event) {
+        Platform.runLater(()->{
+            //获取按钮所在的窗口
+            //BtSign可以为当前窗口任意一个控件
+            Stage primaryStage = (Stage) buildTPGBtn.getScene().getWindow();
+            //当前窗口隐藏
+            primaryStage.hide();
+            //加载注册窗口
+            try {
+                new transportationPlanGenerationMain().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    /**
+     * 发运管理——运输委托单
+     */
 
 
 

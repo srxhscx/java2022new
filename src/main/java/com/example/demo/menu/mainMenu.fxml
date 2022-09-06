@@ -447,52 +447,25 @@
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="268.0" prefWidth="459.0">
                                                     <children>
-                                                        <TableView layoutY="130.0" prefHeight="560.0" prefWidth="1222.0">
+                                                        <TableView fx:id="TPGTableView" layoutY="88.0" prefHeight="583.0" prefWidth="1222.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="113.0" text="运输计划号" />
-                                                                <TableColumn prefWidth="57.0" text="单据状态" />
-                                                                <TableColumn prefWidth="55.0" text="业务类型" />
-                                                                <TableColumn prefWidth="75.0" text="始发城市" />
-                                                                <TableColumn prefWidth="75.0" text="始发仓别" />
-                                                                <TableColumn prefWidth="75.0" text="目的城市" />
-                                                                <TableColumn prefWidth="75.0" text="目的仓别" />
-                                                                <TableColumn prefWidth="75.0" text="预估数量&#10;（箱数）" />
-                                                                <TableColumn prefWidth="75.0" text="预估体积&#10;（立方米）" />
-                                                                <TableColumn prefWidth="90.0" text="预估重量&#10;（公斤）" />
-                                                                <TableColumn prefWidth="60.0" text="备注" />
-                                                                <TableColumn prefWidth="75.0" text="操作员" />
-                                                                <TableColumn prefWidth="88.0" text="生成时间" />
-                                                                <TableColumn prefWidth="120.0" text="审核时间" />
-                                                                <TableColumn prefWidth="113.0" text="操作" />
+                                                                <TableColumn fx:id="transportationPlanGenerationState" prefWidth="76.0" text="单据状态" />
+                                                                <TableColumn fx:id="transportationPlanGenerationType" prefWidth="85.0" text="业务类型" />
+                                                                <TableColumn fx:id="transportationPlanGenerationFromCity" prefWidth="77.0" text="始发城市" />
+                                                                <TableColumn fx:id="transportationPlanGenerationFromBase" prefWidth="81.0" text="始发仓别" />
+                                                                <TableColumn fx:id="transportationPlanGenerationToCity" prefWidth="77.0" text="目的城市" />
+                                                                <TableColumn fx:id="transportationPlanGenerationToBase" prefWidth="68.0" text="目的仓别" />
+                                                                <TableColumn fx:id="transportationPlanGenerationNumber" prefWidth="87.0" text="预估数量&#10;（箱数）" />
+                                                                <TableColumn fx:id="transportationPlanGenerationVolume" prefWidth="83.0" text="预估体积&#10;（立方米）" />
+                                                                <TableColumn fx:id="transportationPlanGenerationWeight" prefWidth="198.0" text="预估重量&#10;（公斤）" />
+                                                                <TableColumn fx:id="transportationPlanGenerationRemark" prefWidth="185.0" text="备注" />
+                                                                <TableColumn fx:id="transportationPlanGenerationOperation" prefWidth="204.0" text="操作" />
                                                             </columns>
                                                         </TableView>
-                                                        <Button layoutX="1100.0" layoutY="70.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="100.0" text="新建运输计划" />
-                                                        <Button layoutX="970.0" layoutY="70.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="100.0" text="查询" />
-                                                        <ChoiceBox layoutX="100.0" layoutY="25.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="330.0" layoutY="25.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="560.0" layoutY="25.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="790.0" layoutY="25.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="100.0" layoutY="70.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="330.0" layoutY="70.0" prefWidth="150.0" />
-                                                        <Label layoutX="50.0" layoutY="30.0" text="始发城市" />
-                                                        <Label layoutX="280.0" layoutY="30.0" text="始发仓别" />
-                                                        <Label layoutX="510.0" layoutY="30.0" text="业务类型" />
-                                                        <Label layoutX="740.0" layoutY="30.0" text="单据状态" />
-                                                        <Label layoutX="50.0" layoutY="75.0" text="目的城市" />
-                                                        <Label layoutX="280.0" layoutY="75.0" text="目的仓别" />
-                                                        <Label layoutX="510.0" layoutY="75.0" text="起始时间" />
-                                                        <Label layoutX="740.0" layoutY="75.0" text="截止时间" />
-                                                        <Label layoutX="80.0" layoutY="100.0" text="预估箱数：" />
-                                                        <Label layoutX="140.0" layoutY="100.0" text="（）" />
-                                                        <Label layoutX="200.0" layoutY="100.0" text="箱" />
-                                                        <Label layoutX="320.0" layoutY="100.0" text="预估体积：" />
-                                                        <Label layoutX="380.0" layoutY="100.0" text="（）" />
-                                                        <Label layoutX="440.0" layoutY="100.0" text="立方米" />
-                                                        <Label layoutX="560.0" layoutY="100.0" text="预估重量：" />
-                                                        <Label layoutX="620.0" layoutY="100.0" text="（）" />
-                                                        <Label layoutX="680.0" layoutY="100.0" text="公斤" />
-                                                        <TextField layoutX="560.0" layoutY="70.0" prefHeight="22.0" prefWidth="150.0" />
-                                                        <TextField layoutX="790.0" layoutY="70.0" prefHeight="23.0" prefWidth="150.0" />
+                                                        <Button fx:id="buildTPGBtn" layoutX="882.0" layoutY="40.0" mnemonicParsing="false" onAction="#buildTPG" prefHeight="29.0" prefWidth="112.0" text="新建运输计划" />
+                                                        <Button fx:id="checkTPGBtn" layoutX="573.0" layoutY="40.0" mnemonicParsing="false" onAction="#checkTPG" prefHeight="23.0" prefWidth="100.0" text="查询" />
+                                                        <ChoiceBox fx:id="TPGType" layoutX="192.0" layoutY="40.0" prefWidth="150.0" />
+                                                        <Label layoutX="88.0" layoutY="45.0" text="业务类型" />
                                                     </children></AnchorPane>
                                             </content>
                                         </Tab>
@@ -500,51 +473,20 @@
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
-                                                        <Label layoutX="50.0" layoutY="30.0" text="始发城市" />
-                                                        <Label layoutX="280.0" layoutY="30.0" text="目的城市" />
-                                                        <Label layoutX="510.0" layoutY="30.0" text="业务类型" />
-                                                        <Label layoutX="740.0" layoutY="30.0" text="承运商" />
-                                                        <Label layoutX="50.0" layoutY="75.0" text="始发仓别" />
-                                                        <Label layoutX="280.0" layoutY="75.0" text="目的仓别" />
-                                                        <Label layoutX="510.0" layoutY="75.0" text="运输方式" />
-                                                        <Label layoutX="740.0" layoutY="75.0" text="托运单号" />
-                                                        <Label layoutX="740.0" layoutY="120.0" text="委托书编号" />
-                                                        <Label layoutX="510.0" layoutY="120.0" text="单据状态" />
-                                                        <Label layoutX="280.0" layoutY="120.0" text="截止时间" />
-                                                        <Label layoutX="50.0" layoutY="120.0" text="起始时间" />
-                                                        <ChoiceBox layoutX="100.0" layoutY="25.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="100.0" layoutY="70.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="330.0" layoutY="25.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="330.0" layoutY="70.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="560.0" layoutY="25.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="560.0" layoutY="70.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="790.0" layoutY="25.0" prefWidth="150.0" />
-                                                        <ChoiceBox layoutX="560.0" layoutY="115.0" prefWidth="150.0" />
-                                                        <TextField layoutX="100.0" layoutY="115.0" prefWidth="150.0" />
-                                                        <TextField layoutX="330.0" layoutY="115.0" prefWidth="150.0" />
-                                                        <TextField layoutX="790.0" layoutY="115.0" prefWidth="150.0" />
-                                                        <TextField layoutX="790.0" layoutY="70.0" prefWidth="150.0" />
-                                                        <Button layoutX="970.0" layoutY="70.0" mnemonicParsing="false" text="录入运输委托单" />
-                                                        <Button layoutX="970.0" layoutY="115.0" mnemonicParsing="false" prefWidth="100.0" text="查询" />
-                                                        <TableView layoutY="144.0" prefHeight="540.0" prefWidth="1222.0">
+                                                        <Label layoutX="78.0" layoutY="45.0" text="业务类型" />
+                                                        <ChoiceBox layoutX="176.0" layoutY="40.0" prefWidth="150.0" />
+                                                        <Button layoutX="549.0" layoutY="65.0" mnemonicParsing="false" text="录入运输委托单" />
+                                                        <Button layoutX="389.0" layoutY="40.0" mnemonicParsing="false" prefWidth="100.0" text="查询" />
+                                                        <TableView layoutY="107.0" prefHeight="563.0" prefWidth="1222.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="92.0" text="委托书编号" />
-                                                                <TableColumn prefWidth="58.0" text="单据状态" />
-                                                                <TableColumn prefWidth="75.0" text="业务类型" />
-                                                                <TableColumn prefWidth="75.0" text="发货信息" />
-                                                                <TableColumn prefWidth="75.0" text="收货信息" />
-                                                                <TableColumn prefWidth="75.0" text="托运单号" />
-                                                                <TableColumn prefWidth="88.0" text="承运商" />
-                                                                <TableColumn prefWidth="62.0" text="运输方式" />
-                                                                <TableColumn prefWidth="75.0" text="车辆参数" />
-                                                                <TableColumn prefWidth="75.0" text="货物参数" />
-                                                                <TableColumn prefWidth="75.0" text="包装" />
-                                                                <TableColumn prefWidth="75.0" text="交接单号" />
-                                                                <TableColumn prefWidth="54.0" text="订单号" />
-                                                                <TableColumn prefWidth="55.0" text="发货信息" />
-                                                                <TableColumn prefWidth="55.0" text="收货信息" />
-                                                                <TableColumn prefWidth="60.0" text="备注" />
-                                                <TableColumn prefWidth="97.0" text="操作" />
+                                                                <TableColumn prefWidth="92.0" text="订单号" />
+                                                                <TableColumn prefWidth="112.0" text="业务类型" />
+                                                                <TableColumn prefWidth="108.0" text="承运商" />
+                                                                <TableColumn prefWidth="111.0" text="运输方式" />
+                                                                <TableColumn prefWidth="164.0" text="发货人姓名" />
+                                                                <TableColumn prefWidth="156.0" text="收货人姓名" />
+                                                                <TableColumn prefWidth="230.0" text="备注" />
+                                                <TableColumn prefWidth="248.0" text="操作" />
                                                             </columns>
                                                         </TableView>
                                                     </children></AnchorPane>
