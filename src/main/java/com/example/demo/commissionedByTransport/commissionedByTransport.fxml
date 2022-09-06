@@ -9,14 +9,14 @@
     <children>
         <Label layoutX="48.0" layoutY="69.0" text="订单号" />
         <Label layoutX="40.0" layoutY="280.0" text="运输方式" />
-        <TextField layoutX="118.0" layoutY="214.0" prefHeight="30.0" prefWidth="199.0" />
-        <ChoiceBox layoutX="118.0" layoutY="133.0" prefWidth="150.0" />
-        <TextField layoutX="118.0" layoutY="54.0" prefHeight="30.0" prefWidth="387.0" />
-        <ChoiceBox layoutX="118.0" layoutY="275.0" prefWidth="150.0" />
-        <TextField layoutX="118.0" layoutY="423.0" prefHeight="30.0" prefWidth="387.0" />
-        <TextField layoutX="118.0" layoutY="372.0" prefHeight="30.0" prefWidth="150.0" />
-        <TextField layoutX="118.0" layoutY="320.0" prefHeight="30.0" prefWidth="150.0" />
-        <Button layoutX="161.0" layoutY="504.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="71.0" text="保存" />
+        <TextField fx:id="commissionedByTransportCarrier" layoutX="118.0" layoutY="214.0" prefHeight="30.0" prefWidth="199.0" />
+        <ChoiceBox fx:id="commissionedByTransportType" layoutX="118.0" layoutY="133.0" prefWidth="150.0" />
+        <TextField fx:id="commissionedByTransportNumber" layoutX="118.0" layoutY="54.0" prefHeight="30.0" prefWidth="387.0" />
+        <ChoiceBox fx:id="commissionedByTransportWay" layoutX="118.0" layoutY="275.0" prefWidth="150.0" />
+        <TextField fx:id="commissionedByTransportRemark" layoutX="118.0" layoutY="423.0" prefHeight="30.0" prefWidth="387.0" />
+        <TextField fx:id="commissionedByTransportFromPeo" layoutX="118.0" layoutY="372.0" prefHeight="30.0" prefWidth="150.0" />
+        <TextField fx:id="commissionedByTransportToPeo" layoutX="118.0" layoutY="320.0" prefHeight="30.0" prefWidth="150.0" />
+        <Button fx:id="saveBtn" layoutX="161.0" layoutY="504.0" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="71.0" text="保存" />
         <Button fx:id="closeBtn" layoutX="386.0" layoutY="504.0" mnemonicParsing="false" onAction="#close" prefHeight="27.0" prefWidth="71.0" text="关闭" />
       <Label layoutX="48.0" layoutY="219.0" text="承运商" />
       <Label layoutX="33.0" layoutY="138.0" text="业务类型" />
