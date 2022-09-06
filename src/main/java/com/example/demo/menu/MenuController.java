@@ -3,10 +3,12 @@ import com.example.demo.accountManagement.accountManagementMain;
 import com.example.demo.business.businessmain;
 import com.example.demo.carRecord.carRecordMain;
 import com.example.demo.carType.carTypeMain;
+import com.example.demo.carrierManagement.carrierManagementMain;
 import com.example.demo.characterManagement.characterManagementMain;
 import com.example.demo.citymanagement.citymanagementMain;
 import com.example.demo.dao.*;
 import com.example.demo.good.goodmain;
+import com.example.demo.routeManagement.routeManagementMain;
 import com.example.demo.transportationPlanGeneration.transportationPlanGenerationMain;
 import com.example.demo.vo.*;
 import javafx.application.Platform;
@@ -347,6 +349,19 @@ public class MenuController implements Initializable{
            cmdata.add(cmiter.next());
         }
 
+        //carrierManagement
+        carrierManagementDAO carrierManagementdao = new carrierManagementDAO();
+        Iterator<carrierManagement> criter = carrierManagementdao.getCarrierManagement().iterator();
+        while(criter.hasNext()) {
+            crdata.add(criter.next());
+        }
+
+        //routeManagement
+        routeManagmentDAO routemanagementdao = new routeManagmentDAO();
+        Iterator<routeManagement> rmiter = routemanagementdao.getRouteManagement().iterator();
+        while(rmiter.hasNext()) {
+            rmdata.add(rmiter.next());
+        }
 
 
         //设置每列的数据
@@ -412,11 +427,33 @@ public class MenuController implements Initializable{
         carrecordNumber2.setCellValueFactory(cellData-> cellData.getValue().trailer_numberProperty());
         carrecordTel.setCellValueFactory(cellData-> cellData.getValue().car_telephoneProperty());
         carrecordVolume.setCellValueFactory(cellData-> cellData.getValue().car_volumeProperty());
+
         //set characterManagement
         cmrole.setCellValueFactory(cellData-> cellData.getValue(). cmroleProperty());
         cmremark.setCellValueFactory(cellData-> cellData.getValue().cmremarkProperty());
         cmpermission.setCellValueFactory(cellData-> cellData.getValue().cmpermissionProperty());
         cmoperate.setCellValueFactory(cellData-> cellData.getValue().cmoperateProperty());
+
+        //set carrierManagement
+        fmnum.setCellValueFactory(cellData-> cellData.getValue(). fmnumProperty());
+        fmname.setCellValueFactory(cellData-> cellData.getValue().fmnameProperty());
+        fmshortname.setCellValueFactory(cellData-> cellData.getValue().fmshortnameProperty());
+        fmcontact.setCellValueFactory(cellData-> cellData.getValue().fmcontactProperty());
+        fmphone.setCellValueFactory(cellData-> cellData.getValue().fmphoneProperty());
+        fmtel.setCellValueFactory(cellData-> cellData.getValue().fmtelProperty());
+        fmaddress.setCellValueFactory(cellData-> cellData.getValue().fmaddressProperty());
+        fmremark.setCellValueFactory(cellData-> cellData.getValue().fmremarkProperty());
+
+        //set routeManagemant
+        rmstartcity.setCellValueFactory(cellData-> cellData.getValue(). rmstartcityProperty());
+        rmdestinationcity.setCellValueFactory(cellData-> cellData.getValue().rmdestinationcityProperty());
+        rmmode.setCellValueFactory(cellData-> cellData.getValue().rmmodeProperty());
+        allone.setCellValueFactory(cellData-> cellData.getValue().rmalloneProperty());
+        rmtype.setCellValueFactory(cellData-> cellData.getValue().rmtypeProperty());
+        rmfirstfreight.setCellValueFactory(cellData-> cellData.getValue().rmfirstfreightProperty());
+        rmlastfreight.setCellValueFactory(cellData-> cellData.getValue().rmlastfreightProperty());
+        rmstarttime.setCellValueFactory(cellData-> cellData.getValue().rmstarttimeProperty());
+        rmremark.setCellValueFactory(cellData-> cellData.getValue().rmoperateProperty());
 
         //设置表格数据
         businessTableView.setItems(businessdata);
@@ -427,6 +464,8 @@ public class MenuController implements Initializable{
         TPGTableView.setItems(transportationPlanGenerationdata);
         carrecordTableView.setItems(carRecordsdata);
         cmTableView.setItems(cmdata);
+        crTableView.setItems(crdata);
+        rmTableView.setItems(rmdata);
 
 
 
@@ -1064,6 +1103,108 @@ public class MenuController implements Initializable{
         cmoperate.setCellValueFactory(cellData-> cellData.getValue().cmoperateProperty());
         cmTableView.setItems(cmdata);
 
+
+    }
+    /**
+     * carrierManagement
+     */
+    @FXML
+    private TableColumn<carrierManagement,String> fmstate;
+    @FXML
+    private TableColumn<carrierManagement,String> fmnum;
+    @FXML
+    private TableColumn<carrierManagement,String> fmname;
+    @FXML
+    private TableColumn<carrierManagement,String> fmshortname;
+    @FXML
+    private TableColumn<carrierManagement,String> fmcontact;
+    @FXML
+    private TableColumn<carrierManagement,String> fmphone;
+    @FXML
+    private TableColumn<carrierManagement,String> fmtel;
+    @FXML
+    private TableColumn<carrierManagement,String> fmaddress;
+    @FXML
+    private TableColumn<carrierManagement,String> fmremark;
+    @FXML
+    private TableColumn<carrierManagement,String> fmoperate;
+    @FXML
+    //创建TableView
+    private TableView<carrierManagement> crTableView = new TableView<>();
+    //创建数据集合
+    private ObservableList<carrierManagement> crdata = FXCollections.observableArrayList();
+    @FXML
+    private Button fmfindchecked;
+    @FXML
+    private Button newCarrier;
+    @FXML
+    void fmnew(ActionEvent event) {
+        Platform.runLater(()->{
+            //获取按钮所在的窗口
+            //BtSign可以为当前窗口任意一个控件
+            Stage primaryStage = (Stage) newCarrier.getScene().getWindow();
+            //当前窗口隐藏
+            primaryStage.hide();
+            //加载注册窗口
+            try {
+                new carrierManagementMain().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    /**
+     * routeManagement
+     */
+
+    @FXML
+    private TableColumn<routeManagement,String> rmstate;
+    @FXML
+    private TableColumn<routeManagement,String> rmstartcity;
+    @FXML
+    private TableColumn<routeManagement,String> rmdestinationcity;
+    @FXML
+    private TableColumn<routeManagement,String> rmmode;
+    @FXML
+    private TableColumn<routeManagement,String> allone;
+    @FXML
+    private TableColumn<routeManagement,String> rmtype;
+    @FXML
+    private TableColumn<routeManagement,String> rmfirstfreight;
+    @FXML
+    private TableColumn<routeManagement,String> rmlastfreight;
+    @FXML
+    private TableColumn<routeManagement,String> rmstarttime;
+    @FXML
+    private TableColumn<routeManagement,String> rmremark;
+    @FXML
+    private TableColumn<routeManagement,String> rmoperate;
+    @FXML
+    //创建TableView
+    private TableView<routeManagement> rmTableView = new TableView<>();
+    //创建数据集合
+    private ObservableList<routeManagement> rmdata = FXCollections.observableArrayList();
+    @FXML
+    private Button rmfindchecked;
+    @FXML
+    private Button newroute;
+    @FXML
+    void rmnew(ActionEvent event) {
+        Platform.runLater(()->{
+            //获取按钮所在的窗口
+            //BtSign可以为当前窗口任意一个控件
+            Stage primaryStage = (Stage) newroute.getScene().getWindow();
+            //当前窗口隐藏
+            primaryStage.hide();
+            //加载注册窗口
+            try {
+                new routeManagementMain().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
 
     }
 
