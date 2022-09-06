@@ -1,6 +1,7 @@
 package com.example.demo.menu;
 import com.example.demo.accountManagement.accountManagementMain;
 import com.example.demo.business.businessmain;
+import com.example.demo.carRecord.carRecordMain;
 import com.example.demo.carType.carTypeMain;
 import com.example.demo.citymanagement.citymanagementMain;
 import com.example.demo.dao.*;
@@ -19,6 +20,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -278,6 +280,66 @@ public class MenuController implements Initializable{
             transportationPlanGenerationdata.add(transportationPlanGeneratoriter.next());
         }
 
+        //车辆备案
+        carRecordDAO carTypeDAO1 = new carRecordDAO();
+        Iterator<CarRecord> carRecordIterator = carTypeDAO1.getCarRecord().iterator();
+        int i5 = 0;
+        StringProperty carRecordState = carTypeDAO1.getCarRecord().get(i5).car_stateProperty();
+
+        while(carRecordIterator.hasNext()) {
+            carRecordsdata.add(carRecordIterator.next());
+            carrecordOperator.setCellFactory((col)->{
+
+                        TableCell<CarRecord, String> Carrecordcell = new TableCell<CarRecord, String>()
+                        {
+                            @Override
+                            protected void updateItem(String item, boolean empty)
+                            {
+                                super.updateItem(item, empty);
+                                if(carRecordState.getValue().equals("正常") ){
+                                    Button button1 = new Button("停用");
+                                    button1.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
+
+                                    button1.setOnMouseClicked((col) -> {
+
+                                        //buisnessDAO.updateBusinessState(  buisnessDAO.getBusiness().get().getBusiness_id());
+                                        //System.out.println(finalI);
+                                        System.out.println("修改成功");
+                                        //buisnessDAO.getBusiness().get(finalNum.get()).getBusiness_id()
+                                    });
+                                    if (empty) {
+                                        //如果此列为空默认不添加元素
+                                        setText(null);
+                                        setGraphic(null);
+                                    } else {
+                                        this.setGraphic(button1);
+                                    }
+                                }
+
+                            }
+                        };
+                        return Carrecordcell;
+                    }
+            );
+        }
+        //车辆备案的ComboBOX
+        carrecordPeopleCB.getItems().addAll(
+                "中国第一汽车集团公司",
+                "大众汽车公司",
+                "中国长安汽车集团股份有限公司",
+                "奇瑞汽车股份有限公司",
+                "北京现代汽车有限公司",
+                "东风汽车公司"
+
+        );
+        //数据源为空时显示
+        carrecordPeopleCB.setPlaceholder(new Label("Placeholder"));
+        //设置可编辑
+        carrecordPeopleCB.setEditable(true);
+        carrecordPeopleCB.setPromptText("选择承运商");
+        //设置可见行数, 超过显示滚动条
+        carrecordPeopleCB.setVisibleRowCount(5);
+
 
         //设置每列的数据
         //设置业务类型管理数据
@@ -308,10 +370,9 @@ public class MenuController implements Initializable{
         carTypeVolume.setCellValueFactory(cellData-> cellData.getValue().car_volumeProperty());
         carTypeLoad.setCellValueFactory(cellData-> cellData.getValue().car_volumeProperty());
         carTypeRemark.setCellValueFactory(cellData-> cellData.getValue().car_remarkProperty());
-        //carTypeOperator.setCellValueFactory(cellData-> cellData.getValue().ca);
+
 
         //设置城市管理数据
-        //citynodeOperator.setCellValueFactory(cellData-> cellData.getValue().city_stateProperty());
         citynodeState.setCellValueFactory(cellData-> cellData.getValue().city_stateProperty());
         citynodeId.setCellValueFactory(cellData-> cellData.getValue().city_idProperty());
         citynodename.setCellValueFactory(cellData-> cellData.getValue().city_nameProperty());
@@ -331,7 +392,17 @@ public class MenuController implements Initializable{
         transportationPlanGenerationWeight.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_weightProperty());
         transportationPlanGenerationRemark.setCellValueFactory(cellData-> cellData.getValue().transportationPlanGeneration_remarkProperty());
 
-
+        //设置车辆备案数据
+        carrecordState.setCellValueFactory(cellData-> cellData.getValue().car_stateProperty());
+        carrecordRemark.setCellValueFactory(cellData-> cellData.getValue().car_remarkProperty());
+        carrecordCartype.setCellValueFactory(cellData-> cellData.getValue().car_typeProperty());
+        carrecordCarrier.setCellValueFactory(cellData-> cellData.getValue().car_carrierProperty());
+        carrecordPeople.setCellValueFactory(cellData-> cellData.getValue().car_peopleProperty());
+        carrecordLoad.setCellValueFactory(cellData-> cellData.getValue().car_loadProperty());
+        carrecordNumber1.setCellValueFactory(cellData-> cellData.getValue().car_numberProperty());
+        carrecordNumber2.setCellValueFactory(cellData-> cellData.getValue().trailer_numberProperty());
+        carrecordTel.setCellValueFactory(cellData-> cellData.getValue().car_telephoneProperty());
+        carrecordVolume.setCellValueFactory(cellData-> cellData.getValue().car_volumeProperty());
 
         //设置表格数据
         businessTableView.setItems(businessdata);
@@ -340,7 +411,7 @@ public class MenuController implements Initializable{
         CarTypeTableView.setItems(cartypedata);
         citynodeTableView.setItems(citynodedata);
         TPGTableView.setItems(transportationPlanGenerationdata);
-
+        carrecordTableView.setItems(carRecordsdata);
 
 
     }
@@ -785,6 +856,131 @@ public class MenuController implements Initializable{
         });
 
     }
+
+    /**
+     * 车辆备案
+     */
+    @FXML
+    private TextField carrecordCarnumberText;
+    @FXML
+    private TextField carrecordCarnumber2Text;
+
+    @FXML
+    private Button carrecordCheckBtn;
+    @FXML
+    private Button carrecordBuildBtn;
+    @FXML
+    private TableView<CarRecord> carrecordTableView = new TableView<>();
+    //创建数据集合
+    private ObservableList<CarRecord> carRecordsdata = FXCollections.observableArrayList();
+
+    @FXML
+    private ComboBox<String> carrecordPeopleCB ;
+
+    @FXML
+    private TableColumn<CarRecord, String> carrecordState;
+    @FXML
+    private TableColumn<CarRecord, String> carrecordRemark;
+    @FXML
+    private TableColumn<CarRecord, String> carrecordCartype;
+    @FXML
+    private TableColumn<CarRecord, String> carrecordOperator;
+    @FXML
+    private TableColumn<CarRecord, String> carrecordCarrier;
+    @FXML
+    private TableColumn<CarRecord, String> carrecordPeople;
+    @FXML
+    private TableColumn<CarRecord, String> carrecordLoad;
+    @FXML
+    private TableColumn<CarRecord, String> carrecordNumber1;
+    @FXML
+    private TableColumn<CarRecord, String> carrecordNumber2;
+    @FXML
+    private TableColumn<CarRecord, String> carrecordTel;
+    @FXML
+    private TableColumn<CarRecord, String> carrecordVolume;
+
+
+    @FXML
+    void carrecordCheck(ActionEvent event) {
+
+        String carRecordCarrier = this.carrecordPeopleCB.getValue().toString();
+
+        if(carRecordCarrier == null || carRecordCarrier.length() <= 0){
+            //new Alert(Alert.AlertType.NONE, "查询内容不能为空", new ButtonType[]{ButtonType.CLOSE}).show();
+            System.out.println("查询内容为空");
+        }
+        else{
+            carrecordTableView.getItems().clear();
+            //添加数据, 这些数据从数据库中查询出
+            carRecordDAO carRecordDAO2 = new carRecordDAO();
+
+            Iterator<CarRecord> carRecordIterator = carRecordDAO2.getCarRecordByCarrier(carRecordCarrier).iterator();
+            while(carRecordIterator.hasNext()) {
+                carRecordsdata.add(carRecordIterator.next());
+
+            }
+
+        }
+
+
+        String carnumber = this.carrecordCarnumberText.getText();
+        // System.out.println(cityname1);
+        if(carnumber == null || carnumber.length() <= 0){
+            System.out.println("查询内容为空");
+        }
+        else{
+            carrecordTableView.getItems().clear();
+            //添加数据, 这些数据从数据库中查询出
+            carRecordDAO carRecordDAO3 = new carRecordDAO();
+
+            Iterator<CarRecord> carRecordIterator1 = carRecordDAO3.getCarRecordByCarnumber(carnumber).iterator();
+            while(carRecordIterator1.hasNext()) {
+                carRecordsdata.add(carRecordIterator1.next());
+
+            }
+        }
+
+
+
+        //设置车辆备案数据
+        carrecordState.setCellValueFactory(cellData-> cellData.getValue().car_stateProperty());
+        carrecordRemark.setCellValueFactory(cellData-> cellData.getValue().car_remarkProperty());
+        carrecordCartype.setCellValueFactory(cellData-> cellData.getValue().car_typeProperty());
+        carrecordCarrier.setCellValueFactory(cellData-> cellData.getValue().car_carrierProperty());
+        carrecordPeople.setCellValueFactory(cellData-> cellData.getValue().car_peopleProperty());
+        carrecordLoad.setCellValueFactory(cellData-> cellData.getValue().car_loadProperty());
+        carrecordNumber1.setCellValueFactory(cellData-> cellData.getValue().car_numberProperty());
+        carrecordNumber2.setCellValueFactory(cellData-> cellData.getValue().trailer_numberProperty());
+        carrecordTel.setCellValueFactory(cellData-> cellData.getValue().car_telephoneProperty());
+        carrecordVolume.setCellValueFactory(cellData-> cellData.getValue().car_volumeProperty());
+
+        //设置表格数据
+        carrecordTableView.setItems(carRecordsdata);
+    }
+
+    @FXML
+    void carrecordBuild(ActionEvent event) {
+        Platform.runLater(()->{
+            //获取按钮所在的窗口
+            //BtSign可以为当前窗口任意一个控件
+            Stage primaryStage = (Stage) carrecordBuildBtn.getScene().getWindow();
+            //当前窗口隐藏
+            primaryStage.hide();
+            //加载注册窗口
+            try {
+                new carRecordMain().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+
+
+
+
+
 
 
 }

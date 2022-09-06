@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="571.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.carRecord.carRecordController">
+   <children>
+      <Label layoutX="34.0" layoutY="47.0" text="*" textFill="#f51111" />
+      <Label layoutX="48.0" layoutY="105.0" text="车牌号：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="364.0" layoutY="105.0" text="挂车车牌号：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="169.0" text="车辆容积（立方米）">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="369.0" layoutY="167.0" text="车辆载重(吨)：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="238.0" text="车型：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="49.0" layoutY="298.0" text="联系人：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="354.0" layoutY="298.0" text="联系方式：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="367.0" text="备注：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="CRSaveBtn" layoutX="206.0" layoutY="509.0" mnemonicParsing="false" onAction="#CRSave" prefHeight="42.0" prefWidth="101.0" text="保存">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="CRCloseBtn" layoutX="393.0" layoutY="509.0" mnemonicParsing="false" onAction="#CRClose" prefHeight="42.0" prefWidth="108.0" text="关闭">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="48.0" layoutY="47.0" text="承运商：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="107.0" text="*" textFill="#f50606" />
+      <Label layoutX="347.0" layoutY="107.0" text="*" textFill="#f51212" />
+      <Label layoutX="347.0" layoutY="171.0" text="*" textFill="#fc0505" />
+      <Label layoutX="31.0" layoutY="240.0" text="*" textFill="#fc0c0c" />
+      <TextField fx:id="carRecordnumber1" layoutX="121.0" layoutY="102.0" prefHeight="30.0" prefWidth="176.0" />
+      <TextField fx:id="carRecordvolume" layoutX="206.0" layoutY="166.0" prefHeight="30.0" prefWidth="124.0" />
+      <TextField fx:id="carRecordnumber2" layoutX="462.0" layoutY="102.0" prefHeight="30.0" prefWidth="176.0" />
+      <TextField fx:id="carRecordload" layoutX="490.0" layoutY="164.0" prefHeight="30.0" prefWidth="148.0" />
+      <TextField fx:id="carRecordpeople" layoutX="120.0" layoutY="295.0" prefHeight="30.0" prefWidth="191.0" />
+      <TextField fx:id="carRecordtel" layoutX="449.0" layoutY="295.0" prefHeight="30.0" prefWidth="191.0" />
+      <TextField fx:id="carRecordremark" layoutX="108.0" layoutY="361.0" prefHeight="125.0" prefWidth="529.0" />
+      <ComboBox fx:id="CRcarrierCB" layoutX="120.0" layoutY="44.0" prefHeight="30.0" prefWidth="176.0" />
+      <ComboBox fx:id="CRcartypeCB" layoutX="121.0" layoutY="235.0" prefHeight="30.0" prefWidth="176.0" />
+   </children>
+</AnchorPane>
