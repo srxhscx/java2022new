@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="599.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.carType.carTypeController">
+   <children>
+      <Label layoutX="46.0" layoutY="55.0" text="车型：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="46.0" layoutY="332.0" text="备注：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="CartypeText" layoutX="158.0" layoutY="35.0" prefHeight="40.0" prefWidth="194.0" />
+      <TextField fx:id="CarVolumeText" layoutX="158.0" layoutY="134.0" prefHeight="40.0" prefWidth="194.0" />
+      <TextField fx:id="CarLoadText" layoutX="158.0" layoutY="237.0" prefHeight="46.0" prefWidth="194.0" />
+      <TextField fx:id="carTypeRemark" layoutX="117.0" layoutY="332.0" prefHeight="143.0" prefWidth="377.0" />
+      <Button fx:id="CarSaveBtn" layoutX="146.0" layoutY="511.0" mnemonicParsing="false" onAction="#CarSave" prefHeight="46.0" prefWidth="97.0" text="保存">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="CarCloseBtn" layoutX="317.0" layoutY="511.0" mnemonicParsing="false" onAction="#CarClose" prefHeight="46.0" prefWidth="107.0" text="关闭">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Label layoutX="44.0" layoutY="115.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="46.0" layoutY="154.0" prefHeight="24.0" prefWidth="91.0" text="标准容积：">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="44.0" layoutY="237.0" prefHeight="24.0" prefWidth="91.0" text="标准载重：">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="385.0" layoutY="156.0" text="立方米">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Label layoutX="385.0" layoutY="260.0" text="吨">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -35,7 +35,7 @@ public class characterManagementController {
     void saveChecked(ActionEvent event) throws SQLException {
         characterManagementDAO characterManagementdao = new characterManagementDAO();
         characterManagementdao.addAccountManagement(Integer.valueOf(id.getText()),name.getText(),remark.getText());
-        new Alert(Alert.AlertType.NONE, "保存成功", new ButtonType[]{ButtonType.CLOSE}).show();;
+        new Alert(Alert.AlertType.NONE, "保存成功", new ButtonType[]{ButtonType.CLOSE}).show();
     }
 
     @FXML
